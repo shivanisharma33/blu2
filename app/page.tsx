@@ -8,7 +8,6 @@ import Milestones from "@/components/sections/Milestones";
 import Leadership from "@/components/sections/Leadership";
 import News from "@/components/sections/News";
 import Investors from "@/components/sections/Investors";
-import ExplorationUpdates from "@/components/sections/ExplorationUpdates";
 import FinalCta from "@/components/sections/FinalCta";
 
 export default function Home() {
@@ -24,7 +23,6 @@ export default function Home() {
       <Leadership />
       <News />
       <Investors />
-      <ExplorationUpdates />
       <FinalCta />
     </>
   );
