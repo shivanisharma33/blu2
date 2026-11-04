@@ -1,6 +1,7 @@
 import HarperMap from "./HarperMap";
 import { SectionHead } from "../ui/primitives";
 import { analogues } from "@/lib/content";
+import WaveRibbon3D from "../ui/WaveRibbon3D";
 
 const insights = [
   {
@@ -65,6 +66,11 @@ export default function Opportunity() {
             </p>
           }
         />
+
+        {/* Interactive 3D Wavefield Ribbon */}
+        <div data-reveal>
+          <WaveRibbon3D height={220} className="opportunity__wave" />
+        </div>
 
         <div className="opportunity__stage">
           <HarperMap />
