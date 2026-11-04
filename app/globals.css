@@ -2044,6 +2044,388 @@ a:hover .read-more .icon-arrow {
   margin-top: 8px;
 }
 
+/* ------------------------------------------- Asset Telemetry & Metrics -- */
+.asset-telemetry {
+  margin-top: clamp(64px, 8vw, 112px);
+}
+
+.asset-telemetry__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.asset-telemetry__header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.asset-telemetry__badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ocean);
+  text-transform: uppercase;
+}
+
+.asset-telemetry__hint {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.asset-telemetry__units {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.asset-telemetry__units-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.asset-telemetry__toggle {
+  display: inline-flex;
+  background: #e2e8f0;
+  padding: 3px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+.asset-telemetry__toggle-btn {
+  border: 0;
+  background: transparent;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.asset-telemetry__toggle-btn.is-active {
+  background: #ffffff;
+  color: var(--navy);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.asset-telemetry__cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.asset-metric-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px 20px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(16, 42, 58, 0.03);
+}
+
+.asset-metric-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(22, 78, 104, 0.3);
+  box-shadow: 0 12px 28px rgba(16, 42, 58, 0.08);
+}
+
+.asset-metric-card.is-active {
+  border-color: var(--ocean);
+  background: rgba(22, 78, 104, 0.03);
+  box-shadow: 0 8px 24px rgba(22, 78, 104, 0.12);
+  transform: translateY(-2px);
+}
+
+.asset-metric-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ocean), var(--accent));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.asset-metric-card.is-active::before,
+.asset-metric-card:hover::before {
+  opacity: 1;
+}
+
+.asset-metric-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.asset-metric-card__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.asset-metric-card__indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line);
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.asset-metric-card__indicator.is-active {
+  background: var(--ocean);
+  box-shadow: 0 0 8px rgba(22, 78, 104, 0.7);
+}
+
+.asset-metric-card__value {
+  font-family: var(--font-head);
+  font-size: clamp(30px, 3vw, 44px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.val-number {
+  letter-spacing: -0.02em;
+}
+
+.val-unit {
+  font-size: 0.5em;
+  font-weight: 600;
+  color: var(--ocean);
+}
+
+.asset-metric-card__progress {
+  width: 100%;
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.asset-metric-card__progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ocean), var(--accent));
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.asset-metric-card__note {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--muted);
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.asset-metric-card__action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ocean);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+/* Deep-Dive Inspector Panel */
+.asset-inspector {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: clamp(28px, 3vw, 40px);
+  margin-bottom: 24px;
+  box-shadow: 0 10px 32px rgba(16, 42, 58, 0.06);
+  animation: rise 0.35s var(--ease) both;
+  position: relative;
+}
+
+.asset-inspector::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  bottom: 0;
+  background: var(--ocean);
+  border-radius: 16px 0 0 16px;
+}
+
+.asset-inspector__header {
+  margin-bottom: 24px;
+}
+
+.asset-inspector__badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.asset-inspector__badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ocean);
+  background: rgba(22, 78, 104, 0.08);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.asset-inspector__ratio {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0284c7;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.asset-inspector__title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0 0 8px 0;
+}
+
+.asset-inspector__desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 0;
+  max-width: 900px;
+}
+
+.asset-inspector__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.asset-inspector__item {
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.asset-inspector__k {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.asset-inspector__v {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.asset-inspector__footer {
+  display: flex;
+}
+
+.asset-inspector__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Disclosure Accordion */
+.disclosure-accordion {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-top: 16px;
+}
+
+.disclosure-accordion__trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  gap: 16px;
+}
+
+.disclosure-accordion__trigger-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.disclosure-accordion__icon {
+  color: var(--ocean);
+  display: flex;
+  align-items: center;
+}
+
+.disclosure-accordion__toggle-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ocean);
+  flex-shrink: 0;
+  text-decoration: underline;
+}
+
+.disclosure-accordion__content {
+  padding: 0 20px 20px 48px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  background: #fafafa;
+}
+
+.disclosure-accordion__content p {
+  margin: 12px 0 0 0;
+}
+
+/* Legacy stats fallback */
 .stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -3121,6 +3503,12 @@ a:hover .read-more .icon-arrow {
   .opportunity__cards-grid {
     grid-template-columns: 1fr;
   }
+  .asset-telemetry__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .asset-inspector__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .analogues ul {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     row-gap: 28px;
@@ -3202,6 +3590,8 @@ a:hover .read-more .icon-arrow {
   .asset-grid,
   .update-grid,
   .stats,
+  .asset-telemetry__cards,
+  .asset-inspector__grid,
   .programme__list,
   .docs,
   .listings,

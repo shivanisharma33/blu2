@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { SectionHead, Button } from "../ui/primitives";
-import { assetFacts, licence, gulfAsset, routes, ORIGIN } from "@/lib/content";
+import { licence, gulfAsset, routes } from "@/lib/content";
+import AssetMetrics from "./AssetMetrics";
 
 type Asset = {
   id: string;
@@ -95,34 +96,8 @@ export default function Assets() {
           ))}
         </div>
 
-        <dl className="stats" data-stagger>
-          {assetFacts.map((f) => (
-            <div key={f.label} className="stat">
-              <dt>{f.label}</dt>
-              <dd className="stat__value">
-                {f.label.startsWith("Approximate") ? "~" : ""}
-                {f.value.toLocaleString("en-US")}
-                <span>{f.unit}</span>
-              </dd>
-              <dd className="stat__note">{f.note}</dd>
-            </div>
-          ))}
-        </dl>
-
-        <aside className="disclosure" aria-label="Cautionary note regarding prospective resources">
-          <p>
-            <strong>Cautionary note.</strong> BluEnergies&apos; blocks are undrilled exploration acreage. They contain no discovered
-            resources or reserves. Prospective resources are quantities of petroleum estimated, as of a given date, to be potentially
-            recoverable from undiscovered accumulations by applying future development projects. There is no certainty that any
-            portion of the resources will be discovered. If discovered, there is no certainty that it will be commercially viable to
-            produce any portion of them. Unrisked estimates have not been adjusted for the chance of discovery or the chance of
-            development. See the company&apos;s{" "}
-            <a href={`${ORIGIN}/_resources/presentations/corporate-presentation.pdf`} target="_blank" rel="noopener noreferrer">
-              corporate presentation
-            </a>{" "}
-            and its filings on SEDAR+ for full disclosure.
-          </p>
-        </aside>
+        {/* Interactive Asset Telemetry & Metrics Suite */}
+        <AssetMetrics />
       </div>
     </section>
   );
