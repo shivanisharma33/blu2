@@ -1212,236 +1212,582 @@ a:hover .read-more .icon-arrow {
   row-gap: 32px;
   align-items: start;
 }
+
+/* --------------------------------------------------- Harper Map Canvas -- */
 .harper__map {
   grid-column: 1 / span 8;
   position: relative;
-  background: var(--bg);
-  padding: clamp(12px, 2vw, 24px);
+  background: #081724;
+  border: 1px solid rgba(16, 42, 58, 0.16);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(16, 42, 58, 0.12);
+  display: flex;
+  flex-direction: column;
 }
+
+/* Map Top Tactical Telemetry HUD */
+.harper__map-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  background: #06111a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  font-size: 11px;
+  z-index: 5;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.harper__map-hud-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hud-beacon {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 10px #34d399;
+  animation: telemetryPulse 2.5s infinite;
+}
+
+.hud-title {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.hud-sep {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.hud-tag {
+  color: #38bdf8;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.harper__map-hud-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hud-coords,
+.hud-depth {
+  color: rgba(255, 255, 255, 0.65);
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.hud-btn-expand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 6px;
+  padding: 4px 10px;
+  color: #38bdf8;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hud-btn-expand:hover {
+  background: rgba(56, 189, 248, 0.25);
+  color: #ffffff;
+  border-color: #38bdf8;
+}
+
+/* Map SVG Presentation */
+.harper__svg-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #081724;
+}
+
 .harper__svg {
   width: 100%;
   height: auto;
+  display: block;
 }
+
 .m-land {
-  fill: #dfe5e7;
+  stroke: rgba(56, 189, 248, 0.2);
+  stroke-width: 1.5;
 }
+
 .m-coast {
   fill: none;
-  stroke: #b7c3c8;
-  stroke-width: 2;
+  stroke: #38bdf8;
+  stroke-width: 3.5;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5));
 }
+
 .m-basin {
-  fill: rgba(57, 137, 168, 0.07);
-  stroke: rgba(22, 78, 104, 0.35);
+  fill: rgba(14, 165, 233, 0.05);
+  stroke: rgba(56, 189, 248, 0.35);
   stroke-width: 2;
+  stroke-dasharray: 8 6;
 }
+
 .m-contour {
   fill: none;
-  stroke: rgba(16, 29, 39, 0.22);
-  stroke-width: 1.6;
+  stroke-width: 1.8;
   stroke-dasharray: 6 8;
+  opacity: 0.7;
 }
-.m-block {
-  fill: rgba(255, 255, 255, 0.35);
-  stroke: var(--ocean);
-  stroke-width: 3;
-  cursor: pointer;
-  transition: fill 0.3s var(--ease);
+
+.m-contour--1000 {
+  stroke: #38bdf8;
 }
-.m-block:hover,
-.m-block.is-active {
-  fill: rgba(57, 137, 168, 0.18);
+
+.m-contour--2000 {
+  stroke: #0ea5e9;
 }
-.m-fan {
-  stroke: #fff;
-  stroke-width: 2;
-  transition: opacity 0.3s var(--ease);
+
+.m-contour--3000 {
+  stroke: #0284c7;
 }
-.m-fan--turonian {
-  fill: var(--ocean);
-  opacity: 0.85;
-}
-.m-fan--top {
-  fill: var(--accent);
-  opacity: 0.75;
-}
-.m-fan--upper {
-  fill: #9fcbdb;
-  opacity: 0.8;
-}
-.m-fans.is-active .m-fan {
-  opacity: 1;
-}
-.m-seismic {
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 2.5;
-  stroke-dasharray: 14 10;
-  opacity: 0.45;
-  transition: opacity 0.3s var(--ease), stroke 0.3s;
-}
-.m-seismic.is-active {
-  opacity: 1;
-  stroke: var(--accent);
-  stroke-width: 4;
-}
-.m-text {
-  font-family: var(--font-text);
-  fill: var(--ink);
+
+.m-seismic-fill {
   pointer-events: none;
 }
-.m-text--country {
-  font-size: 44px;
-  font-weight: 600;
-  letter-spacing: 0.24em;
-  fill: #8c9aa3;
+
+.m-seismic {
+  fill: none;
+  stroke: #f59e0b;
+  stroke-width: 2.5;
+  stroke-dasharray: 12 8;
+  opacity: 0.65;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
 }
-.m-text--basin {
-  font-size: 30px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  fill: var(--ocean);
-  text-anchor: middle;
+
+.m-seismic:hover,
+.m-seismic.is-active {
+  stroke: #fbbf24;
+  stroke-width: 4;
+  opacity: 1;
+  filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.55));
 }
-.m-text--block {
-  font-size: 34px;
-  font-weight: 600;
-  text-anchor: middle;
-  fill: var(--ocean);
+
+.m-block {
+  fill: rgba(255, 255, 255, 0.03);
+  stroke: rgba(56, 189, 248, 0.65);
+  stroke-width: 2.5;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
 }
-.m-text--fan {
-  font-size: 24px;
-  font-weight: 600;
-  paint-order: stroke;
+
+.m-block:hover {
+  fill: rgba(56, 189, 248, 0.12);
+  stroke: #38bdf8;
+  stroke-width: 3.5;
+}
+
+.m-block.is-active {
+  fill: rgba(56, 189, 248, 0.18);
+  stroke: #38bdf8;
+  stroke-width: 4;
+  filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.4));
+}
+
+.m-fan {
   stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 2.2;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.6));
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+}
+
+.m-fan:hover {
+  stroke: #ffffff;
+  stroke-width: 3.5;
+  filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.9));
+}
+
+.m-fans.is-active .m-fan {
+  stroke: #ffffff;
+  stroke-width: 3;
+  filter: drop-shadow(0 0 14px rgba(56, 189, 248, 0.7));
+}
+
+.m-coord {
+  fill: rgba(255, 255, 255, 0.4);
+  font-size: 15px;
+  font-family: monospace;
+}
+
+.m-text {
+  font-family: var(--font-text);
+  fill: #ffffff;
+  pointer-events: none;
+}
+
+.m-text--country {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  fill: #e2e8f0;
+}
+
+.m-text--country-sub {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  fill: #94a3b8;
+}
+
+.m-text--basin {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  fill: #38bdf8;
+  text-anchor: middle;
+}
+
+.m-text--basin-sub {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  fill: rgba(56, 189, 248, 0.7);
+  text-anchor: middle;
+}
+
+.m-label-block {
+  cursor: pointer;
+}
+
+.m-label-bg {
+  fill: rgba(10, 24, 36, 0.92);
+  stroke: rgba(56, 189, 248, 0.4);
+  stroke-width: 1.5;
+  transition: all 0.2s ease;
+}
+
+.m-label-block:hover .m-label-bg,
+.m-label-block.is-active .m-label-bg {
+  fill: var(--ocean);
+  stroke: #38bdf8;
+  stroke-width: 2;
+}
+
+.m-text--block {
+  font-size: 20px;
+  font-weight: 700;
+  fill: #ffffff;
+  text-anchor: middle;
+}
+
+.m-text--fan {
+  font-size: 22px;
+  font-weight: 700;
+  fill: #ffffff;
+  paint-order: stroke;
+  stroke: rgba(6, 17, 26, 0.95);
   stroke-width: 6px;
   stroke-linejoin: round;
 }
+
 .m-text--contour {
-  font-size: 20px;
-  fill: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  fill: #e2e8f0;
+  font-family: monospace;
 }
-.m-scale path {
-  stroke: var(--ink);
-  stroke-width: 3;
+
+.m-compass-text {
+  font-size: 14px;
+  font-weight: 700;
+  fill: #38bdf8;
+  font-family: var(--font-head);
 }
+
 .m-scale text {
-  font-size: 22px;
-  fill: var(--muted);
-  font-family: var(--font-text);
+  font-size: 14px;
+  font-weight: 600;
+  fill: #e2e8f0;
+  font-family: monospace;
 }
+
+/* Tactical Inset Mini-Globe */
 .harper__locator {
   position: absolute;
-  left: clamp(12px, 2vw, 24px);
-  bottom: clamp(56px, 6vw, 72px);
-  width: clamp(110px, 16%, 170px);
-  background: var(--white);
-  padding: 8px;
+  left: clamp(12px, 2vw, 22px);
+  bottom: clamp(64px, 7vw, 84px);
+  width: clamp(120px, 16%, 170px);
+  background: rgba(6, 17, 26, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
 }
+
+.loc-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+  padding: 6px 8px 4px;
+  background: rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-transform: uppercase;
+}
+
 .loc-land {
-  fill: #dfe5e7;
+  fill: #1a2c38;
 }
+
 .loc-dot {
-  fill: var(--accent);
+  fill: #38bdf8;
+  filter: drop-shadow(0 0 6px #38bdf8);
 }
+
+.loc-pulse {
+  animation: telemetryPulse 2.5s infinite;
+}
+
 .loc-text {
   font-family: var(--font-text);
-  font-size: 22px;
+  font-size: 17px;
   font-weight: 600;
-  fill: var(--ink);
+  fill: #e2e8f0;
 }
+
+/* High-Tech Frosted Interactive Legend Bar */
 .harper__legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 24px;
-  padding-top: 16px;
-  font-size: 13px;
-  color: var(--muted);
+  gap: 10px 22px;
+  padding: 12px 18px;
+  background: #06111a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  color: #94a3b8;
 }
-.harper__legend span {
+
+.harper__legend-item {
   display: inline-flex;
   align-items: center;
   gap: 8px;
 }
+
 .lg {
   width: 12px;
   height: 12px;
+  border-radius: 3px;
   display: inline-block;
+  flex-shrink: 0;
 }
+
 .lg--turonian {
-  background: var(--ocean);
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.5);
 }
+
 .lg--top {
-  background: var(--accent);
+  background: linear-gradient(135deg, #06b6d4, #38bdf8);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
 }
+
 .lg--upper {
-  background: #9fcbdb;
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
 }
+
 .lg--seismic {
-  border: 1.5px dashed var(--ink);
+  background: transparent;
+  border: 1.5px dashed #f59e0b;
 }
+
+.lg--contour {
+  background: transparent;
+  border-bottom: 2px dashed #38bdf8;
+}
+
+/* ---------------------------------------------------- Right Control Panel -- */
 .harper__panel {
   grid-column: 9 / -1;
-  display: grid;
-  gap: 28px;
-  align-content: start;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+
+.harper__panel-header {
+  margin-bottom: 4px;
+}
+
+.harper__panel-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ocean);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.harper__panel-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0;
+}
+
 .harper__tabs {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--line);
+  gap: 8px;
 }
-.harper__tabs button {
-  text-align: left;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
-  font-family: var(--font-head);
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--muted);
+
+.harper__tab-btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: color 0.2s;
+  width: 100%;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(16, 42, 58, 0.02);
 }
-.harper__tabs button::after {
-  content: "";
+
+.harper__tab-btn:hover {
+  border-color: rgba(22, 78, 104, 0.35);
+  background: #f8fafc;
+  transform: translateX(2px);
+}
+
+.harper__tab-btn.is-active {
+  background: rgba(22, 78, 104, 0.06);
+  border-color: var(--ocean);
+  box-shadow: 0 4px 14px rgba(22, 78, 104, 0.1);
+}
+
+.harper__tab-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.harper__tab-kicker {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.harper__tab-name {
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.harper__tab-status {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: transparent;
-  transition: background-color 0.2s;
+  background: var(--line);
+  transition: all 0.25s ease;
+  flex-shrink: 0;
 }
-.harper__tabs button:hover {
-  color: var(--ink);
+
+.harper__tab-btn.is-active .harper__tab-status {
+  background: var(--ocean);
+  box-shadow: 0 0 8px rgba(22, 78, 104, 0.6);
+  transform: scale(1.2);
 }
-.harper__tabs button.is-active {
-  color: var(--ink);
-}
-.harper__tabs button.is-active::after {
-  background: var(--accent);
-}
+
+/* Active Detail Feature Card */
 .harper__detail {
-  animation: rise 0.5s var(--ease) both;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(16, 42, 58, 0.05);
+  animation: rise 0.4s var(--ease) both;
 }
-.harper__detail p {
+
+.harper__detail-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ocean);
+  background: rgba(22, 78, 104, 0.08);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.harper__detail-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0 0 10px 0;
+}
+
+.harper__detail-desc {
+  font-size: 14px;
+  line-height: 1.62;
   color: var(--muted);
+  margin: 0 0 18px 0;
 }
-.harper__detail dl {
+
+.harper__facts-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
 }
-.harper__detail dt {
-  font-size: 13px;
+
+.harper__fact-card {
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.harper__fact-k {
+  font-size: 10px;
   color: var(--muted);
-}
-.harper__detail dd {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   font-weight: 600;
 }
-.harper__official {
-  justify-self: start;
+
+.harper__fact-v {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.35;
+}
+
+.harper__official-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  width: 100%;
+  border-radius: 8px;
 }
 
 .opportunity__explain {

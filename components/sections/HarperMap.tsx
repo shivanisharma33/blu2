@@ -39,48 +39,86 @@ const coastPath = coastLL.map((p, i) => `${i ? "L" : "M"}${proj(p)[0].toFixed(1)
 const landPath = `${coastPath} L300,${proj([14, -6.5])[1].toFixed(1)} L300,0 L${proj([-17, 22])[0].toFixed(1)},0 Z`;
 const harper = proj([-7.9, 3.9]);
 
-type Spot = { id: string; x: number; y: number; title: string; kicker: string; body: string; facts?: [string, string][] };
+type Spot = {
+  id: string;
+  x: number;
+  y: number;
+  title: string;
+  kicker: string;
+  body: string;
+  facts?: [string, string][];
+};
 
 const spots: Spot[] = [
   {
+    id: "fans",
+    x: 975,
+    y: 905,
+    kicker: "Play Fairway",
+    title: "Cretaceous Fan Systems",
+    body: "Seven Cretaceous fan systems are identified across Cenomanian and Turonian intervals. Six of them, all in Blocks LB-30 and LB-31, carry independently certified, unrisked, recoverable prospective resource potential (report dated March 28, 2025).",
+    facts: [
+      ["Intervals", "Cenomanian · Turonian"],
+      ["Certified Fans", "6 Independently Audited"],
+      ["Source Rock", "Cretaceous Marine Shale"],
+      ["Gross Thickness", "Up to 300m Reservoir Columns"],
+    ],
+  },
+  {
     id: "lb30",
-    x: 787, y: 1180,
-    kicker: "Block",
-    title: "LB-30",
-    body: "Deepwater basin floor fans are identified here on 3D seismic, including the Turonian Saturn fan, the Cenomanian Thea fan and the Apollo fan, which extends into LB-31.",
-    facts: [["Licence", "RL-003"], ["Status", "Fans identified"]],
+    x: 787,
+    y: 1180,
+    kicker: "Licence Block",
+    title: "Block LB-30",
+    body: "Deepwater basin floor fans are identified here on 3D seismic, including the Turonian Saturn fan, the Cenomanian Thea fan, and the giant Apollo fan, which extends eastward into LB-31.",
+    facts: [
+      ["Licence", "RL-003 (Liberia)"],
+      ["Working Interest", "35% BluEnergies · 65% TotalEnergies"],
+      ["Water Depths", "1,500 m – 3,200 m"],
+      ["Status", "Fans Identified · Drill Target Prep"],
+    ],
   },
   {
     id: "lb31",
-    x: 1088, y: 1180,
-    kicker: "Block",
-    title: "LB-31",
-    body: "The Turonian Neptune fan and the Cenomanian Diana and Zeus fans lie here. Like LB-30, this block hosts fans where independently certified prospective resource potential has been recognised.",
-    facts: [["Licence", "RL-003"], ["Status", "Fans identified"]],
+    x: 1088,
+    y: 1180,
+    kicker: "Licence Block",
+    title: "Block LB-31",
+    body: "The Turonian Neptune fan and the Cenomanian Diana and Zeus fans lie here. Like LB-30, this block hosts high-confidence fan systems with multi-hundred-million barrel prospective resource potential.",
+    facts: [
+      ["Licence", "RL-003 (Liberia)"],
+      ["Working Interest", "35% BluEnergies · 65% TotalEnergies"],
+      ["Water Depths", "1,800 m – 3,400 m"],
+      ["Status", "Fans Identified · Drill Target Prep"],
+    ],
   },
   {
     id: "lb26",
-    x: 1088, y: 560,
-    kicker: "Block",
-    title: "LB-26",
-    body: "The northernmost block, closest to shore. The company reports that an assessment of Block LB-26 is underway.",
-    facts: [["Licence", "RL-003"], ["Status", "Assessment underway"]],
+    x: 1088,
+    y: 560,
+    kicker: "Licence Block",
+    title: "Block LB-26",
+    body: "The northernmost block, closest to the Liberian coastline in shallow-to-intermediate water depths. An intensive geological and geophysical assessment of Block LB-26 is currently underway.",
+    facts: [
+      ["Licence", "RL-003 (Liberia)"],
+      ["Working Interest", "35% BluEnergies · 65% TotalEnergies"],
+      ["Water Depths", "500 m – 2,000 m"],
+      ["Status", "Reprocessing & Interpretation Underway"],
+    ],
   },
   {
     id: "seismic",
-    x: 1440, y: 880,
-    kicker: "Dataset",
-    title: "3D seismic outline",
-    body: "Survey acquired by TGS in 2013, covering the majority of the blocks. The full dataset is now being reprocessed by TGS on behalf of BluEnergies and TotalEnergies.",
-    facts: [["Coverage", "6,167 km²"], ["Reprocessing", ">50% (Jul 2026)"]],
-  },
-  {
-    id: "fans",
-    x: 975, y: 905,
-    kicker: "Play",
-    title: "Cretaceous fan systems",
-    body: "Seven Cretaceous fan systems are identified across Cenomanian and Turonian intervals. Six of them, all in LB-30 and LB-31, carry independently certified, unrisked, recoverable prospective resource potential (report dated March 28, 2025).",
-    facts: [["Intervals", "Cenomanian · Turonian"], ["Certified fans", "6"]],
+    x: 1440,
+    y: 880,
+    kicker: "Subsurface Dataset",
+    title: "3D Seismic Coverage (6,167 km²)",
+    body: "High-resolution 3D seismic survey acquired by TGS, covering the core exploration fairway across Blocks LB-26, LB-30, and LB-31. The full volume has undergone state-of-the-art PSTM/PSDM reprocessing.",
+    facts: [
+      ["Coverage", "6,167 km² Full Fold"],
+      ["Acquisition", "TGS Modern 3D Data"],
+      ["Reprocessing", "Advanced PSTM/PSDM Fast-Track"],
+      ["Resolution", "Stratigraphic-Grade Reservoir Imaging"],
+    ],
   },
 ];
 
@@ -102,123 +140,390 @@ export default function HarperMap() {
 
   return (
     <div className="harper">
+      {/* Map Interactive Canvas */}
       <figure className="harper__map" data-reveal="image">
-        <svg viewBox="470 100 1530 1400" className="harper__svg" role="img" aria-labelledby="map-title map-desc">
-          <title id="map-title">Map of Reconnaissance Licence RL-003, Harper basin, offshore Liberia</title>
-          <desc id="map-desc">
-            Blocks LB-26, LB-30 and LB-31 lie offshore Liberia within the Harper basin. Cretaceous fan systems sit in Blocks LB-30
-            and LB-31 inside the 3D seismic survey outline. The map also shows the 1,000, 2,000 and 3,000 metre water depth contours.
-          </desc>
+        {/* Top Tactical Telemetry HUD Bar */}
+        <div className="harper__map-hud">
+          <div className="harper__map-hud-left">
+            <span className="hud-beacon" />
+            <span className="hud-title">OFFSHORE LIBERIA · HARPER BASIN RL-003</span>
+            <span className="hud-sep">/</span>
+            <span className="hud-tag">3D SEISMIC & RESERVOIR GIS</span>
+          </div>
+          <div className="harper__map-hud-right">
+            <span className="hud-coords">4°20&apos;N · 8°15&apos;W</span>
+            <span className="hud-depth">500m – 3,500m ISO</span>
+            <button
+              type="button"
+              className="hud-btn-expand"
+              onClick={() => setLightbox(true)}
+              aria-label="View official licence map in high resolution"
+            >
+              <span>Licence Map</span>
+              <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+                <path d="M1 5V1h4M13 9v4H9M1 1l5 5M13 13L8 8" />
+              </svg>
+            </button>
+          </div>
+        </div>
 
-          <path d={P.land} className="m-land" />
-          <path d={P.coast} className="m-coast" />
-          <path d={P.basin} className="m-basin" />
+        {/* High-Precision Interactive SVG Map */}
+        <div className="harper__svg-wrap">
+          <svg
+            viewBox="470 100 1530 1400"
+            className="harper__svg"
+            role="img"
+            aria-labelledby="map-title map-desc"
+          >
+            <title id="map-title">Exploration Map of Reconnaissance Licence RL-003, Harper basin, offshore Liberia</title>
+            <desc id="map-desc">
+              High-resolution cartographic map showing Blocks LB-26, LB-30, and LB-31 within the Harper basin offshore Liberia.
+              Includes 3D seismic coverage of 6,167 km² and Cenomanian and Turonian Cretaceous basin floor fan systems.
+            </desc>
 
-          <path d={P.c1000} className="m-contour" />
-          <path d={P.c2000} className="m-contour" />
-          <path d={P.c3000} className="m-contour" />
-          <text x="1050" y="458" className="m-text m-text--contour">1,000 m</text>
-          <text x="1010" y="612" className="m-text m-text--contour">2,000 m</text>
-          <text x="650" y="722" className="m-text m-text--contour">3,000 m</text>
+            <defs>
+              {/* Ocean Bathymetry Gradient */}
+              <linearGradient id="oceanBathymetry" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#132a3a" />
+                <stop offset="35%" stopColor="#0d2130" />
+                <stop offset="70%" stopColor="#081724" />
+                <stop offset="100%" stopColor="#040e17" />
+              </linearGradient>
 
-          {(["lb26", "lb30", "lb31"] as const).map((b) => (
-            <path key={b} d={P[b]} className={`m-block ${on(b)}`} onClick={() => setActive(b)} />
-          ))}
+              {/* Onshore Land Gradient & Pattern */}
+              <linearGradient id="landGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#1e3342" />
+                <stop offset="100%" stopColor="#152632" />
+              </linearGradient>
 
-          <g className={`m-fans ${on("fans")}`}>
-            <path d={P.apollo} className="m-fan m-fan--upper" />
-            <path d={P.zeus} className="m-fan m-fan--upper" />
-            <path d={P.thea} className="m-fan m-fan--top" />
-            <path d={P.diana} className="m-fan m-fan--top" />
-            <path d={P.saturn} className="m-fan m-fan--turonian" />
-            <path d={P.neptune} className="m-fan m-fan--turonian" />
-          </g>
+              {/* Seismic Survey Grid Hatch */}
+              <pattern id="seismicPattern" width="28" height="28" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="0" x2="28" y2="28" stroke="rgba(56, 189, 248, 0.12)" strokeWidth="1" />
+                <line x1="28" y1="0" x2="0" y2="28" stroke="rgba(56, 189, 248, 0.08)" strokeWidth="1" />
+              </pattern>
 
-          <path d={P.seismic} className={`m-seismic ${on("seismic")}`} />
+              {/* Turonian Fan Gradient */}
+              <linearGradient id="fanTuronianGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#0284c7" />
+                <stop offset="100%" stopColor="#0ea5e9" />
+              </linearGradient>
 
-          <g>
-            <text x="1500" y="250" className="m-text m-text--country">LIBERIA</text>
-            <text x="1700" y="900" className="m-text m-text--basin">HARPER BASIN</text>
-            <text x="1088" y="650" className="m-text m-text--block">LB-26</text>
-            <text x="787" y="1270" className="m-text m-text--block">LB-30</text>
-            <text x="1088" y="1270" className="m-text m-text--block">LB-31</text>
-            <text x="720" y="1060" className="m-text m-text--fan">Saturn</text>
-            <text x="1072" y="1000" className="m-text m-text--fan">Neptune</text>
-            <text x="842" y="800" className="m-text m-text--fan">Thea</text>
-            <text x="1125" y="955" className="m-text m-text--fan">Diana</text>
-            <text x="842" y="1080" className="m-text m-text--fan">Apollo</text>
-            <text x="1262" y="790" className="m-text m-text--fan">Zeus</text>
-          </g>
+              {/* Top Cenomanian Fan Gradient */}
+              <linearGradient id="fanTopGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#06b6d4" />
+                <stop offset="100%" stopColor="#38bdf8" />
+              </linearGradient>
 
-          {/* scale bar: 350 px = 50 km on the source map */}
-          <g className="m-scale" transform="translate(1520 1430)">
-            <path d="M0 0H350" />
-            <text x="0" y="-16">0</text>
-            <text x="350" y="-16" textAnchor="end">50 km</text>
-          </g>
-        </svg>
+              {/* Upper Cenomanian Fan Gradient */}
+              <linearGradient id="fanUpperGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#2563eb" />
+                <stop offset="100%" stopColor="#60a5fa" />
+              </linearGradient>
 
-        <div className="harper__locator" aria-hidden>
-          <svg viewBox="0 0 300 260">
-            <path d={landPath} className="loc-land" />
-            <circle cx={harper[0]} cy={harper[1]} r="7" className="loc-dot" />
-            <text x={harper[0] + 14} y={harper[1] + 28} className="loc-text">Harper basin</text>
+              {/* Luminous Glow Filter */}
+              <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="8" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+
+            {/* Ocean Floor Canvas Base */}
+            <rect x="470" y="100" width="1530" height="1400" fill="url(#oceanBathymetry)" />
+
+            {/* Latitude & Longitude Graticule Grid */}
+            <g className="m-graticule" opacity="0.35">
+              <line x1="470" y1="350" x2="2000" y2="350" stroke="rgba(255,255,255,0.08)" strokeDasharray="4 6" />
+              <line x1="470" y1="650" x2="2000" y2="650" stroke="rgba(255,255,255,0.08)" strokeDasharray="4 6" />
+              <line x1="470" y1="950" x2="2000" y2="950" stroke="rgba(255,255,255,0.08)" strokeDasharray="4 6" />
+              <line x1="470" y1="1250" x2="2000" y2="1250" stroke="rgba(255,255,255,0.08)" strokeDasharray="4 6" />
+
+              <line x1="750" y1="100" x2="750" y2="1500" stroke="rgba(255,255,255,0.08)" strokeDasharray="4 6" />
+              <line x1="1050" y1="100" x2="1050" y2="1500" stroke="rgba(255,255,255,0.08)" strokeDasharray="4 6" />
+              <line x1="1350" y1="100" x2="1350" y2="1500" stroke="rgba(255,255,255,0.08)" strokeDasharray="4 6" />
+              <line x1="1650" y1="100" x2="1650" y2="1500" stroke="rgba(255,255,255,0.08)" strokeDasharray="4 6" />
+
+              <text x="485" y="345" className="m-coord">5°00&apos;N</text>
+              <text x="485" y="645" className="m-coord">4°30&apos;N</text>
+              <text x="485" y="945" className="m-coord">4°00&apos;N</text>
+              <text x="485" y="1245" className="m-coord">3°30&apos;N</text>
+
+              <text x="755" y="1485" className="m-coord">9°00&apos;W</text>
+              <text x="1055" y="1485" className="m-coord">8°30&apos;W</text>
+              <text x="1355" y="1485" className="m-coord">8°00&apos;W</text>
+              <text x="1655" y="1485" className="m-coord">7°30&apos;W</text>
+            </g>
+
+            {/* Basin Play Fairway Outline */}
+            <path d={P.basin} className="m-basin" />
+
+            {/* Depth Contours (Isobaths) */}
+            <path d={P.c1000} className="m-contour m-contour--1000" />
+            <path d={P.c2000} className="m-contour m-contour--2000" />
+            <path d={P.c3000} className="m-contour m-contour--3000" />
+
+            {/* Contour depth labels with pill backgrounds */}
+            <g className="m-contour-tag" transform="translate(1040, 442)">
+              <rect x="-8" y="-14" width="76" height="20" rx="4" fill="rgba(10,24,36,0.85)" stroke="rgba(56,189,248,0.3)" />
+              <text x="30" y="0" textAnchor="middle" className="m-text m-text--contour">1,000 m</text>
+            </g>
+            <g className="m-contour-tag" transform="translate(1000, 596)">
+              <rect x="-8" y="-14" width="76" height="20" rx="4" fill="rgba(10,24,36,0.85)" stroke="rgba(14,165,233,0.3)" />
+              <text x="30" y="0" textAnchor="middle" className="m-text m-text--contour">2,000 m</text>
+            </g>
+            <g className="m-contour-tag" transform="translate(640, 706)">
+              <rect x="-8" y="-14" width="76" height="20" rx="4" fill="rgba(10,24,36,0.85)" stroke="rgba(2,132,199,0.3)" />
+              <text x="30" y="0" textAnchor="middle" className="m-text m-text--contour">3,000 m</text>
+            </g>
+
+            {/* 3D Seismic Survey Polygons */}
+            <path d={P.seismic} fill="url(#seismicPattern)" className="m-seismic-fill" />
+            <path
+              d={P.seismic}
+              className={`m-seismic ${on("seismic")}`}
+              onClick={() => setActive("seismic")}
+              role="button"
+              tabIndex={0}
+              aria-label="3D Seismic Survey 6,167 km²"
+            />
+
+            {/* Exploration Blocks LB-26, LB-30, LB-31 */}
+            {(["lb26", "lb30", "lb31"] as const).map((b) => (
+              <g key={b} className={`m-block-group ${on(b)}`}>
+                <path
+                  d={P[b]}
+                  className={`m-block ${on(b)}`}
+                  onClick={() => setActive(b)}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Exploration Block ${b.toUpperCase()}`}
+                />
+              </g>
+            ))}
+
+            {/* Cretaceous Turbidite Fan Systems */}
+            <g
+              className={`m-fans ${on("fans")}`}
+              onClick={() => setActive("fans")}
+              role="button"
+              tabIndex={0}
+              aria-label="Cretaceous fan systems"
+            >
+              {/* Upper Cenomanian */}
+              <path d={P.apollo} className="m-fan m-fan--upper" fill="url(#fanUpperGrad)" />
+              <path d={P.zeus} className="m-fan m-fan--upper" fill="url(#fanUpperGrad)" />
+
+              {/* Top Cenomanian */}
+              <path d={P.thea} className="m-fan m-fan--top" fill="url(#fanTopGrad)" />
+              <path d={P.diana} className="m-fan m-fan--top" fill="url(#fanTopGrad)" />
+
+              {/* Turonian */}
+              <path d={P.saturn} className="m-fan m-fan--turonian" fill="url(#fanTuronianGrad)" />
+              <path d={P.neptune} className="m-fan m-fan--turonian" fill="url(#fanTuronianGrad)" />
+            </g>
+
+            {/* Onshore Liberia Landmass & Coastline */}
+            <path d={P.land} className="m-land" fill="url(#landGrad)" />
+            <path d={P.coast} className="m-coast" />
+
+            {/* Onshore & Geological Typography */}
+            <g className="m-labels">
+              {/* Liberia Title Block */}
+              <g transform="translate(1480, 230)">
+                <circle cx="-16" cy="-10" r="4" fill="#34d399" />
+                <text x="0" y="0" className="m-text m-text--country">LIBERIA</text>
+                <text x="0" y="24" className="m-text m-text--country-sub">WEST AFRICAN COASTLINE</text>
+              </g>
+
+              {/* Harper Basin Label */}
+              <g transform="translate(1720, 910)">
+                <text x="0" y="0" className="m-text m-text--basin">HARPER BASIN</text>
+                <text x="0" y="22" className="m-text m-text--basin-sub">DEEPWATER CRETACEOUS PLAY</text>
+              </g>
+
+              {/* Block Identifiers */}
+              <g className={`m-label-block ${on("lb26")}`} onClick={() => setActive("lb26")}>
+                <rect x="1038" y="470" width="100" height="34" rx="6" className="m-label-bg" />
+                <text x="1088" y="493" className="m-text m-text--block">LB-26</text>
+              </g>
+
+              <g className={`m-label-block ${on("lb30")}`} onClick={() => setActive("lb30")}>
+                <rect x="737" y="1235" width="100" height="34" rx="6" className="m-label-bg" />
+                <text x="787" y="1258" className="m-text m-text--block">LB-30</text>
+              </g>
+
+              <g className={`m-label-block ${on("lb31")}`} onClick={() => setActive("lb31")}>
+                <rect x="1038" y="1235" width="100" height="34" rx="6" className="m-label-bg" />
+                <text x="1088" y="1258" className="m-text m-text--block">LB-31</text>
+              </g>
+
+              {/* Fan Feature Labels with Depth / Period Tags */}
+              <g className="m-fan-labels">
+                <text x="710" y="1065" className="m-text m-text--fan">Saturn</text>
+                <text x="1070" y="1005" className="m-text m-text--fan">Neptune</text>
+                <text x="835" y="800" className="m-text m-text--fan">Thea</text>
+                <text x="1130" y="955" className="m-text m-text--fan">Diana</text>
+                <text x="835" y="1085" className="m-text m-text--fan">Apollo</text>
+                <text x="1265" y="795" className="m-text m-text--fan">Zeus</text>
+              </g>
+            </g>
+
+            {/* Cartographic Compass Rose */}
+            <g className="m-compass" transform="translate(560, 200)">
+              <circle cx="0" cy="0" r="30" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
+              <circle cx="0" cy="0" r="2" fill="#38bdf8" />
+              <path d="M0 -26 L6 -6 L0 0 L-6 -6 Z" fill="#38bdf8" />
+              <path d="M0 26 L6 6 L0 0 L-6 6 Z" fill="rgba(255,255,255,0.3)" />
+              <path d="M-26 0 L-6 6 L0 0 L-6 -6 Z" fill="rgba(255,255,255,0.3)" />
+              <path d="M26 0 L6 6 L0 0 L6 -6 Z" fill="rgba(255,255,255,0.3)" />
+              <text x="0" y="-32" textAnchor="middle" className="m-compass-text">N</text>
+            </g>
+
+            {/* Precision Nautical Scale Bar */}
+            <g className="m-scale" transform="translate(1500, 1420)">
+              <rect x="-12" y="-36" width="374" height="48" rx="6" fill="rgba(10,24,36,0.85)" stroke="rgba(255,255,255,0.1)" />
+              <path d="M0 0 H350" stroke="#38bdf8" strokeWidth="2.5" />
+              <line x1="0" y1="-6" x2="0" y2="6" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="175" y1="-4" x2="175" y2="4" stroke="#38bdf8" strokeWidth="1.5" />
+              <line x1="350" y1="-6" x2="350" y2="6" stroke="#38bdf8" strokeWidth="2" />
+              <text x="0" y="-12" textAnchor="start">0</text>
+              <text x="175" y="-12" textAnchor="middle">25 km</text>
+              <text x="350" y="-12" textAnchor="end">50 km</text>
+            </g>
           </svg>
         </div>
 
+        {/* Tactical Inset Mini-Globe */}
+        <div className="harper__locator" aria-hidden>
+          <div className="loc-label">REGIONAL CONTEXT</div>
+          <svg viewBox="0 0 300 260">
+            <rect width="300" height="260" fill="#0b1b26" rx="6" />
+            <path d={landPath} className="loc-land" />
+            <circle cx={harper[0]} cy={harper[1]} r="6" className="loc-dot" />
+            <circle cx={harper[0]} cy={harper[1]} r="14" className="loc-pulse" />
+            <text x={harper[0] + 12} y={harper[1] + 24} className="loc-text">
+              Harper Basin
+            </text>
+          </svg>
+        </div>
+
+        {/* High-Tech Frosted Interactive Legend Bar */}
         <figcaption className="harper__legend">
-          <span><i className="lg lg--turonian" /> Turonian fans</span>
-          <span><i className="lg lg--top" /> Top Cenomanian</span>
-          <span><i className="lg lg--upper" /> Upper Cenomanian</span>
-          <span><i className="lg lg--seismic" /> 3D seismic outline</span>
+          <div className="harper__legend-item">
+            <span className="lg lg--turonian" />
+            <span>Turonian Fans (Saturn · Neptune)</span>
+          </div>
+          <div className="harper__legend-item">
+            <span className="lg lg--top" />
+            <span>Top Cenomanian (Thea · Diana)</span>
+          </div>
+          <div className="harper__legend-item">
+            <span className="lg lg--upper" />
+            <span>Upper Cenomanian (Apollo · Zeus)</span>
+          </div>
+          <div className="harper__legend-item">
+            <span className="lg lg--seismic" />
+            <span>3D Seismic Survey (6,167 km²)</span>
+          </div>
+          <div className="harper__legend-item">
+            <span className="lg lg--contour" />
+            <span>Water Depth (1,000m – 3,000m)</span>
+          </div>
         </figcaption>
       </figure>
 
+      {/* Right Control & Exploration Details Panel */}
       <div className="harper__panel">
+        <div className="harper__panel-header">
+          <span className="harper__panel-badge">RESERVOIR & LICENCE SELECTOR</span>
+          <h3 className="h4 harper__panel-title">Explore Subsurface Features</h3>
+        </div>
+
         <div className="harper__tabs" role="tablist" aria-label="Map features">
           {tabs.map((s) => (
             <button
               key={s.id}
+              type="button"
               role="tab"
               id={`tab-${s.id}`}
               aria-selected={active === s.id}
               aria-controls="harper-detail"
-              className={active === s.id ? "is-active" : ""}
+              className={`harper__tab-btn ${active === s.id ? "is-active" : ""}`}
               onClick={() => setActive(s.id)}
             >
-              {s.title}
+              <div className="harper__tab-info">
+                <span className="harper__tab-kicker">{s.kicker}</span>
+                <span className="harper__tab-name">{s.title}</span>
+              </div>
+              <span className="harper__tab-status" />
             </button>
           ))}
         </div>
-        <div id="harper-detail" role="tabpanel" aria-labelledby={`tab-${spot.id}`} className="harper__detail" key={spot.id}>
-          <p>{spot.body}</p>
+
+        {/* Selected Layer Detail Card */}
+        <div
+          id="harper-detail"
+          role="tabpanel"
+          aria-labelledby={`tab-${spot.id}`}
+          className="harper__detail"
+          key={spot.id}
+        >
+          <div className="harper__detail-badge">
+            <span>{spot.kicker}</span>
+          </div>
+          <h4 className="harper__detail-title">{spot.title}</h4>
+          <p className="harper__detail-desc">{spot.body}</p>
+
           {spot.facts && (
-            <dl>
+            <div className="harper__facts-grid">
               {spot.facts.map(([k, v]) => (
-                <div key={k}>
-                  <dt>{k}</dt>
-                  <dd>{v}</dd>
+                <div key={k} className="harper__fact-card">
+                  <span className="harper__fact-k">{k}</span>
+                  <span className="harper__fact-v">{v}</span>
                 </div>
               ))}
-            </dl>
+            </div>
           )}
         </div>
-        <button className="btn btn--link btn--on-light harper__official" onClick={() => setLightbox(true)}>
-          <span>View the official licence map</span>
-          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden><path d="M1 5V1h4M13 9v4H9M1 1l5 5M13 13L8 8" stroke="currentColor" fill="none" strokeWidth="1.4" /></svg>
+
+        <button
+          type="button"
+          className="btn btn--secondary btn--on-light harper__official-btn"
+          onClick={() => setLightbox(true)}
+        >
+          <span>View Official LPRA-003 Licence Map</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden>
+            <path d="M1 5V1h4M13 9v4H9M1 1l5 5M13 13L8 8" />
+          </svg>
         </button>
       </div>
 
+      {/* High-Resolution Official Map Lightbox */}
       {lightbox && (
-        <div className="lightbox" role="dialog" aria-modal="true" aria-label="Official RL-003 licence map" onClick={() => setLightbox(false)}>
+        <div
+          className="lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Official RL-003 licence map"
+          onClick={() => setLightbox(false)}
+        >
           <figure onClick={(e) => e.stopPropagation()}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/rl-003-licence-map.png" alt="Official map of Reconnaissance Licence LPRA-003 showing Blocks LB-26, LB-30 and LB-31, the 3D seismic outline and the lead inventory as of April 2025" />
+            <img
+              src="/images/rl-003-licence-map.png"
+              alt="Official map of Reconnaissance Licence LPRA-003 showing Blocks LB-26, LB-30 and LB-31, the 3D seismic outline and the lead inventory as of April 2025"
+            />
             <figcaption>
-              Map showing the location of Reconnaissance License No. LPRA-003, its component Blocks LB-26, LB-30 and LB-31, and the lead
-              inventory as of April 2025. Source: BluEnergies Ltd.
+              Map showing the location of Reconnaissance License No. LPRA-003, its component Blocks LB-26, LB-30 and LB-31,
+              and the lead inventory as of April 2025. Source: BluEnergies Ltd.
             </figcaption>
-            <button className="lightbox__close" onClick={() => setLightbox(false)} autoFocus>Close</button>
+            <button
+              type="button"
+              className="lightbox__close"
+              onClick={() => setLightbox(false)}
+              autoFocus
+            >
+              Close
+            </button>
           </figure>
         </div>
       )}
