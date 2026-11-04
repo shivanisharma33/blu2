@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "../ui/primitives";
 import { routes } from "@/lib/content";
 
@@ -123,57 +122,6 @@ export default function Intro() {
             </div>
           ))}
         </div>
-
-        {/* Showcase Visual Media */}
-        <figure className="intro__figure" data-reveal="image">
-          <div className="intro__media-frame">
-            <div className="media intro__media">
-              <Image
-                src="/images/ocean-horizon.jpg"
-                alt="Open ocean stretching across the Harper Basin offshore Liberia"
-                fill
-                sizes="(max-width: 1360px) 100vw, 1320px"
-                style={{ objectFit: "cover" }}
-              />
-              <div className="intro__media-gradient" />
-            </div>
-
-            {/* Floating Glass Telemetry Card */}
-            <div className="intro__telemetry-card">
-              <div className="intro__telemetry-header">
-                <span className="intro__telemetry-pulse" />
-                <span className="intro__telemetry-title">FLAGSHIP ASSET · HARPER BASIN</span>
-              </div>
-              <div className="intro__telemetry-grid">
-                <div className="intro__telemetry-item">
-                  <span className="intro__telemetry-label">Licence</span>
-                  <span className="intro__telemetry-val">Offshore RL-003</span>
-                </div>
-                <div className="intro__telemetry-item">
-                  <span className="intro__telemetry-label">Water Depths</span>
-                  <span className="intro__telemetry-val">500 m – 3,500 m</span>
-                </div>
-                <div className="intro__telemetry-item">
-                  <span className="intro__telemetry-label">Gross Acreage</span>
-                  <span className="intro__telemetry-val">8,924 km² (2.2M Acres)</span>
-                </div>
-                <div className="intro__telemetry-item">
-                  <span className="intro__telemetry-label">Operator</span>
-                  <span className="intro__telemetry-val">TotalEnergies (65%)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <figcaption className="intro__caption-bar">
-            <div className="intro__caption-quote">
-              Independents like BluEnergies continue to play a critical role in unlocking the world&apos;s few remaining billion-barrel deepwater provinces.
-            </div>
-            <Button href={routes.overview} variant="link" className="intro__caption-link">
-              Explore Harper Basin
-            </Button>
-          </figcaption>
-        </figure>
       </div>
     </section>
   );
