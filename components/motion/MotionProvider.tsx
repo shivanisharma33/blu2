@@ -1,150 +1,119 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
 import Lenis from "lenis";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 /**
- * One motion controller for the whole page. Sections stay server-rendered and opt in
- * through data attributes, so the page ships very little per-section JavaScript.
+ * One restrained motion controller for the whole site. Pages stay server-rendered and opt in
+ * through data attributes:
  *
- *   data-reveal="lines"   split heading into masked lines that rise in
- *   data-reveal="fade"    soft rise + fade
- *   data-reveal="mask"    image wipes open through a clip-path
- *   data-reveal="rule"    hairline draws from the left
- *   data-stagger          children fade/rise in sequence
- *   data-count="8924"     number counts up when visible
- *   data-parallax="0.15"  vertical drift relative to scroll
+ *   data-reveal           soft fade-up when the element enters the viewport
+ *   data-reveal="image"   gentle image reveal: a slight scale settle plus a fade
+ *   data-stagger          direct children fade up in sequence
+ *   data-line             a vertical rule that grows with scroll (timeline)
+ *
+ * Smooth scrolling is created once; reveals are rebuilt on every route change.
+ * With prefers-reduced-motion, nothing animates and native scrolling is kept.
  */
-export default function MotionProvider() {
-  useEffect(() => {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    document.documentElement.classList.add("js");
+const HEADER_OFFSET = -88;
 
-    if (reduce) {
+export default function MotionProvider() {
+  const pathname = usePathname();
+  const lenisRef = useRef<Lenis | null>(null);
+  const reduce = useRef(false);
+
+  // Smooth scroll + in-page anchors: once per session.
+  useEffect(() => {
+    reduce.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce.current) {
       document.documentElement.classList.add("reduced-motion");
-      document.querySelectorAll<HTMLElement>("[data-count]").forEach((el) => {
-        el.textContent = Number(el.dataset.count).toLocaleString("en-US");
-      });
       return;
     }
-
-    const lenis = new Lenis({ duration: 1.15, easing: (t) => 1 - Math.pow(1 - t, 3.2) });
+    const lenis = new Lenis({ duration: 1.05, easing: (t) => 1 - Math.pow(1 - t, 3) });
+    lenisRef.current = lenis;
     (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
     lenis.on("scroll", ScrollTrigger.update);
     const raf = (time: number) => lenis.raf(time * 1000);
     gsap.ticker.add(raf);
     gsap.ticker.lagSmoothing(0);
 
-    // anchor links → smooth scroll with header offset
     const onClick = (e: MouseEvent) => {
-      const a = (e.target as HTMLElement).closest("a[href^='#']") as HTMLAnchorElement | null;
-      if (!a) return;
-      const id = a.getAttribute("href");
-      if (!id || id === "#") return;
-      const target = document.querySelector(id);
+      const a = (e.target as HTMLElement).closest("a[href*='#']") as HTMLAnchorElement | null;
+      if (!a || a.target === "_blank") return;
+      const url = new URL(a.href, location.href);
+      if (url.pathname !== location.pathname || !url.hash) return;
+      const target = url.hash === "#top" ? document.body : document.querySelector(decodeURIComponent(url.hash));
       if (!target) return;
       e.preventDefault();
-      lenis.scrollTo(target as HTMLElement, { offset: id === "#top" ? 0 : -64 });
-      history.replaceState(null, "", id);
+      lenis.scrollTo(target as HTMLElement, { offset: url.hash === "#top" ? 0 : HEADER_OFFSET });
+      history.replaceState(null, "", url.hash);
     };
     document.addEventListener("click", onClick);
 
-    const splits: SplitText[] = [];
+    return () => {
+      document.removeEventListener("click", onClick);
+      gsap.ticker.remove(raf);
+      lenis.destroy();
+      lenisRef.current = null;
+    };
+  }, []);
+
+  // Reveals: rebuilt for every page.
+  useEffect(() => {
+    if (reduce.current) return;
+    const lenis = lenisRef.current;
+
+    // New page: start at the top, or at the requested anchor.
+    const hash = location.hash;
+    const target = hash && hash !== "#top" ? document.querySelector(decodeURIComponent(hash)) : null;
+    if (lenis) {
+      lenis.scrollTo(target ? (target as HTMLElement) : 0, { immediate: true, offset: target ? HEADER_OFFSET : 0, force: true });
+    }
+
+    const ease = "power2.out";
     const ctx = gsap.context(() => {
-      gsap.utils.toArray<HTMLElement>("[data-reveal='lines']").forEach((el) => {
-        const split = SplitText.create(el, { type: "lines", mask: "lines", linesClass: "line" });
-        splits.push(split);
-        gsap.from(split.lines, {
-          yPercent: 115,
-          duration: 1.25,
-          ease: "expo.out",
-          stagger: 0.09,
-          delay: Number(el.dataset.delay || 0),
-          scrollTrigger: el.dataset.immediate ? undefined : { trigger: el, start: "top 88%" },
-        });
-        gsap.set(el, { autoAlpha: 1 });
+      gsap.utils.toArray<HTMLElement>("[data-reveal]:not([data-reveal='image'])").forEach((el) => {
+        gsap.fromTo(el, { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.9, ease, scrollTrigger: { trigger: el, start: "top 88%", once: true } });
       });
 
-      gsap.utils.toArray<HTMLElement>("[data-reveal='fade']").forEach((el) => {
-        gsap.fromTo(
-          el,
-          { autoAlpha: 0, y: 28 },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 1.1,
-            ease: "power3.out",
-            delay: Number(el.dataset.delay || 0),
-            scrollTrigger: el.dataset.immediate ? undefined : { trigger: el, start: "top 90%" },
-          },
-        );
+      gsap.utils.toArray<HTMLElement>("[data-reveal='image']").forEach((el) => {
+        const media = el.querySelector("img, video");
+        const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: "top 85%", once: true } });
+        tl.fromTo(el, { autoAlpha: 0 }, { autoAlpha: 1, duration: 1, ease });
+        if (media) tl.fromTo(media, { scale: 1.06 }, { scale: 1, duration: 1.6, ease: "power3.out" }, 0);
       });
 
       gsap.utils.toArray<HTMLElement>("[data-stagger]").forEach((el) => {
         gsap.fromTo(
           el.children,
-          { autoAlpha: 0, y: 24 },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.9,
-            ease: "power3.out",
-            stagger: 0.08,
-            scrollTrigger: { trigger: el, start: "top 88%" },
-          },
+          { autoAlpha: 0, y: 20 },
+          { autoAlpha: 1, y: 0, duration: 0.8, ease, stagger: 0.07, scrollTrigger: { trigger: el, start: "top 90%", once: true } },
         );
       });
 
-      gsap.utils.toArray<HTMLElement>("[data-reveal='mask']").forEach((el) => {
-        const img = el.querySelector("img, video");
-        const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: "top 85%" } });
-        tl.fromTo(el, { clipPath: "inset(18% 12% 18% 12%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 1.6, ease: "expo.inOut" });
-        if (img) tl.fromTo(img, { scale: 1.25 }, { scale: 1, duration: 2, ease: "expo.out" }, 0);
-      });
-
-      gsap.utils.toArray<HTMLElement>("[data-reveal='rule']").forEach((el) => {
-        gsap.fromTo(el, { scaleX: 0 }, { scaleX: 1, transformOrigin: "left center", duration: 1.4, ease: "expo.inOut", scrollTrigger: { trigger: el, start: "top 92%" } });
-      });
-
-      gsap.utils.toArray<HTMLElement>("[data-count]").forEach((el) => {
-        const end = Number(el.dataset.count);
-        const obj = { v: 0 };
-        el.textContent = "0";
-        gsap.to(obj, {
-          v: end,
-          duration: 2.2,
-          ease: "power3.out",
-          scrollTrigger: { trigger: el, start: "top 90%" },
-          onUpdate: () => (el.textContent = Math.round(obj.v).toLocaleString("en-US")),
-        });
-      });
-
-      gsap.utils.toArray<HTMLElement>("[data-parallax]").forEach((el) => {
-        const amt = Number(el.dataset.parallax || 0.15);
+      gsap.utils.toArray<HTMLElement>("[data-line]").forEach((el) => {
         gsap.fromTo(
           el,
-          { yPercent: -amt * 50 },
-          { yPercent: amt * 50, ease: "none", scrollTrigger: { trigger: el.parentElement || el, start: "top bottom", end: "bottom top", scrub: true } },
+          { scaleY: 0 },
+          { scaleY: 1, ease: "none", transformOrigin: "top center", scrollTrigger: { trigger: el.parentElement || el, start: "top 70%", end: "bottom 60%", scrub: 0.6 } },
         );
       });
     });
 
-    // fonts change line metrics → refresh once they're ready
-    document.fonts?.ready.then(() => ScrollTrigger.refresh());
+    const refresh = () => ScrollTrigger.refresh();
+    document.fonts?.ready.then(refresh);
+    window.addEventListener("load", refresh);
 
     return () => {
-      document.removeEventListener("click", onClick);
+      window.removeEventListener("load", refresh);
       ctx.revert();
-      splits.forEach((s) => s.revert());
-      gsap.ticker.remove(raf);
-      lenis.destroy();
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

@@ -1,11 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Inter, IBM_Plex_Mono, Instrument_Serif } from "next/font/google";
+import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
+import "./pages.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import MotionProvider from "@/components/motion/MotionProvider";
 
-const display = Manrope({ subsets: ["latin"], variable: "--font-display", weight: ["300", "400", "500", "600"], display: "swap" });
+const display = Manrope({ subsets: ["latin"], variable: "--font-display", weight: ["400", "500", "600", "700"], display: "swap" });
 const body = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
-const mono = IBM_Plex_Mono({ subsets: ["latin"], variable: "--font-mono", weight: ["400", "500"], display: "swap" });
-const serif = Instrument_Serif({ subsets: ["latin"], variable: "--font-serif", weight: "400", style: ["normal", "italic"], display: "swap" });
 
 const title = "BluEnergies Ltd. | West Africa Deepwater Oil & Gas Exploration";
 const description =
@@ -13,7 +15,7 @@ const description =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.blu-energies.com"),
-  title,
+  title: { default: title, template: "%s | BluEnergies Ltd." },
   description,
   keywords: ["BluEnergies", "TSXV BLU", "BLUGF", "Harper basin", "offshore Liberia", "deepwater exploration", "basin floor fan", "West Africa oil and gas", "RL-003"],
   openGraph: {
@@ -28,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#071522",
+  themeColor: "#102A3A",
   width: "device-width",
   initialScale: 1,
 };
@@ -54,13 +56,16 @@ const orgLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable} ${serif.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
       </head>
-      <body>
+      <body id="top">
         <a className="skip-link" href="#main">Skip to content</a>
-        {children}
+        <Header />
+        <main id="main">{children}</main>
+        <Footer />
+        <MotionProvider />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
       </body>
     </html>

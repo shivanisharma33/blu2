@@ -1,26 +1,71 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 
-export function SectionLabel({ children, className = "" }: { index?: string; children: ReactNode; className?: string }) {
+export const isExternal = (href: string) => /^(https?:|mailto:)/.test(href);
+export const extProps = (href: string) => (/^https?:/.test(href) ? { target: "_blank", rel: "noopener noreferrer" } : {});
+
+/** Internal routes use client-side navigation; external URLs, mailto and in-page anchors use a plain anchor. */
+export function SmartLink({ href, children, className, onClick, ...rest }: { href: string; children: ReactNode; className?: string; onClick?: () => void; "aria-label"?: string }) {
+  if (href.startsWith("/")) {
+    return (
+      <Link href={href} className={className} onClick={onClick} {...rest}>
+        {children}
+      </Link>
+    );
+  }
   return (
-    <p className={`section-label ${className}`} data-reveal="fade">
-      <span className="section-label__rule" aria-hidden />
-      <span>{children}</span>
-    </p>
+    <a href={href} className={className} onClick={onClick} {...extProps(href)} {...rest}>
+      {children}
+    </a>
+  );
+}
+
+/** Small uppercase label that sits above a section heading. */
+export function Eyebrow({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return <p className={`eyebrow ${className}`}>{children}</p>;
+}
+
+/** Standard section heading block: eyebrow, title, optional intro. */
+export function SectionHead({
+  eyebrow,
+  title,
+  id,
+  intro,
+  className = "",
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  id: string;
+  intro?: ReactNode;
+  className?: string;
+}) {
+  return (
+    <header className={`section-head ${className}`}>
+      <div className="section-head__title" data-reveal>
+        <Eyebrow>{eyebrow}</Eyebrow>
+        <h2 id={id} className="h2">{title}</h2>
+      </div>
+      {intro && (
+        <div className="section-head__intro" data-reveal>
+          {intro}
+        </div>
+      )}
+    </header>
   );
 }
 
 export function Arrow({ className = "" }: { className?: string }) {
   return (
-    <svg className={`arrow ${className}`} width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden>
-      <path d="M0 5h16M12 1l4 4-4 4" stroke="currentColor" strokeWidth="1.2" />
+    <svg className={`icon-arrow ${className}`} width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+      <path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
 export function ExternalArrow({ className = "" }: { className?: string }) {
   return (
-    <svg className={`arrow arrow--ext ${className}`} width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden>
-      <path d="M1 10L10 1M3 1h7v7" stroke="currentColor" strokeWidth="1.2" />
+    <svg className={`icon-arrow icon-arrow--ext ${className}`} width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+      <path d="M4 10L10 4M5 4h5v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -28,23 +73,19 @@ export function ExternalArrow({ className = "" }: { className?: string }) {
 type BtnProps = {
   href: string;
   children: ReactNode;
-  variant?: "solid" | "ghost" | "text";
-  tone?: "light" | "dark";
-  external?: boolean;
+  variant?: "primary" | "secondary" | "link";
+  /** "light" = sits on a light background, "dark" = sits on navy or a photo. */
+  on?: "light" | "dark";
   className?: string;
 };
 
-export function Button({ href, children, variant = "solid", tone = "dark", external, className = "" }: BtnProps) {
-  const ext = external ?? /^https?:/.test(href);
+export function Button({ href, children, variant = "primary", on = "light", className = "" }: BtnProps) {
+  const ext = /^https?:/.test(href);
   return (
-    <a
-      href={href}
-      className={`btn btn--${variant} btn--on-${tone} ${className}`}
-      {...(ext ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-    >
-      <span className="btn__label">{children}</span>
-      <span className="btn__icon">{ext ? <ExternalArrow /> : <Arrow />}</span>
-    </a>
+    <SmartLink href={href} className={`btn btn--${variant} btn--on-${on} ${className}`}>
+      <span>{children}</span>
+      {ext ? <ExternalArrow /> : <Arrow />}
+    </SmartLink>
   );
 }
 
@@ -63,5 +104,8 @@ export function Logo({ variant = "white", className = "" }: { variant?: "white" 
 
 export function formatDate(iso: string, style: "long" | "short" = "long") {
   const d = new Date(iso + "T12:00:00Z");
-  return d.toLocaleDateString("en-US", style === "long" ? { month: "long", day: "numeric", year: "numeric" } : { month: "short", day: "2-digit", year: "numeric" });
+  return d.toLocaleDateString(
+    "en-US",
+    style === "long" ? { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" } : { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" },
+  );
 }

@@ -42,50 +42,76 @@ export const company = {
   video: "https://www.youtube.com/watch?v=-ZmxXdsUQsU",
 };
 
-export const nav = [
+/** Internal routes mirror the official site paths, so existing links keep working. */
+export const routes = {
+  about: "/corporate/about-us",
+  board: "/corporate/board-management",
+  governance: "/corporate/corporate-governance",
+  overview: "/assets-and-operations/overview",
+  outlook: "/investors/outlook",
+  stock: "/investors/stock-information",
+  financials: "/investors/financials",
+  presentations: "/investors/presentations",
+  agm: "/investors/agm",
+  news: "/news-and-media/news",
+  media: "/news-and-media/in-the-media",
+  contact: "/contact/contact-details",
+  rfi: "/contact/request-for-information",
+  legal: "/legal",
+};
+
+export type NavGroup = { label: string; href: string; intro: string; children: { label: string; href: string }[] };
+
+export const nav: NavGroup[] = [
   {
     label: "Corporate",
-    href: "#about",
+    href: routes.about,
+    intro: "Who we are, how we are governed and the people leading the company.",
     children: [
-      { label: "About Us", href: o("/corporate/about-us/") },
-      { label: "Board & Management", href: "#leadership" },
-      { label: "Corporate Governance", href: o("/corporate/corporate-governance/") },
+      { label: "About Us", href: routes.about },
+      { label: "Board & Management", href: routes.board },
+      { label: "Corporate Governance", href: routes.governance },
     ],
   },
   {
     label: "Assets & Operations",
-    href: "#assets",
+    href: routes.overview,
+    intro: "Reconnaissance Licence RL-003 in the Harper basin, offshore Liberia, and lease block SS-59 in the Gulf of America.",
     children: [
-      { label: "Harper Basin Overview", href: o("/assets-and-operations/overview/") },
-      { label: "Exploration Programme", href: "#technology" },
-      { label: "Partnership", href: "#partnership" },
+      { label: "Overview", href: routes.overview },
+      { label: "Harper Basin Map", href: `${routes.overview}#map` },
+      { label: "2026 Work Programme", href: `${routes.overview}#programme` },
+      { label: "Gulf of America · SS-59", href: `${routes.overview}#ss-59` },
     ],
   },
   {
     label: "Investors",
-    href: "#investors",
+    href: routes.outlook,
+    intro: "Outlook, live stock information, filings, presentations and AGM materials.",
     children: [
-      { label: "Outlook", href: o("/investors/outlook/") },
-      { label: "Stock Information", href: o("/investors/stock-information/") },
-      { label: "Financials", href: o("/investors/financials/") },
-      { label: "Presentations", href: o("/investors/presentations/") },
-      { label: "AGM", href: o("/investors/agm/") },
+      { label: "Outlook", href: routes.outlook },
+      { label: "Stock Information", href: routes.stock },
+      { label: "Financials", href: routes.financials },
+      { label: "Presentations", href: routes.presentations },
+      { label: "AGM", href: routes.agm },
     ],
   },
   {
     label: "News & Media",
-    href: "#news",
+    href: routes.news,
+    intro: "Company news releases and media coverage.",
     children: [
-      { label: "News Releases", href: o("/news-and-media/news/") },
-      { label: "In the Media", href: o("/news-and-media/in-the-media/") },
+      { label: "News", href: routes.news },
+      { label: "In the Media", href: routes.media },
     ],
   },
   {
     label: "Contact",
-    href: "#contact",
+    href: routes.contact,
+    intro: "Offices in Vancouver and London, and investor enquiries.",
     children: [
-      { label: "Contact Details", href: o("/contact/contact-details/") },
-      { label: "Request for Information", href: o("/contact/request-for-information/") },
+      { label: "Contact Details", href: routes.contact },
+      { label: "Request for Information", href: routes.rfi },
     ],
   },
 ];
@@ -141,6 +167,7 @@ export const analogues = [
   { name: "Jubilee", where: "Ghana", size: "0.8 billion boe" },
   { name: "Venus", where: "Namibia", size: "4+ billion boe" },
   { name: "Mopane", where: "Namibia", size: "10 billion boe (in place)" },
+  { name: "Stabroek", where: "Guyana · conjugate margin", size: "16+ billion barrels" },
 ];
 
 /* ------------------------------------------------- Exploration programme ---- */
@@ -196,6 +223,7 @@ export const milestones = [
   { date: "Apr 14, 2025", title: "TSX Venture listing", body: "Trading begins on the TSX Venture Exchange under the symbol BLU." },
   { date: "Nov 28, 2025", title: "Seismic reprocessing begins", body: "TGS begins reprocessing 6,167 km² of 3D seismic data." },
   { date: "Jan 15, 2026", title: "TotalEnergies partnership", body: "A joint study and application agreement is signed, and RL-003 is issued with BLU at 35% and TotalEnergies at 65%." },
+  { date: "Mar 19, 2026", title: "Gulf of America top bid", body: "BluEnergies is the successful top bidder for lease block SS-59, offshore Louisiana, at the BOEM lease sale of March 11, 2026." },
   { date: "Mar 30, 2026", title: "OTCQX Best Market", body: "Trading begins in the United States under the symbol BLUGF." },
   { date: "Jun 19, 2026", title: "Sea-bottom survey under way", body: "MBES, geochemical and heat-flow acquisition begins aboard the R/V GYRE." },
   { date: "Jul 23, 2026", title: "C$20.7M placement closed", body: "Proceeds go to exploration and asset advancement, and to working capital." },
@@ -205,11 +233,23 @@ export const milestones = [
 
 /* ----------------------------------------------------------------- News ---- */
 // /news-and-media/news/
-const n = (slug: string) => o(`/news-and-media/news/${slug}`);
-export const news = [
+const n = (slug: string) => `/news-and-media/news/${slug}`;
+export type NewsItem = {
+  date: string;
+  category: string;
+  /** "exploration" items feed the Exploration Updates section; "corporate" items feed Latest Developments. */
+  stream: "corporate" | "exploration";
+  title: string;
+  excerpt: string;
+  href: string;
+  asset?: string;
+};
+
+export const news: NewsItem[] = [
   {
     date: "2026-09-14",
     category: "Corporate",
+    stream: "corporate",
     title: "BluEnergies Announces Advisory Agreements",
     excerpt: "The Financial Advisory Agreement with Canaccord Genuity Corp. is extended, and the agreement with Haywood Securities Inc. is amended.",
     href: n("bluenergies-announces-advisory-agreements"),
@@ -217,6 +257,7 @@ export const news = [
   {
     date: "2026-07-23",
     category: "Financing",
+    stream: "corporate",
     title: "BluEnergies Announces Closing of Non-Brokered Private Placement of Units for Gross Proceeds of C$20.7 Million",
     excerpt: "9,202,027 units were issued at C$2.25 per unit. Net proceeds go to exploration and the advancement of the Company's assets.",
     href: n("bluenergies-announces-closing-of-non-brokered-private-placement-of-units-for-gross-proceeds-of-c207-million"),
@@ -224,24 +265,102 @@ export const news = [
   {
     date: "2026-07-06",
     category: "Operations",
+    stream: "exploration",
+    asset: "RL-003 · Harper basin, offshore Liberia",
     title: "BluEnergies and TotalEnergies Progress Operations, Harper Basin, Offshore Liberia",
     excerpt: "The work programme is on schedule. Seismic reprocessing is over 50% complete, and sea-bottom survey acquisition began June 19, 2026.",
     href: n("bluenergies-and-totalenergies-progress-operations-harper-basin-offshore-liberia"),
   },
   {
+    date: "2026-04-27",
+    category: "Markets",
+    stream: "corporate",
+    title: "BluEnergies Announces DTC Eligibility, Engagement of Market Maker and Initiation of Research Coverage",
+    excerpt: "Shares are now DTC eligible in the U.S. Independent Trading Group (ITG) Inc. is engaged as market maker, and Granite Point Research Inc. for sponsored research, subject to TSXV approval.",
+    href: n("bluenergies-announces-dtc-eligibility-engagement-of-market-maker-and-initiation-of-research-coverage"),
+  },
+  {
     date: "2026-03-30",
     category: "Markets",
+    stream: "corporate",
     title: "BluEnergies Announces Trading on OTCQX Best Market Under the Trading Symbol “BLUGF”",
     excerpt: "BluEnergies shares are now available to U.S. investors on the OTCQX Best Market.",
     href: n("bluenergies-announces-trading-on-otcqx-best-market-under-the-trading-symbol--blugf"),
   },
   {
+    date: "2026-03-19",
+    category: "Assets",
+    stream: "exploration",
+    asset: "SS-59 · Gulf of America, offshore Louisiana",
+    title: "BluEnergies Secures Top Bid in Gulf of America Lease Sale, Engages Independent Houston Firm for Reserve Evaluation",
+    excerpt: "BluEnergies was the successful top bidder for lease block SS-59, a 5,000-acre block in the Crown Royal prospect, at the BOEM lease sale of March 11, 2026.",
+    href: n("bluenergies-secures-top-bid-in-gulf-of-america-lease-sale--engages-independent-houston-firm-for-reserve-evaluation"),
+  },
+  {
+    date: "2026-03-16",
+    category: "Corporate",
+    stream: "corporate",
+    title: "BluEnergies Announces Engagement of Curzio Research, Inc. and Appointment of Doug Allen, Senior Manager of Investor Relations",
+    excerpt: "Curzio Research, Inc. is engaged, and Doug Allen is appointed Senior Manager of Investor Relations.",
+    href: n("bluenergies-announces-engagement-of-curzio-research-inc-and-appointment-of-doug-allen-senior-manager-of-investor-relations"),
+  },
+  {
     date: "2026-01-15",
     category: "Partnership",
+    stream: "exploration",
+    asset: "RL-003 · Harper basin, offshore Liberia",
     title: "TotalEnergies Partners With BluEnergies in Its Harper Basin Fan Play, Offshore Liberia",
     excerpt: "A joint study and application agreement is signed, and the new Reconnaissance Licence RL-003 covers Blocks LB-26, LB-30 and LB-31.",
     href: n("totalenergies-partners-with-bluenergies-in-its-harper-basin-fan-play-offshore-liberia"),
   },
+];
+
+/* ---------------------------------------------------- Gulf of America ---- */
+// news release 2026-03-19. Not yet listed on the official Assets overview page,
+// so status is stated exactly as of that release.
+export const gulfAsset = {
+  name: "Lease Block SS-59",
+  region: "Gulf of America · offshore Louisiana",
+  prospect: "Crown Royal prospect",
+  area: "5,000 acres",
+  term: "5-year term",
+  interest: 100,
+  waterDepth: "Less than 20 ft",
+  status: "Top bid at the BOEM lease sale of March 11, 2026. Lease execution pending as of the March 19, 2026 release.",
+  quote:
+    "The new 5,000-acre lease (SS-59), encompassing approximately 50% of the Crown Royal prospect, represents untapped value in today's market.",
+  href: n("bluenergies-secures-top-bid-in-gulf-of-america-lease-sale--engages-independent-houston-firm-for-reserve-evaluation"),
+};
+
+/* ----------------------------------------------------- Investor details ---- */
+// news release 2026-03-16 and /investors/agm/
+export const investorContact = {
+  name: "Doug Allen",
+  role: "Senior Manager, Investor Relations",
+  email: "info@blu-energies.com",
+};
+
+export const agm = {
+  title: "2026 Annual General Meeting",
+  when: "June 23, 2026 · 11:00 am PST",
+  docs: [
+    { label: "Notice of Meeting & Information Circular", href: o("/_resources/agm/BLU-NOM-Information-Circular.pdf") },
+    { label: "Form of Proxy", href: o("/_resources/agm/BLU-Proxy.pdf") },
+    { label: "Financial Statement Return Card", href: o("/_resources/agm/BLU-Return-Card.pdf") },
+  ],
+  page: "/investors/agm",
+};
+
+/* ---------------------------------------------------------- In the Media ---- */
+// /news-and-media/in-the-media/
+export const media = [
+  { date: "2026-05-14", outlet: "SmithWeekly Research", type: "Video", title: "SmithWeekly Research Discussion with Craig Steinke, CEO and Doug Allen, Senior Manager, Investor Relations", href: "https://youtu.be/XUNiuHwe3kc" },
+  { date: "2026-05-06", outlet: "Wall Street Unplugged", type: "Podcast", title: "Wall Street Unplugged podcast with host, Frank Curzio, and BluEnergies CEO, Craig Steinke", href: "https://www.curzioresearch.com/this-tiny-offshore-driller-is-ahead-of-the-majors-in-the-global-energy-race/" },
+  { date: "2026-04-15", outlet: "BNN Bloomberg", type: "Video", title: "The Race to Discover Offshore Oil & Gas Reserves", href: "https://www.bnnbloomberg.ca/video/shows/commodities/2026/04/15/the-race-to-discover-offshore-oil-gas-reserves/" },
+  { date: "2026-02-04", outlet: "Reuters", type: "Article", title: "Oil majors snap up West African blocks in hunt for next Brazil", href: o("/news-and-media/in-the-media/oil-majors-snap-up-west-african-blocks-in-hunt-for-next-brazil") },
+  { date: "2024-11-27", outlet: "The Vaultz News", type: "Article", title: "Liberia Emerges as Africa's Next Deep-Water Oil Hub", href: "https://thevaultznews.com/business/extractives-energy/liberia-emerges-as-africas-next-deep-water-oil-hub/" },
+  { date: "2024-11-26", outlet: "African Energy Council", type: "Article", title: "Liberia: Africa's Top Deepwater Hydrocarbon Hotspot", href: "https://africanenergycouncil.org/liberia-africas-top-deepwater-hydrocarbon-hotspot/" },
+  { date: "2024-11-25", outlet: "FrontPageAfrica", type: "Article", title: "Liberia Named Top Destination for Deepwater Hydrocarbon Exploration in Africa", href: "https://frontpageafricaonline.com/news/liberia-named-top-destination-for-deepwater-hydrocarbon-exploration-in-africa/" },
 ];
 
 /* ----------------------------------------------------------- Leadership ---- */
@@ -312,6 +431,6 @@ export const governanceDocs = [
 ];
 
 export const legal = {
-  privacy: o("/legal/"),
-  terms: o("/legal/"),
+  privacy: "/legal#privacy-policy",
+  terms: "/legal#terms-of-use",
 };

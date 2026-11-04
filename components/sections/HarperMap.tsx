@@ -1,16 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useState } from "react";
 
 /*
  * Geometry is traced from the company's official licence map
  * ("Map showing the location of Reconnaissance License No. LPRA-003 … as of April 2025"),
- * using that map's own pixel space. It is a stylised redraw: the official map is one click
- * away from the panel.
+ * using that map's own pixel space. It is a stylised redraw: the official map opens in a lightbox.
  */
 const P = {
   land: "M650,100 L720,128 L790,170 L850,200 L900,215 L960,232 L1050,262 L1130,290 L1200,312 L1280,345 L1340,362 L1420,385 L1500,410 L1580,440 L1650,465 L1690,505 L1760,525 L1850,540 L1940,550 L2000,552 L2000,100 Z",
@@ -89,38 +84,14 @@ const spots: Spot[] = [
   },
 ];
 
+const TAB_ORDER = ["fans", "lb30", "lb31", "lb26", "seismic"];
+const tabs = TAB_ORDER.map((id) => spots.find((s) => s.id === id)!);
+
 export default function HarperMap() {
   const [active, setActive] = useState<string>("fans");
   const [lightbox, setLightbox] = useState(false);
-  const svgRef = useRef<SVGSVGElement>(null);
   const spot = spots.find((s) => s.id === active)!;
-  const blockActive = (id: string) => (active === id ? "is-active" : "");
-
-  useEffect(() => {
-    const svg = svgRef.current;
-    if (!svg) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      svg.classList.add("is-drawn");
-      return;
-    }
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ scrollTrigger: { trigger: svg, start: "top 75%" } });
-      svg.querySelectorAll<SVGGeometryElement>(".draw").forEach((p) => {
-        const len = p.getTotalLength();
-        gsap.set(p, { strokeDasharray: len, strokeDashoffset: len });
-      });
-      tl.to(".map-coast", { strokeDashoffset: 0, duration: 2, ease: "power2.inOut" })
-        .from(".map-land", { autoAlpha: 0, duration: 1.2 }, 0.4)
-        .to(".map-basin", { strokeDashoffset: 0, duration: 1.8, ease: "power2.inOut" }, 0.3)
-        .from(".map-basin-fill", { autoAlpha: 0, duration: 1.2 }, 1)
-        .to(".map-block", { strokeDashoffset: 0, duration: 1.4, ease: "power2.inOut", stagger: 0.15 }, 0.9)
-        .call(() => svg.classList.add("is-drawn"), [], 1.6)
-        .from(".map-seismic", { autoAlpha: 0, duration: 1 }, 2.2)
-        .from(".map-label, .map-contour", { autoAlpha: 0, duration: 0.8, stagger: 0.04 }, 2.0)
-        .from(".map-spot", { autoAlpha: 0, scale: 0, transformOrigin: "50% 50%", duration: 0.7, stagger: 0.08, ease: "back.out(2)" }, 2.4);
-    }, svg);
-    return () => ctx.revert();
-  }, []);
+  const on = (id: string) => (active === id ? "is-active" : "");
 
   useEffect(() => {
     if (!lightbox) return;
@@ -131,165 +102,112 @@ export default function HarperMap() {
 
   return (
     <div className="harper">
-      <div className="harper__map">
-        <div className="harper__map-head">
-          <span className="mono-label">RL-003 · Harper basin, offshore Liberia</span>
-          <span className="mono-label harper__live"><i aria-hidden /> Interactive</span>
-        </div>
-
-        <svg ref={svgRef} viewBox="470 100 1530 1400" className="harper__svg" role="img" aria-labelledby="map-title map-desc">
+      <figure className="harper__map" data-reveal="image">
+        <svg viewBox="470 100 1530 1400" className="harper__svg" role="img" aria-labelledby="map-title map-desc">
           <title id="map-title">Map of Reconnaissance Licence RL-003, Harper basin, offshore Liberia</title>
           <desc id="map-desc">
             Blocks LB-26, LB-30 and LB-31 lie offshore Liberia within the Harper basin. Cretaceous fan systems sit in Blocks LB-30
             and LB-31 inside the 3D seismic survey outline. The map also shows the 1,000, 2,000 and 3,000 metre water depth contours.
           </desc>
-          <defs>
-            <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
-              <path d="M100 0H0V100" fill="none" stroke="currentColor" strokeWidth="0.6" />
-            </pattern>
-            <linearGradient id="fanDeep" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stopColor="#1677A8" />
-              <stop offset="1" stopColor="#0E4F74" />
-            </linearGradient>
-            <radialGradient id="basinGlow" cx="0.45" cy="0.55" r="0.6">
-              <stop offset="0" stopColor="#1677A8" stopOpacity="0.22" />
-              <stop offset="1" stopColor="#1677A8" stopOpacity="0.04" />
-            </radialGradient>
-          </defs>
 
-          <rect x="470" y="100" width="1530" height="1400" fill="url(#grid)" className="map-grid" />
+          <path d={P.land} className="m-land" />
+          <path d={P.coast} className="m-coast" />
+          <path d={P.basin} className="m-basin" />
 
-          <path d={P.land} className="map-land" />
-          <path d={P.coast} className="map-coast draw" />
-
-          <path d={P.basin} className="map-basin-fill" fill="url(#basinGlow)" />
-          <path d={P.basin} className="map-basin draw" />
-
-          <path d={P.c1000} className="map-contour" />
-          <path d={P.c2000} className="map-contour" />
-          <path d={P.c3000} className="map-contour" />
-          <text x="1050" y="458" className="map-contour-label map-label">1,000 m</text>
-          <text x="1010" y="612" className="map-contour-label map-label">2,000 m</text>
-          <text x="650" y="722" className="map-contour-label map-label">3,000 m</text>
+          <path d={P.c1000} className="m-contour" />
+          <path d={P.c2000} className="m-contour" />
+          <path d={P.c3000} className="m-contour" />
+          <text x="1050" y="458" className="m-text m-text--contour">1,000 m</text>
+          <text x="1010" y="612" className="m-text m-text--contour">2,000 m</text>
+          <text x="650" y="722" className="m-text m-text--contour">3,000 m</text>
 
           {(["lb26", "lb30", "lb31"] as const).map((b) => (
-            <path
-              key={b}
-              d={P[b]}
-              className={`map-block draw ${blockActive(b)}`}
-              onMouseEnter={() => setActive(b)}
-              onClick={() => setActive(b)}
-            />
+            <path key={b} d={P[b]} className={`m-block ${on(b)}`} onClick={() => setActive(b)} />
           ))}
 
-          <g className={`map-fans ${active === "fans" ? "is-active" : ""}`}>
-            <path d={P.apollo} className="map-fan map-fan--upper" />
-            <path d={P.zeus} className="map-fan map-fan--upper" />
-            <path d={P.thea} className="map-fan map-fan--top" />
-            <path d={P.diana} className="map-fan map-fan--top" />
-            <path d={P.saturn} className="map-fan map-fan--turonian" fill="url(#fanDeep)" />
-            <path d={P.neptune} className="map-fan map-fan--turonian" fill="url(#fanDeep)" />
+          <g className={`m-fans ${on("fans")}`}>
+            <path d={P.apollo} className="m-fan m-fan--upper" />
+            <path d={P.zeus} className="m-fan m-fan--upper" />
+            <path d={P.thea} className="m-fan m-fan--top" />
+            <path d={P.diana} className="m-fan m-fan--top" />
+            <path d={P.saturn} className="m-fan m-fan--turonian" />
+            <path d={P.neptune} className="m-fan m-fan--turonian" />
           </g>
 
-          <path d={P.seismic} className={`map-seismic ${active === "seismic" ? "is-active" : ""}`} />
+          <path d={P.seismic} className={`m-seismic ${on("seismic")}`} />
 
-          <g className="map-labels">
-            <text x="1500" y="250" className="map-label map-label--country">LIBERIA</text>
-            <text x="1690" y="880" className="map-label map-label--basin">HARPER</text>
-            <text x="1690" y="940" className="map-label map-label--basin">BASIN</text>
-            <text x="1088" y="650" className="map-label map-label--block">LB-26</text>
-            <text x="787" y="1270" className="map-label map-label--block">LB-30</text>
-            <text x="1088" y="1270" className="map-label map-label--block">LB-31</text>
-            <text x="720" y="1060" className="map-label map-label--fan">Saturn</text>
-            <text x="1072" y="1000" className="map-label map-label--fan">Neptune</text>
-            <text x="842" y="800" className="map-label map-label--fan">Thea</text>
-            <text x="1125" y="955" className="map-label map-label--fan">Diana</text>
-            <text x="842" y="1080" className="map-label map-label--fan">Apollo</text>
-            <text x="1262" y="790" className="map-label map-label--fan">Zeus</text>
-            <text x="1445" y="760" className="map-label map-label--seismic" transform="rotate(76 1445 760)">3D OUTLINE</text>
+          <g>
+            <text x="1500" y="250" className="m-text m-text--country">LIBERIA</text>
+            <text x="1700" y="900" className="m-text m-text--basin">HARPER BASIN</text>
+            <text x="1088" y="650" className="m-text m-text--block">LB-26</text>
+            <text x="787" y="1270" className="m-text m-text--block">LB-30</text>
+            <text x="1088" y="1270" className="m-text m-text--block">LB-31</text>
+            <text x="720" y="1060" className="m-text m-text--fan">Saturn</text>
+            <text x="1072" y="1000" className="m-text m-text--fan">Neptune</text>
+            <text x="842" y="800" className="m-text m-text--fan">Thea</text>
+            <text x="1125" y="955" className="m-text m-text--fan">Diana</text>
+            <text x="842" y="1080" className="m-text m-text--fan">Apollo</text>
+            <text x="1262" y="790" className="m-text m-text--fan">Zeus</text>
           </g>
 
           {/* scale bar: 350 px = 50 km on the source map */}
-          <g className="map-scale map-label" transform="translate(1440 1420)">
-            <path d="M0 0V-12M0 -6H350M350 0V-12M175 -3V-9" />
-            <text x="0" y="28">0</text>
-            <text x="175" y="28" textAnchor="middle">25</text>
-            <text x="350" y="28" textAnchor="end">50 km</text>
+          <g className="m-scale" transform="translate(1520 1430)">
+            <path d="M0 0H350" />
+            <text x="0" y="-16">0</text>
+            <text x="350" y="-16" textAnchor="end">50 km</text>
           </g>
-          <g className="map-north map-label" transform="translate(1920 1250)">
-            <path d="M0 -40 L12 0 L0 -8 L-12 0 Z" />
-            <text x="0" y="28" textAnchor="middle">N</text>
-          </g>
-
-          {spots.map((s) => (
-            <g
-              key={s.id}
-              className={`map-spot ${active === s.id ? "is-active" : ""}`}
-              transform={`translate(${s.x} ${s.y})`}
-              tabIndex={0}
-              role="button"
-              aria-label={`${s.kicker}: ${s.title}`}
-              aria-pressed={active === s.id}
-              onMouseEnter={() => setActive(s.id)}
-              onFocus={() => setActive(s.id)}
-              onClick={() => setActive(s.id)}
-              onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), setActive(s.id))}
-            >
-              <circle r="34" className="map-spot__halo" />
-              <circle r="11" className="map-spot__core" />
-              <circle r="22" className="map-spot__ring" />
-            </g>
-          ))}
         </svg>
 
         <div className="harper__locator" aria-hidden>
           <svg viewBox="0 0 300 260">
             <path d={landPath} className="loc-land" />
-            <path d={coastPath} className="loc-coast" />
-            <circle cx={harper[0]} cy={harper[1]} r="16" className="loc-ring" />
-            <circle cx={harper[0]} cy={harper[1]} r="4" className="loc-dot" />
-            <text x={harper[0] + 22} y={harper[1] + 30} className="loc-text">Harper basin</text>
-            <text x="150" y="70" className="loc-text loc-text--muted">West Africa</text>
-            <text x="40" y="225" className="loc-text loc-text--muted">Atlantic Ocean</text>
+            <circle cx={harper[0]} cy={harper[1]} r="7" className="loc-dot" />
+            <text x={harper[0] + 14} y={harper[1] + 28} className="loc-text">Harper basin</text>
           </svg>
         </div>
 
-        <ul className="harper__legend" aria-label="Legend">
-          <li><i className="lg lg--turonian" /> Turonian · Saturn &amp; Neptune</li>
-          <li><i className="lg lg--top" /> Top Cenomanian · Thea &amp; Diana</li>
-          <li><i className="lg lg--upper" /> Upper Cenomanian · Apollo &amp; Zeus</li>
-          <li><i className="lg lg--seismic" /> 3D seismic outline</li>
-        </ul>
-      </div>
+        <figcaption className="harper__legend">
+          <span><i className="lg lg--turonian" /> Turonian fans</span>
+          <span><i className="lg lg--top" /> Top Cenomanian</span>
+          <span><i className="lg lg--upper" /> Upper Cenomanian</span>
+          <span><i className="lg lg--seismic" /> 3D seismic outline</span>
+        </figcaption>
+      </figure>
 
-      <aside className="harper__panel" aria-live="polite">
+      <div className="harper__panel">
         <div className="harper__tabs" role="tablist" aria-label="Map features">
-          {spots.map((s) => (
-            <button key={s.id} role="tab" aria-selected={active === s.id} className={active === s.id ? "is-active" : ""} onClick={() => setActive(s.id)}>
+          {tabs.map((s) => (
+            <button
+              key={s.id}
+              role="tab"
+              id={`tab-${s.id}`}
+              aria-selected={active === s.id}
+              aria-controls="harper-detail"
+              className={active === s.id ? "is-active" : ""}
+              onClick={() => setActive(s.id)}
+            >
               {s.title}
             </button>
           ))}
         </div>
-        <div className="harper__card" key={spot.id}>
-          <span className="mono-label">{spot.kicker}</span>
-          <h3>{spot.title}</h3>
+        <div id="harper-detail" role="tabpanel" aria-labelledby={`tab-${spot.id}`} className="harper__detail" key={spot.id}>
           <p>{spot.body}</p>
           {spot.facts && (
             <dl>
               {spot.facts.map(([k, v]) => (
                 <div key={k}>
-                  <dt className="mono-label">{k}</dt>
+                  <dt>{k}</dt>
                   <dd>{v}</dd>
                 </div>
               ))}
             </dl>
           )}
         </div>
-        <button className="harper__official" onClick={() => setLightbox(true)}>
+        <button className="btn btn--link btn--on-light harper__official" onClick={() => setLightbox(true)}>
           <span>View the official licence map</span>
-          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden><path d="M1 5V1h4M13 9v4H9M1 1l5 5M13 13L8 8" stroke="currentColor" fill="none" strokeWidth="1.2" /></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden><path d="M1 5V1h4M13 9v4H9M1 1l5 5M13 13L8 8" stroke="currentColor" fill="none" strokeWidth="1.4" /></svg>
         </button>
-      </aside>
+      </div>
 
       {lightbox && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label="Official RL-003 licence map" onClick={() => setLightbox(false)}>
