@@ -3875,18 +3875,56 @@ a:hover .read-more .icon-arrow {
   inset: 0;
 }
 .cta__overlay {
-  background: linear-gradient(180deg, rgba(16, 42, 58, 0.55), rgba(16, 42, 58, 0.8));
+  background: linear-gradient(180deg, rgba(16, 42, 58, 0.65), rgba(7, 21, 34, 0.88));
 }
+
+/* 3D Wavefield in CTA */
+.cta__wave-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: auto;
+  opacity: 0.95;
+}
+
+.cta__wave {
+  width: 100%;
+  height: 100%;
+}
+
+.wave-ribbon-stage--fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.wave-ribbon-stage--dark {
+  background: transparent;
+}
+
 .cta__inner {
   position: relative;
+  z-index: 2;
   padding-block: clamp(120px, 16vw, 220px);
   text-align: center;
   display: grid;
   justify-items: center;
+  pointer-events: none;
+}
+.cta__inner .eyebrow,
+.cta__inner .h1 {
+  pointer-events: auto;
 }
 .cta__inner .h1 {
   max-width: 15ch;
   text-wrap: balance;
+  text-shadow: 0 4px 24px rgba(7, 21, 34, 0.8);
 }
 .cta__actions {
   display: flex;
@@ -3894,6 +3932,7 @@ a:hover .read-more .icon-arrow {
   justify-content: center;
   gap: 12px;
   margin-top: 44px;
+  pointer-events: auto;
 }
 
 /* -------------------------------------------------------------- footer -- */

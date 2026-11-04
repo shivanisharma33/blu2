@@ -5,13 +5,23 @@ import { useEffect, useRef, useState } from "react";
 interface WaveRibbon3DProps {
   className?: string;
   height?: number;
+  fill?: boolean;
+  tone?: "light" | "dark";
+  showHud?: boolean;
+  speed?: number;
 }
 
-export default function WaveRibbon3D({ className = "", height = 240 }: WaveRibbon3DProps) {
+export default function WaveRibbon3D({
+  className = "",
+  height = 240,
+  fill = false,
+  tone = "dark",
+  showHud = false,
+  speed = 1,
+}: WaveRibbon3DProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [interactive, setInteractive] = useState(true);
-  const [speedMultiplier, setSpeedMultiplier] = useState(1);
+  const [speedMultiplier, setSpeedMultiplier] = useState(speed);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -62,7 +72,9 @@ export default function WaveRibbon3D({ className = "", height = 240 }: WaveRibbo
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       const rect = container.getBoundingClientRect();
       width = rect.width;
-      canvasHeight = height;
+      canvasHeight = fill ? rect.height : height;
+
+      if (width <= 0 || canvasHeight <= 0) return;
 
       canvas.width = Math.floor(width * dpr);
       canvas.height = Math.floor(canvasHeight * dpr);
@@ -87,41 +99,73 @@ export default function WaveRibbon3D({ className = "", height = 240 }: WaveRibbo
     );
     observer.observe(canvas);
 
-    // Number of ribbons and filaments
-    const ribbonConfigs = [
-      {
-        phase: 0,
-        amp1Ratio: 0.24,
-        amp2Ratio: 0.1,
-        waveLenRatio1: 0.72,
-        waveLenRatio2: 0.36,
-        twistFreq: 0.0032,
-        twistSpeed: 0.9,
-        lineCount: 36,
-        ribbonWidth: 48,
-        colorStart: "#38bdf8", // Sky blue
-        colorMid: "#0284c7",   // Azure
-        colorEnd: "#0369a1",   // Deep ocean
-      },
-      {
-        phase: Math.PI * 0.78,
-        amp1Ratio: 0.22,
-        amp2Ratio: 0.12,
-        waveLenRatio1: 0.68,
-        waveLenRatio2: 0.42,
-        twistFreq: 0.0028,
-        twistSpeed: -0.75,
-        lineCount: 36,
-        ribbonWidth: 44,
-        colorStart: "#60a5fa", // Soft cyan
-        colorMid: "#2563eb",   // Cobalt
-        colorEnd: "#1d4ed8",   // Deep royal blue
-      },
-    ];
+    // Color configurations for dark vs light tones
+    const ribbonConfigs =
+      tone === "dark"
+        ? [
+            {
+              phase: 0,
+              amp1Ratio: 0.28,
+              amp2Ratio: 0.12,
+              waveLenRatio1: 0.74,
+              waveLenRatio2: 0.38,
+              twistFreq: 0.003,
+              twistSpeed: 0.85,
+              lineCount: 38,
+              ribbonWidth: 54,
+              colorStart: "#38bdf8", // Luminous Sky
+              colorMid: "#00e5ff",   // Radiant Aqua
+              colorEnd: "#3b82f6",   // Azure Glow
+            },
+            {
+              phase: Math.PI * 0.8,
+              amp1Ratio: 0.25,
+              amp2Ratio: 0.14,
+              waveLenRatio1: 0.66,
+              waveLenRatio2: 0.44,
+              twistFreq: 0.0026,
+              twistSpeed: -0.7,
+              lineCount: 38,
+              ribbonWidth: 50,
+              colorStart: "#60a5fa", // Ice Blue
+              colorMid: "#06b6d4",   // Vivid Cyan
+              colorEnd: "#818cf8",   // Electric Indigo
+            },
+          ]
+        : [
+            {
+              phase: 0,
+              amp1Ratio: 0.24,
+              amp2Ratio: 0.1,
+              waveLenRatio1: 0.72,
+              waveLenRatio2: 0.36,
+              twistFreq: 0.0032,
+              twistSpeed: 0.9,
+              lineCount: 36,
+              ribbonWidth: 48,
+              colorStart: "#38bdf8",
+              colorMid: "#0284c7",
+              colorEnd: "#0369a1",
+            },
+            {
+              phase: Math.PI * 0.78,
+              amp1Ratio: 0.22,
+              amp2Ratio: 0.12,
+              waveLenRatio1: 0.68,
+              waveLenRatio2: 0.42,
+              twistFreq: 0.0028,
+              twistSpeed: -0.75,
+              lineCount: 36,
+              ribbonWidth: 44,
+              colorStart: "#60a5fa",
+              colorMid: "#2563eb",
+              colorEnd: "#1d4ed8",
+            },
+          ];
 
     const render = () => {
       animId = requestAnimationFrame(render);
-      if (!isVisible || width <= 0) return;
+      if (!isVisible || width <= 0 || canvasHeight <= 0) return;
 
       time += 0.012 * speedMultiplier;
 
@@ -132,7 +176,7 @@ export default function WaveRibbon3D({ className = "", height = 240 }: WaveRibbo
       ctx.clearRect(0, 0, width, canvasHeight);
 
       const centerY = canvasHeight / 2;
-      const stepX = 4; // Dense sampling for ultra-smooth bezier look
+      const stepX = 4; // Dense sampling for ultra-smooth wireframe curve
       const numSteps = Math.ceil(width / stepX) + 1;
 
       // Render each 3D twisted ribbon
@@ -173,16 +217,16 @@ export default function WaveRibbon3D({ className = "", height = 240 }: WaveRibbo
             amp1 * Math.sin(k1 * x - time * 1.1 + phase) +
             amp2 * Math.cos(k2 * x + time * 0.7 + phase);
 
-          const z = 120 * Math.sin(k1 * x - time * 0.9 + phase + Math.PI / 2);
+          const z = 140 * Math.sin(k1 * x - time * 0.9 + phase + Math.PI / 2);
 
           // Mouse ripple interaction
           if (targetMouseX > -500) {
             const dx = x - currentMouseX;
             const dy = y - currentMouseY;
             const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 220) {
-              const influence = Math.exp(-(dist * dist) / (2 * 70 * 70));
-              y += Math.sin(time * 6 + dist * 0.05) * 32 * influence;
+            if (dist < 260) {
+              const influence = Math.exp(-(dist * dist) / (2 * 80 * 80));
+              y += Math.sin(time * 6 + dist * 0.05) * 40 * influence;
             }
           }
 
@@ -204,14 +248,18 @@ export default function WaveRibbon3D({ className = "", height = 240 }: WaveRibbo
 
         // Draw individual filament lines across the ribbon cross-section
         const halfCount = (lineCount - 1) / 2;
-        const cameraDist = 480;
+        const cameraDist = 500;
 
         for (let j = 0; j < lineCount; j++) {
           const u = (j - halfCount) / halfCount; // -1 to +1
           const distFromEdge = Math.abs(u); // 0 at center, 1 at edge
 
           // Alpha distribution: edge lines are denser & more vivid, matching reference image
-          const baseAlpha = 0.12 + 0.32 * Math.pow(distFromEdge, 1.8);
+          const baseAlpha =
+            tone === "dark"
+              ? 0.16 + 0.48 * Math.pow(distFromEdge, 1.8)
+              : 0.12 + 0.32 * Math.pow(distFromEdge, 1.8);
+
           ctx.beginPath();
 
           for (let s = 0; s < numSteps; s++) {
@@ -238,11 +286,20 @@ export default function WaveRibbon3D({ className = "", height = 240 }: WaveRibbo
 
           ctx.strokeStyle = grad;
           ctx.globalAlpha = baseAlpha;
-          ctx.lineWidth = distFromEdge > 0.85 ? 1.4 : 1.1;
+          ctx.lineWidth = distFromEdge > 0.85 ? 1.5 : 1.1;
+
+          if (tone === "dark" && distFromEdge > 0.88) {
+            ctx.shadowColor = "rgba(56, 189, 248, 0.45)";
+            ctx.shadowBlur = 8;
+          } else {
+            ctx.shadowBlur = 0;
+          }
+
           ctx.stroke();
         }
       });
 
+      ctx.shadowBlur = 0;
       ctx.globalAlpha = 1.0;
     };
 
@@ -257,39 +314,44 @@ export default function WaveRibbon3D({ className = "", height = 240 }: WaveRibbo
       canvas.removeEventListener("touchmove", handleTouchMove);
       canvas.removeEventListener("touchend", handleMouseLeave);
     };
-  }, [height, speedMultiplier]);
+  }, [height, fill, tone, speedMultiplier]);
 
   return (
-    <div ref={containerRef} className={`wave-ribbon-stage ${className}`}>
+    <div
+      ref={containerRef}
+      className={`wave-ribbon-stage ${fill ? "wave-ribbon-stage--fill" : ""} wave-ribbon-stage--${tone} ${className}`}
+    >
       {/* 3D Wave Canvas */}
       <canvas ref={canvasRef} className="wave-ribbon-canvas" aria-hidden="true" />
 
-      {/* Floating Ambient Wavefield HUD Badge */}
-      <div className="wave-ribbon-hud">
-        <div className="wave-ribbon-hud__indicator">
-          <span className="wave-ribbon-hud__dot" />
-          <span className="wave-ribbon-hud__label">Acoustic Wavefield · 3D Seismic Resonance</span>
-        </div>
+      {/* Optional Floating Ambient Wavefield HUD Badge */}
+      {showHud && (
+        <div className="wave-ribbon-hud">
+          <div className="wave-ribbon-hud__indicator">
+            <span className="wave-ribbon-hud__dot" />
+            <span className="wave-ribbon-hud__label">Acoustic Wavefield · 3D Seismic Resonance</span>
+          </div>
 
-        <div className="wave-ribbon-hud__controls">
-          <button
-            type="button"
-            className={`wave-hud-btn ${speedMultiplier === 1 ? "is-active" : ""}`}
-            onClick={() => setSpeedMultiplier(1)}
-            aria-label="Normal wave speed"
-          >
-            Flow: 1x
-          </button>
-          <button
-            type="button"
-            className={`wave-hud-btn ${speedMultiplier === 0.4 ? "is-active" : ""}`}
-            onClick={() => setSpeedMultiplier(0.4)}
-            aria-label="Slow wave speed"
-          >
-            0.4x
-          </button>
+          <div className="wave-ribbon-hud__controls">
+            <button
+              type="button"
+              className={`wave-hud-btn ${speedMultiplier === 1 ? "is-active" : ""}`}
+              onClick={() => setSpeedMultiplier(1)}
+              aria-label="Normal wave speed"
+            >
+              Flow: 1x
+            </button>
+            <button
+              type="button"
+              className={`wave-hud-btn ${speedMultiplier === 0.4 ? "is-active" : ""}`}
+              onClick={() => setSpeedMultiplier(0.4)}
+              aria-label="Slow wave speed"
+            >
+              0.4x
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
