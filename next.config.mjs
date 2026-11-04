@@ -17,8 +17,9 @@ const nextConfig = {
   images: { formats: ["image/avif", "image/webp"] },
   webpack: (config, { dev }) => {
     if (dev) {
-      // Disable webpack filesystem caching in dev to prevent Windows PackFileCacheStrategy ENOENT rename errors
-      config.cache = false;
+      // Use in-memory caching in development to prevent Windows PackFileCacheStrategy
+      // ENOENT rename errors while keeping module references intact.
+      config.cache = { type: "memory" };
     }
     return config;
   },
