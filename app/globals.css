@@ -726,8 +726,7 @@ a:hover .read-more .icon-arrow {
   background: var(--navy);
   overflow: hidden;
 }
-.hero__media,
-.hero__overlay {
+.hero__media {
   position: absolute;
   inset: 0;
 }
@@ -736,10 +735,6 @@ a:hover .read-more .icon-arrow {
   height: 100%;
   object-fit: cover;
   animation: hero-settle 2.4s var(--ease) both;
-}
-.hero__overlay {
-  background: linear-gradient(180deg, rgba(16, 42, 58, 0.55) 0%, rgba(16, 42, 58, 0.15) 35%, rgba(16, 42, 58, 0.35) 60%, rgba(16, 42, 58, 0.88) 100%),
-    linear-gradient(90deg, rgba(16, 42, 58, 0.55) 0%, rgba(16, 42, 58, 0) 65%);
 }
 .hero__content {
   position: relative;
@@ -753,13 +748,16 @@ a:hover .read-more .icon-arrow {
   gap: 10px 16px;
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  color: #ffffff;
   margin-bottom: 28px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
 }
 .hero__ticker {
   font-weight: 600;
   padding: 5px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
   border-radius: 2px;
   letter-spacing: 0.04em;
 }
@@ -771,6 +769,7 @@ a:hover .read-more .icon-arrow {
 .hero__title {
   max-width: 13.5ch;
   text-wrap: balance;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.85), 0 1px 4px rgba(0, 0, 0, 0.95);
 }
 .hero__foot {
   display: grid;
@@ -780,12 +779,13 @@ a:hover .read-more .icon-arrow {
   gap: 32px 64px;
   margin-top: clamp(32px, 4vw, 48px);
   padding-top: clamp(28px, 3vw, 36px);
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 .hero__lede {
   font-size: clamp(17px, 1.35vw, 19px);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.82);
+  color: #ffffff;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.85), 0 1px 4px rgba(0, 0, 0, 0.95);
 }
 .hero__actions {
   display: flex;

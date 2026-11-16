@@ -15,6 +15,8 @@ export default function Hero() {
       v.pause();
       return;
     }
+    // Ensure the video plays immediately on load
+    v.play().catch(() => {});
     // Pause the background video when the hero is off-screen.
     const io = new IntersectionObserver(([e]) => (e.isIntersecting ? v.play().catch(() => {}) : v.pause()));
     io.observe(el);
@@ -24,12 +26,11 @@ export default function Hero() {
   return (
     <section id="hero" ref={root} className="hero" aria-labelledby="hero-title">
       <div className="hero__media" aria-hidden>
-        <video ref={video} autoPlay muted loop playsInline preload="metadata" poster="/video/survey-vessel-poster.jpg">
+        <video ref={video} autoPlay muted loop playsInline preload="auto" poster="/video/survey-vessel-poster.jpg">
           <source src="/video/survey-vessel-720.mp4" type="video/mp4" media="(max-width: 900px)" />
           <source src="/video/survey-vessel-1080.mp4" type="video/mp4" />
         </video>
       </div>
-      <div className="hero__overlay" aria-hidden />
 
       <div className="container hero__content">
         <p className="hero__kicker hero-in" style={{ ["--d" as string]: "0.1s" }}>
