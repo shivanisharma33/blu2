@@ -4,15 +4,16 @@ import { useState } from "react";
 import { company } from "@/lib/content";
 import { Arrow } from "../ui/primitives";
 
+// Options, labels, placeholders and messages exactly as on the official form.
 const ROLES = ["Potential Investor", "Analyst", "Shareholder", "Journalist", "Broker", "Investment Advisor", "Industry Professional"];
 
 /**
- * Request-for-information form with the same fields as the official site.
- * This app has no mail backend yet, so submitting opens the visitor's email client with the
- * request pre-filled and addressed to the company. Swap `submit` for an API call when one exists.
+ * Request-for-information form with the official site's fields and wording.
+ * This app has no mail backend, so submitting opens the visitor's email client with the request
+ * pre-filled and addressed to the company. Swap `submit` for an API call when one exists.
  */
 export default function RfiForm() {
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState(ROLES[0]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [comments, setComments] = useState("");
@@ -28,60 +29,67 @@ export default function RfiForm() {
     setErrors(next);
     if (Object.keys(next).length) return;
 
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      role && `I am a: ${role}`,
-      `Add to email list: ${list ? "Yes, I consent to receive news, updates and other communications" : "No"}`,
-      "",
-      comments,
-    ]
-      .filter((l): l is string => typeof l === "string")
-      .join("\n");
+    const body = [`I am a: ${role}`, `Full Name: ${name}`, `Email: ${email}`, `Sign me up for Email List: ${list ? "Yes" : "No"}`, "", comments].join("\n");
     window.location.href = `mailto:${company.email}?subject=${encodeURIComponent("Request for Information")}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
 
   return (
     <form className="form" onSubmit={submit} noValidate>
-      <fieldset className="form__roles">
-        <legend>I am a</legend>
-        <div>
+      <label className="field">
+        <span>I am a:</span>
+        <select name="iama" value={role} onChange={(e) => setRole(e.target.value)}>
           {ROLES.map((r) => (
-            <label key={r} className={`chip ${role === r ? "is-active" : ""}`}>
-              <input type="radio" name="role" value={r} checked={role === r} onChange={() => setRole(r)} />
-              {r}
-            </label>
+            <option key={r}>{r}</option>
           ))}
-        </div>
-      </fieldset>
+        </select>
+      </label>
 
       <div className="form__row">
         <label className="field">
-          <span>Full name *</span>
-          <input type="text" autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} aria-invalid={!!errors.name} aria-describedby="err-name" />
+          <span>Full Name *</span>
+          <input
+            type="text"
+            name="full_name"
+            placeholder="Your Name"
+            autoComplete="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            aria-invalid={!!errors.name}
+            aria-describedby="err-name"
+          />
           {errors.name && <small id="err-name" className="field__error">{errors.name}</small>}
         </label>
         <label className="field">
           <span>Email *</span>
-          <input type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} aria-invalid={!!errors.email} aria-describedby="err-email" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            autoComplete="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            aria-invalid={!!errors.email}
+            aria-describedby="err-email"
+          />
           {errors.email && <small id="err-email" className="field__error">{errors.email}</small>}
         </label>
       </div>
 
       <label className="field">
         <span>Comments</span>
-        <textarea rows={5} value={comments} onChange={(e) => setComments(e.target.value)} />
+        <textarea name="comments" rows={5} placeholder="Enter your message here" value={comments} onChange={(e) => setComments(e.target.value)} />
       </label>
 
       <label className="check">
-        <input type="checkbox" checked={list} onChange={(e) => setList(e.target.checked)} />
-        <span>
-          <strong>Sign me up for the email list.</strong> I agree to and consent to receive news, updates, and other communications by
-          way of commercial electronic messages (including email) from BluEnergies Ltd. I understand I may withdraw consent at any time
-          by clicking the unsubscribe link contained in all emails from BluEnergies Ltd.
-        </span>
+        <input type="checkbox" name="email_list" checked={list} onChange={(e) => setList(e.target.checked)} />
+        <span>Sign me up for Email List</span>
       </label>
+      <p className="fineprint">
+        I agree to and consent to receive news, updates, and other communications by way of commercial electronic messages (including
+        email) from BluEnergies Ltd. I understand I may withdraw consent at any time by clicking the unsubscribe link contained in all
+        emails from BluEnergies Ltd. <a href={`mailto:${company.email}`}>{company.email}</a>
+      </p>
 
       <div className="form__foot">
         <button type="submit" className="btn btn--primary btn--on-light">
@@ -89,9 +97,7 @@ export default function RfiForm() {
           <Arrow />
         </button>
         <p className="fineprint" aria-live="polite">
-          {sent
-            ? `Your email app should now open with the request addressed to ${company.email}. Please send it from there.`
-            : `Submitting opens your email app with the request addressed to ${company.email}.`}
+          {sent ? `Your email app should now open with the request addressed to ${company.email}. Please send it from there.` : ""}
         </p>
       </div>
     </form>

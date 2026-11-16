@@ -2,6 +2,13 @@
 
 import { useEffect, useRef } from "react";
 import { Button } from "../ui/primitives";
+import { licence } from "@/lib/content";
+
+const proof = [
+  { value: `${licence.areaKm2.toLocaleString("en-US")} km²`, label: "Licence area, RL-003" },
+  { value: `${licence.bluInterest}%`, label: "BluEnergies working interest" },
+  { value: "TotalEnergies", label: `Operator, ${licence.partnerInterest}% interest` },
+];
 
 export default function Hero() {
   const video = useRef<HTMLVideoElement>(null);
@@ -15,7 +22,6 @@ export default function Hero() {
       v.pause();
       return;
     }
-    // Ensure the video plays immediately on load
     v.play().catch(() => {});
     // Pause the background video when the hero is off-screen.
     const io = new IntersectionObserver(([e]) => (e.isIntersecting ? v.play().catch(() => {}) : v.pause()));
@@ -33,25 +39,36 @@ export default function Hero() {
       </div>
 
       <div className="container hero__content">
-        <p className="hero__kicker hero-in" style={{ ["--d" as string]: "0.1s" }}>
-          <span className="hero__ticker">TSXV: BLU</span>
-          <span className="hero__kicker-sep" aria-hidden />
-          <span>West Africa Deepwater Oil &amp; Gas Exploration</span>
-        </p>
+        <div className="hero__copy">
+          <p className="hero__kicker hero-in" style={{ ["--d" as string]: "0.1s" }}>
+            <span className="hero__ticker">TSXV: BLU</span>
+            <span className="hero__kicker-sep" aria-hidden />
+            <span>Offshore Liberia · Harper basin</span>
+          </p>
 
-        <h1 id="hero-title" className="hero__title hero-in" style={{ ["--d" as string]: "0.2s" }}>
-          Unlocking the Next Frontier in Deepwater Energy.
-        </h1>
+          <h1 id="hero-title" className="hero__title hero-in" style={{ ["--d" as string]: "0.2s" }}>
+            Unlocking the next frontier in deepwater energy.
+          </h1>
 
-        <div className="hero__foot">
-          <p className="hero__lede hero-in" style={{ ["--d" as string]: "0.35s" }}>
-            BluEnergies is exploring the Harper basin, offshore Liberia, one of the last undrilled basins on the West African
-            Margin to contain the basin floor fan play. It is advancing Reconnaissance Licence RL-003 in partnership with
+          <p className="hero__lede hero-in" style={{ ["--d" as string]: "0.3s" }}>
+            Exploring one of the last undrilled basin floor fan plays on the West African Margin, in partnership with
             TotalEnergies.
           </p>
-          <div className="hero__actions hero-in" style={{ ["--d" as string]: "0.45s" }}>
-            <Button href="#assets" on="dark">Explore Our Assets</Button>
-            <Button href="#investors" variant="secondary" on="dark">Investor Information</Button>
+
+          <dl className="hero__proof hero-in" style={{ ["--d" as string]: "0.4s" }}>
+            {proof.map((p) => (
+              <div key={p.label} className="hero__proof-item">
+                <dt>{p.label}</dt>
+                <dd>{p.value}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <div className="hero__actions hero-in" style={{ ["--d" as string]: "0.5s" }}>
+            <Button href="#assets" on="dark">Explore the RL-003 licence</Button>
+            <Button href="#investors" variant="link" on="dark" className="hero__link">
+              Investor information
+            </Button>
           </div>
         </div>
       </div>

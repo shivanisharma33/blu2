@@ -1,31 +1,26 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/page/PageHero";
 import SubNav from "@/components/page/SubNav";
-import NewsIndex from "@/components/page/NewsIndex";
-import { releases } from "@/lib/releases";
+import OriginalBody from "@/components/page/OriginalBody";
+import LatestNews from "@/components/page/LatestNews";
+import YearList from "@/components/page/YearList";
+import { releases, releaseHref } from "@/lib/releases";
+import { banners, pageMeta } from "@/lib/original";
 import { routes } from "@/lib/content";
 
-export const metadata: Metadata = {
-  title: "News Releases",
-  description: "News releases from BluEnergies Ltd. (TSXV: BLU | OTCQX: BLUGF).",
-  alternates: { canonical: routes.news },
-};
+export const metadata: Metadata = pageMeta("News", routes.news);
 
 export default function NewsPage() {
   return (
     <>
-      <PageHero
-        eyebrow="News & Media"
-        title="News Releases."
-        intro={<p>Company announcements from BluEnergies Ltd., newest first.</p>}
-        crumbs={[{ label: "News & Media", href: routes.news }, { label: "News" }]}
-        image="/images/ocean-dusk.jpg"
-        imagePosition="center 60%"
-      />
+      <PageHero eyebrow="News & Media" title="News" crumbs={[{ label: "News & Media", href: routes.news }, { label: "News" }]} image={banners.news} />
       <SubNav group="News & Media" />
-      <NewsIndex
-        items={releases.map(({ slug, date, title, category, excerpt }) => ({ slug, date, title, category, excerpt }))}
-      />
+
+      <OriginalBody label="News" wide>
+        <YearList label="News" items={releases.map((r) => ({ date: r.date, title: r.title, href: releaseHref(r.slug) }))} />
+      </OriginalBody>
+
+      <LatestNews title="News" />
     </>
   );
 }

@@ -716,12 +716,14 @@ a:hover .read-more .icon-arrow {
 }
 
 /* ---------------------------------------------------------------- hero -- */
+/* Composition: copy anchored left over a navy scrim; the survey vessel sits
+   centre-right in the footage and stays clear of any overlay. */
 .hero {
   position: relative;
   min-height: 100vh;
   min-height: 100svh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   color: #fff;
   background: var(--navy);
   overflow: hidden;
@@ -730,67 +732,106 @@ a:hover .read-more .icon-arrow {
   position: absolute;
   inset: 0;
 }
+.hero__media img,
 .hero__media video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 62% 50%;
   animation: hero-settle 2.4s var(--ease) both;
+}
+/* Subtle scrim behind the text column only, fading out before the vessel. */
+.hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 23, 34, 0.82) 0%, rgba(8, 23, 34, 0.55) 32%, rgba(8, 23, 34, 0) 58%),
+    linear-gradient(0deg, rgba(8, 23, 34, 0.45) 0%, rgba(8, 23, 34, 0) 28%);
+  pointer-events: none;
 }
 .hero__content {
   position: relative;
-  padding-top: calc(var(--header-h) + 64px);
-  padding-bottom: clamp(56px, 8vh, 96px);
+  width: 100%;
+  padding-top: calc(var(--header-h) + 40px);
+  padding-bottom: clamp(48px, 7vh, 80px);
+}
+.hero__copy {
+  max-width: 600px;
 }
 .hero__kicker {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px 16px;
+  gap: 10px 14px;
   font-size: 14px;
   font-weight: 500;
-  color: #ffffff;
-  margin-bottom: 28px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+  color: rgba(255, 255, 255, 0.86);
+  margin-bottom: 24px;
 }
 .hero__ticker {
   font-weight: 600;
-  padding: 5px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(4px);
-  border-radius: 2px;
+  color: #7cc4df;
   letter-spacing: 0.04em;
 }
 .hero__kicker-sep {
-  width: 24px;
+  width: 20px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.45);
 }
 .hero__title {
-  max-width: 13.5ch;
+  max-width: 14ch;
+  font-size: clamp(40px, 4.8vw, 72px);
   text-wrap: balance;
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.85), 0 1px 4px rgba(0, 0, 0, 0.95);
-}
-.hero__foot {
-  display: grid;
-  grid-template-columns: minmax(0, 560px) auto;
-  justify-content: space-between;
-  align-items: end;
-  gap: 32px 64px;
-  margin-top: clamp(32px, 4vw, 48px);
-  padding-top: clamp(28px, 3vw, 36px);
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
 }
 .hero__lede {
-  font-size: clamp(17px, 1.35vw, 19px);
+  max-width: 34em;
+  margin-top: 22px;
+  font-size: clamp(17px, 1.3vw, 19px);
   line-height: 1.6;
-  color: #ffffff;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.85), 0 1px 4px rgba(0, 0, 0, 0.95);
+  color: rgba(255, 255, 255, 0.88);
+}
+.hero__proof {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: start;
+  gap: 16px clamp(24px, 3vw, 40px);
+  margin: 32px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+.hero__proof-item {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4px;
+}
+.hero__proof-item dd {
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: clamp(22px, 1.9vw, 28px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.hero__proof-item dt {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.72);
 }
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  align-items: center;
+  gap: 16px 28px;
+  margin-top: 36px;
+}
+.hero__link.btn--link {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+.hero__link.btn--link:hover {
+  color: #fff;
+  border-bottom-color: #fff;
 }
 .hero__scroll {
   position: absolute;
@@ -1206,588 +1247,904 @@ a:hover .read-more .icon-arrow {
   margin-bottom: clamp(56px, 7vw, 96px);
 }
 .harper {
+  --hm-ink: var(--navy);
+  --hm-dim: #5b6f7c;
+  --hm-slate: #46708b;
+  --hm-gold: #ca8a04;
+  --hm-glass: rgba(255, 255, 255, 0.88);
+  --hm-edge: rgba(16, 42, 58, 0.1);
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: var(--gutter);
   row-gap: 32px;
-  align-items: start;
+  align-items: stretch;
 }
 
-/* --------------------------------------------------- Harper Map Canvas -- */
+/* ------------------------------------------------------- Map canvas -- */
 .harper__map {
   grid-column: 1 / span 8;
+  align-self: start;
   position: relative;
-  background: #081724;
-  border: 1px solid rgba(16, 42, 58, 0.16);
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 20px 48px rgba(16, 42, 58, 0.12);
+  margin: 0;
   display: flex;
   flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow:
+    0 1px 2px rgba(16, 42, 58, 0.04),
+    0 18px 44px -18px rgba(16, 42, 58, 0.18);
 }
 
-/* Map Top Tactical Telemetry HUD */
-.harper__map-hud {
+.harper__hud {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 18px;
-  background: #06111a;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-  font-size: 11px;
-  z-index: 5;
   flex-wrap: wrap;
-  gap: 10px;
-}
-
-.harper__map-hud-left {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.hud-beacon {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #34d399;
-  box-shadow: 0 0 10px #34d399;
-  animation: telemetryPulse 2.5s infinite;
-}
-
-.hud-title {
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: #ffffff;
-}
-
-.hud-sep {
-  color: rgba(255, 255, 255, 0.25);
-}
-
-.hud-tag {
-  color: #38bdf8;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-}
-
-.harper__map-hud-right {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.hud-coords,
-.hud-depth {
-  color: rgba(255, 255, 255, 0.65);
-  font-family: monospace;
-  font-size: 11px;
-}
-
-.hud-btn-expand {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  border-radius: 6px;
-  padding: 4px 10px;
-  color: #38bdf8;
-  font-size: 11px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.hud-btn-expand:hover {
-  background: rgba(56, 189, 248, 0.25);
-  color: #ffffff;
-  border-color: #38bdf8;
-}
-
-/* Map SVG Presentation */
-.harper__svg-wrap {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: #081724;
-}
-
-.harper__svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.m-land {
-  stroke: rgba(56, 189, 248, 0.2);
-  stroke-width: 1.5;
-}
-
-.m-coast {
-  fill: none;
-  stroke: #38bdf8;
-  stroke-width: 3.5;
-  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5));
-}
-
-.m-basin {
-  fill: rgba(14, 165, 233, 0.05);
-  stroke: rgba(56, 189, 248, 0.35);
-  stroke-width: 2;
-  stroke-dasharray: 8 6;
-}
-
-.m-contour {
-  fill: none;
-  stroke-width: 1.8;
-  stroke-dasharray: 6 8;
-  opacity: 0.7;
-}
-
-.m-contour--1000 {
-  stroke: #38bdf8;
-}
-
-.m-contour--2000 {
-  stroke: #0ea5e9;
-}
-
-.m-contour--3000 {
-  stroke: #0284c7;
-}
-
-.m-seismic-fill {
-  pointer-events: none;
-}
-
-.m-seismic {
-  fill: none;
-  stroke: #f59e0b;
-  stroke-width: 2.5;
-  stroke-dasharray: 12 8;
-  opacity: 0.65;
-  cursor: pointer;
-  transition: all 0.3s var(--ease);
-}
-
-.m-seismic:hover,
-.m-seismic.is-active {
-  stroke: #fbbf24;
-  stroke-width: 4;
-  opacity: 1;
-  filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.55));
-}
-
-.m-block {
-  fill: rgba(255, 255, 255, 0.03);
-  stroke: rgba(56, 189, 248, 0.65);
-  stroke-width: 2.5;
-  cursor: pointer;
-  transition: all 0.3s var(--ease);
-}
-
-.m-block:hover {
-  fill: rgba(56, 189, 248, 0.12);
-  stroke: #38bdf8;
-  stroke-width: 3.5;
-}
-
-.m-block.is-active {
-  fill: rgba(56, 189, 248, 0.18);
-  stroke: #38bdf8;
-  stroke-width: 4;
-  filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.4));
-}
-
-.m-fan {
-  stroke: rgba(255, 255, 255, 0.9);
-  stroke-width: 2.2;
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.6));
-  cursor: pointer;
-  transition: all 0.3s var(--ease);
-}
-
-.m-fan:hover {
-  stroke: #ffffff;
-  stroke-width: 3.5;
-  filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.9));
-}
-
-.m-fans.is-active .m-fan {
-  stroke: #ffffff;
-  stroke-width: 3;
-  filter: drop-shadow(0 0 14px rgba(56, 189, 248, 0.7));
-}
-
-.m-coord {
-  fill: rgba(255, 255, 255, 0.4);
-  font-size: 15px;
-  font-family: monospace;
-}
-
-.m-text {
-  font-family: var(--font-text);
-  fill: #ffffff;
-  pointer-events: none;
-}
-
-.m-text--country {
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: 0.24em;
-  fill: #e2e8f0;
-}
-
-.m-text--country-sub {
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  fill: #94a3b8;
-}
-
-.m-text--basin {
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  fill: #38bdf8;
-  text-anchor: middle;
-}
-
-.m-text--basin-sub {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  fill: rgba(56, 189, 248, 0.7);
-  text-anchor: middle;
-}
-
-.m-label-block {
-  cursor: pointer;
-}
-
-.m-label-bg {
-  fill: rgba(10, 24, 36, 0.92);
-  stroke: rgba(56, 189, 248, 0.4);
-  stroke-width: 1.5;
-  transition: all 0.2s ease;
-}
-
-.m-label-block:hover .m-label-bg,
-.m-label-block.is-active .m-label-bg {
-  fill: var(--ocean);
-  stroke: #38bdf8;
-  stroke-width: 2;
-}
-
-.m-text--block {
-  font-size: 20px;
-  font-weight: 700;
-  fill: #ffffff;
-  text-anchor: middle;
-}
-
-.m-text--fan {
-  font-size: 22px;
-  font-weight: 700;
-  fill: #ffffff;
-  paint-order: stroke;
-  stroke: rgba(6, 17, 26, 0.95);
-  stroke-width: 6px;
-  stroke-linejoin: round;
-}
-
-.m-text--contour {
+  gap: 10px 16px;
+  padding: 14px 18px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  color: var(--hm-ink);
   font-size: 12px;
-  font-weight: 600;
-  fill: #e2e8f0;
-  font-family: monospace;
 }
-
-.m-compass-text {
-  font-size: 14px;
-  font-weight: 700;
-  fill: #38bdf8;
+.harper__hud-id,
+.harper__hud-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.harper__beacon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ocean);
+  box-shadow: 0 0 0 3px rgba(22, 78, 104, 0.14);
+  flex-shrink: 0;
+}
+.harper__hud-title {
   font-family: var(--font-head);
-}
-
-.m-scale text {
-  font-size: 14px;
-  font-weight: 600;
-  fill: #e2e8f0;
-  font-family: monospace;
-}
-
-/* Tactical Inset Mini-Globe */
-.harper__locator {
-  position: absolute;
-  left: clamp(12px, 2vw, 22px);
-  bottom: clamp(64px, 7vw, 84px);
-  width: clamp(120px, 16%, 170px);
-  background: rgba(6, 17, 26, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
-}
-
-.loc-label {
-  font-size: 9px;
   font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: 0.01em;
+}
+.harper__hud-tag {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #f1f5f7;
+  color: var(--hm-dim);
+  font-size: 10.5px;
+  font-weight: 600;
   letter-spacing: 0.1em;
-  color: #94a3b8;
-  padding: 6px 8px 4px;
-  background: rgba(0, 0, 0, 0.35);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   text-transform: uppercase;
 }
+.harper__hud-readout {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--hm-dim);
+}
+.harper__hud-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.harper__hud-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--navy);
+  font: 600 12px/1 var(--font-text);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.harper__hud-btn:hover {
+  background: #f4f7f9;
+  border-color: rgba(22, 78, 104, 0.35);
+}
 
+.harper__stage {
+  position: relative;
+  overflow: hidden;
+  touch-action: pan-y;
+  user-select: none;
+  background: #fbfcfd;
+}
+.harper__stage.is-pannable {
+  cursor: grab;
+  touch-action: none;
+}
+.harper__stage.is-pannable:active {
+  cursor: grabbing;
+}
+.harper__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1800 / 1520;
+}
+.harper__svg :focus {
+  outline: none;
+}
+.harper__vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(16, 42, 58, 0.04);
+}
+
+/* ---------------------------------------------------- SVG cartography -- */
+.hm-grid line {
+  stroke: rgba(16, 42, 58, 0.05);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.hm-basin {
+  fill: #e6ecf0;
+  stroke: #8fa1ad;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+.hm-tag {
+  font-family: var(--font-head);
+  font-weight: 800;
+  pointer-events: none;
+}
+.hm-tag--licence {
+  font-size: 54px;
+  letter-spacing: 0.03em;
+  fill: var(--hm-slate);
+}
+.hm-tag--seismic {
+  font-size: 24px;
+  letter-spacing: 0.2em;
+  fill: var(--hm-gold);
+}
+
+.hm-contours,
+.hm-seismic,
+.hm-blocks,
+.hm-fans {
+  transition: opacity 0.45s var(--ease);
+}
+.harper .is-off {
+  opacity: 0;
+  pointer-events: none;
+}
+.hm-contour {
+  fill: none;
+  stroke: rgba(16, 42, 58, 0.5);
+  stroke-width: 1.8;
+  stroke-dasharray: 4 6;
+  stroke-linecap: round;
+}
+.hm-contour--mid {
+  stroke: rgba(16, 42, 58, 0.45);
+}
+.hm-contour--deep {
+  stroke: rgba(16, 42, 58, 0.4);
+}
+.hm-depth {
+  font: 600 22px/1 var(--font-text);
+  fill: #2c4656;
+  paint-order: stroke;
+  stroke: #e6ecf0;
+  stroke-width: 7px;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.hm-seismic__bins {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.hm-seismic__line {
+  fill: transparent;
+  stroke: #e3a908;
+  stroke-width: 3;
+  stroke-dasharray: 16 10;
+  stroke-linejoin: round;
+  cursor: pointer;
+  transition: stroke-width 0.3s ease, stroke 0.3s ease;
+}
+.hm-seismic.is-hover .hm-seismic__line,
+.hm-seismic.is-active .hm-seismic__line {
+  stroke: var(--hm-gold);
+  stroke-width: 4.5;
+}
+.hm-seismic.is-active .hm-seismic__line {
+  animation: hmMarch 2.4s linear infinite;
+}
+.hm-seismic.is-active .hm-seismic__bins {
+  opacity: 1;
+}
+.hm-seismic__line:focus-visible {
+  stroke: var(--navy);
+}
+
+.hm-block {
+  fill: rgba(255, 255, 255, 0.28);
+  stroke: #5d7f95;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  cursor: pointer;
+  transition: fill 0.3s ease, stroke 0.3s ease, stroke-width 0.3s ease;
+}
+.hm-block.is-hover {
+  fill: rgba(22, 78, 104, 0.06);
+  stroke: var(--ocean);
+}
+.hm-block.is-active {
+  fill: rgba(22, 78, 104, 0.1);
+  stroke: var(--ocean);
+  stroke-width: 4;
+}
+.hm-block:focus-visible {
+  stroke: var(--navy);
+  stroke-width: 4.5;
+}
+.hm-block-name {
+  font-family: var(--font-head);
+  font-size: 62px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-anchor: middle;
+  fill: rgba(70, 112, 139, 0.55);
+  pointer-events: none;
+  transition: fill 0.3s ease;
+}
+.hm-block-name.is-hover {
+  fill: rgba(22, 78, 104, 0.75);
+}
+.hm-block-name.is-active {
+  fill: var(--ocean);
+}
+
+.hm-fan {
+  stroke-width: 2;
+  stroke-linejoin: round;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, stroke-width 0.2s ease;
+}
+.hm-fan--upper {
+  stroke: #8cc6d2;
+}
+.hm-fan--top {
+  stroke: #2f969b;
+}
+.hm-fan--turonian {
+  stroke: #1d3f57;
+  opacity: 0.88;
+}
+.hm-fans.is-hover .hm-fan,
+.hm-fans.is-active .hm-fan {
+  opacity: 1;
+}
+.hm-fan:hover {
+  stroke-width: 3.5;
+}
+.hm-fans__hit {
+  fill: transparent;
+  pointer-events: none;
+}
+.hm-fans__hit:focus-visible {
+  stroke: var(--navy);
+  stroke-width: 3;
+  stroke-dasharray: 6 6;
+}
+
+.hm-callout {
+  pointer-events: none;
+}
+.hm-callout line {
+  stroke: var(--hm-slate);
+  stroke-width: 1.6;
+}
+.hm-callout circle {
+  fill: var(--navy);
+}
+.hm-callout rect {
+  fill: #fff;
+  stroke-width: 2;
+  filter: drop-shadow(0 2px 4px rgba(16, 42, 58, 0.12));
+}
+.hm-callout text {
+  font: 600 24px/1 var(--font-text);
+  fill: var(--navy);
+  text-anchor: middle;
+}
+.hm-callout--turonian rect {
+  stroke: #2f5b78;
+}
+.hm-callout--top rect {
+  stroke: #3fa9ae;
+}
+.hm-callout--upper rect {
+  stroke: #9fd3de;
+}
+
+.hm-surf {
+  fill: none;
+  stroke: rgba(95, 138, 165, 0.25);
+  stroke-width: 18;
+}
+.hm-coast {
+  fill: none;
+  stroke: #46708b;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+.hm-country {
+  font-family: var(--font-head);
+  font-size: 92px;
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  fill: #fff;
+}
+.hm-basin-name {
+  font-family: var(--font-head);
+  font-size: 54px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-anchor: middle;
+  fill: #3a4a54;
+}
+.hm-basin-sub {
+  font: 600 15px/1 var(--font-text);
+  letter-spacing: 0.2em;
+  text-anchor: middle;
+  fill: #6b7d88;
+}
+
+@keyframes hmMarch {
+  to {
+    stroke-dashoffset: -52;
+  }
+}
+
+/* -------------------------------------------------------- Map overlays -- */
+.harper__locator,
+.harper__compass,
+.harper__scale,
+.harper__zoom,
+.harper__hint {
+  position: absolute;
+  z-index: 2;
+  background: var(--hm-glass);
+  border: 1px solid var(--hm-edge);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px -8px rgba(16, 42, 58, 0.25);
+}
+.harper__locator {
+  top: 16px;
+  left: 16px;
+  width: clamp(110px, 17%, 160px);
+  border-radius: 12px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.harper__locator svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #eaf3f8;
+}
 .loc-land {
-  fill: #1a2c38;
+  fill: #d5dde2;
 }
-
+.loc-coast {
+  fill: none;
+  stroke: #8fa1ad;
+  stroke-width: 1.4;
+}
 .loc-dot {
-  fill: #38bdf8;
-  filter: drop-shadow(0 0 6px #38bdf8);
+  fill: var(--ocean);
+  stroke: #fff;
+  stroke-width: 2;
 }
-
 .loc-pulse {
-  animation: telemetryPulse 2.5s infinite;
+  fill: rgba(22, 78, 104, 0.15);
+  stroke: rgba(22, 78, 104, 0.5);
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hmPing 2.6s var(--ease) infinite;
+}
+@keyframes hmPing {
+  0% {
+    transform: scale(0.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+.loc-label {
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--hm-dim);
 }
 
-.loc-text {
-  font-family: var(--font-text);
-  font-size: 17px;
+.harper__compass {
+  top: 16px;
+  right: 16px;
+  width: 48px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  pointer-events: none;
+  color: var(--navy);
+  font: 700 10px/1 var(--font-head);
+  letter-spacing: 0.1em;
+}
+.harper__compass svg {
+  width: 28px;
+  height: 28px;
+}
+.harper__compass circle {
+  fill: none;
+  stroke: rgba(16, 42, 58, 0.2);
+}
+.harper__compass path {
+  fill: rgba(16, 42, 58, 0.25);
+}
+.harper__compass path.n {
+  fill: var(--navy);
+}
+
+.harper__scale {
+  left: 16px;
+  bottom: 16px;
+  padding: 9px 12px 8px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: none;
+}
+.harper__scale-bar {
+  position: relative;
+  display: block;
+  height: 6px;
+  border: 1.5px solid var(--navy);
+  border-top: 0;
+  transition: width 0.2s ease;
+}
+.harper__scale-bar i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  height: 3px;
+  background: var(--navy);
+}
+.harper__scale-label {
+  font: 600 11.5px/1 var(--font-text);
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.harper__zoom {
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.harper__zoom button {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.harper__zoom button + button {
+  border-top: 1px solid var(--hm-edge);
+}
+.harper__zoom button:hover:not(:disabled) {
+  background: rgba(22, 78, 104, 0.08);
+}
+.harper__zoom button:disabled {
+  color: rgba(16, 42, 58, 0.25);
+  cursor: default;
+}
+.harper__zoom button:focus-visible,
+.harper__hud-btn:focus-visible,
+.harper__layer:focus-visible {
+  outline: 2px solid var(--ocean);
+  outline-offset: -2px;
+}
+
+.harper__hint {
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 11px;
   font-weight: 600;
-  fill: #e2e8f0;
+  color: var(--hm-dim);
+  pointer-events: none;
+  animation: rise 0.4s var(--ease) both;
 }
 
-/* High-Tech Frosted Interactive Legend Bar */
+.harper__tip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  margin: 18px 0 0 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--navy);
+  box-shadow: 0 10px 24px -6px rgba(16, 42, 58, 0.4);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  white-space: nowrap;
+  will-change: transform;
+}
+.harper__tip strong {
+  font: 700 13px/1.2 var(--font-head);
+  color: #fff;
+}
+.harper__tip span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ------------------------------------------------- Legend / layer bar -- */
 .harper__legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 22px;
-  padding: 12px 18px;
-  background: #06111a;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #fff;
+  border-top: 1px solid var(--line);
+  color: var(--hm-dim);
   font-size: 12px;
-  color: #94a3b8;
 }
-
-.harper__legend-item {
+.harper__legend-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+.harper__layer {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  min-height: 32px;
+  padding: 0 12px 0 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #8a99a3;
+  font: 600 12px/1 var(--font-text);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
-
-.lg {
-  width: 12px;
-  height: 12px;
+.harper__layer:hover {
+  border-color: rgba(22, 78, 104, 0.3);
+}
+.harper__layer[aria-pressed="true"] {
+  color: var(--navy);
+  background: #f2f6f8;
+  border-color: rgba(22, 78, 104, 0.25);
+}
+.harper__layer[aria-pressed="false"] .sw {
+  opacity: 0.3;
+}
+.sw {
+  display: inline-flex;
+  width: 14px;
+  height: 14px;
   border-radius: 3px;
-  display: inline-block;
   flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+.sw--stack {
+  gap: 1px;
+  overflow: hidden;
+}
+.sw--stack i {
+  flex: 1;
+}
+.sw--turonian {
+  background: #3e6c8a;
+}
+.sw--top {
+  background: #6cc6ca;
+}
+.sw--upper {
+  background: #d6edf2;
+  box-shadow: inset 0 0 0 1px #9fd3de;
+}
+.sw--seismic {
+  border: 1.5px dashed #e3a908;
+}
+.sw--block {
+  border: 1.5px solid #5d7f95;
+  background: #e6ecf0;
+}
+.sw--contour {
+  height: 0;
+  border-radius: 0;
+  border-top: 2px dashed rgba(16, 42, 58, 0.55);
+}
+.harper__legend-key {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin-left: auto;
+  font-size: 11px;
+}
+.harper__legend-key span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.harper__legend-key i {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
 }
 
-.lg--turonian {
-  background: linear-gradient(135deg, #0284c7, #0ea5e9);
-  box-shadow: 0 0 8px rgba(14, 165, 233, 0.5);
-}
-
-.lg--top {
-  background: linear-gradient(135deg, #06b6d4, #38bdf8);
-  box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
-}
-
-.lg--upper {
-  background: linear-gradient(135deg, #2563eb, #60a5fa);
-  box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
-}
-
-.lg--seismic {
-  background: transparent;
-  border: 1.5px dashed #f59e0b;
-}
-
-.lg--contour {
-  background: transparent;
-  border-bottom: 2px dashed #38bdf8;
-}
-
-/* ---------------------------------------------------- Right Control Panel -- */
+/* ------------------------------------------------------- Detail panel -- */
 .harper__panel {
   grid-column: 9 / -1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
-
-.harper__panel-header {
-  margin-bottom: 4px;
-}
-
 .harper__panel-badge {
-  font-size: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10.5px;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--ocean);
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  display: block;
-  margin-bottom: 4px;
+  color: var(--ocean);
+  margin-bottom: 8px;
 }
-
+.harper__panel-badge::before {
+  content: "";
+  width: 18px;
+  height: 1.5px;
+  background: currentColor;
+}
 .harper__panel-title {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 600;
   color: var(--navy);
   margin: 0;
+  letter-spacing: -0.01em;
+}
+.harper__panel-hint {
+  margin: 6px 0 0;
+  font-size: 13.5px;
+  color: var(--muted);
 }
 
 .harper__tabs {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-}
-
-.harper__tab-btn {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 12px 16px;
-  background: #ffffff;
   border: 1px solid var(--line);
-  border-radius: 10px;
-  cursor: pointer;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+}
+.harper__tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 56px;
+  padding: 10px 16px;
+  border: 0;
+  background: transparent;
   text-align: left;
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 8px rgba(16, 42, 58, 0.02);
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
-
-.harper__tab-btn:hover {
-  border-color: rgba(22, 78, 104, 0.35);
-  background: #f8fafc;
-  transform: translateX(2px);
+.harper__tab + .harper__tab {
+  border-top: 1px solid var(--line);
 }
-
-.harper__tab-btn.is-active {
-  background: rgba(22, 78, 104, 0.06);
-  border-color: var(--ocean);
-  box-shadow: 0 4px 14px rgba(22, 78, 104, 0.1);
+.harper__tab::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--ocean);
+  transform: scaleY(0);
+  transition: transform 0.3s var(--ease);
 }
-
+.harper__tab:hover {
+  background: #f6f9fa;
+}
+.harper__tab.is-active {
+  background: linear-gradient(90deg, rgba(22, 78, 104, 0.08), rgba(22, 78, 104, 0.02));
+}
+.harper__tab.is-active::before {
+  transform: scaleY(1);
+}
+.harper__tab:focus-visible {
+  outline: 2px solid var(--ocean);
+  outline-offset: -2px;
+}
+.harper__tab-num {
+  font: 600 11px/1 ui-monospace, "SF Mono", Menlo, monospace;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  transition: color 0.2s ease;
+}
+.harper__tab.is-active .harper__tab-num {
+  color: var(--ocean);
+}
 .harper__tab-info {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  flex: 1;
+  min-width: 0;
 }
-
 .harper__tab-kicker {
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
 }
-
 .harper__tab-name {
   font-family: var(--font-head);
   font-size: 15px;
   font-weight: 600;
   color: var(--navy);
 }
-
-.harper__tab-status {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--line);
-  transition: all 0.25s ease;
+.harper__tab-arrow {
+  color: var(--muted);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.3s var(--ease), color 0.2s ease;
   flex-shrink: 0;
 }
-
-.harper__tab-btn.is-active .harper__tab-status {
-  background: var(--ocean);
-  box-shadow: 0 0 8px rgba(22, 78, 104, 0.6);
-  transform: scale(1.2);
+.harper__tab:hover .harper__tab-arrow,
+.harper__tab.is-active .harper__tab-arrow {
+  opacity: 1;
+  transform: none;
+}
+.harper__tab.is-active .harper__tab-arrow {
+  color: var(--ocean);
 }
 
-/* Active Detail Feature Card */
 .harper__detail {
-  background: #ffffff;
-  border: 1px solid var(--line);
-  border-radius: 14px;
+  position: relative;
   padding: 22px;
-  box-shadow: 0 8px 24px rgba(16, 42, 58, 0.05);
-  animation: rise 0.4s var(--ease) both;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 32px -12px rgba(16, 42, 58, 0.14);
+  animation: rise 0.45s var(--ease) both;
 }
-
+.harper__detail-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
 .harper__detail-badge {
-  display: inline-block;
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ocean);
   background: rgba(22, 78, 104, 0.08);
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin-bottom: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
 }
-
+.harper__detail-count {
+  font: 600 11px/1 ui-monospace, "SF Mono", Menlo, monospace;
+  color: var(--muted);
+}
 .harper__detail-title {
-  font-size: 18px;
+  font-family: var(--font-head);
+  font-size: 19px;
   font-weight: 600;
   color: var(--navy);
-  margin: 0 0 10px 0;
+  margin: 0 0 8px;
 }
-
 .harper__detail-desc {
   font-size: 14px;
   line-height: 1.62;
   color: var(--muted);
-  margin: 0 0 18px 0;
+  margin: 0 0 18px;
 }
-
 .harper__facts-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.harper__fact-card {
-  background: #f8fafc;
+  gap: 1px;
+  margin: 0;
+  background: var(--line);
   border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 10px 12px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.harper__fact-card {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
+  padding: 11px 13px;
+  background: #f8fafb;
 }
-
 .harper__fact-k {
   font-size: 10px;
-  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-weight: 600;
+  color: var(--muted);
 }
-
 .harper__fact-v {
-  font-size: 12px;
+  margin: 0;
+  font-size: 12.5px;
   font-weight: 600;
-  color: var(--navy);
   line-height: 1.35;
+  color: var(--navy);
 }
-
 .harper__official-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 12px 20px;
   width: 100%;
-  border-radius: 8px;
+  padding: 13px 20px;
+  border-radius: 10px;
+  margin-top: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hm-seismic__line,
+  .loc-pulse,
+  .harper__beacon {
+    animation: none;
+  }
 }
 
 /* Executive Insight Cards Grid */
@@ -4023,8 +4380,14 @@ a:hover .read-more .icon-arrow {
   .hero__scroll {
     display: none;
   }
-  .hero__foot {
-    grid-template-columns: 1fr;
+  .hero {
+    align-items: flex-end;
+  }
+  .hero__media::after {
+    background: linear-gradient(0deg, rgba(8, 23, 34, 0.9) 0%, rgba(8, 23, 34, 0.7) 45%, rgba(8, 23, 34, 0) 75%);
+  }
+  .hero__media video {
+    object-position: 70% 30%;
   }
 
   .section-head__title,
@@ -4077,11 +4440,18 @@ a:hover .read-more .icon-arrow {
     margin-bottom: 48px;
   }
   .harper__panel {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px var(--gutter);
+    gap: 20px var(--gutter);
+    align-items: start;
   }
-  .harper__official {
+  .harper__panel-header,
+  .harper__official-btn {
     grid-column: 1 / -1;
+  }
+  .harper__legend-key {
+    margin-left: 0;
+    width: 100%;
   }
   .opportunity__col {
     grid-column: 1 / -1;
@@ -4172,12 +4542,19 @@ a:hover .read-more .icon-arrow {
   .harper__panel {
     grid-template-columns: 1fr;
   }
-  .harper__locator {
+  .harper__locator,
+  .harper__compass,
+  .harper__hud-tag {
     display: none;
   }
-  .m-text--fan,
-  .m-text--contour {
+  .harper__map {
+    border-radius: 16px;
+  }
+  .hm-callout text {
     font-size: 30px;
+  }
+  .hm-depth {
+    font-size: 28px;
   }
   .media--wide {
     aspect-ratio: 4 / 3;
@@ -4263,9 +4640,15 @@ a:hover .read-more .icon-arrow {
   .footer__nav {
     grid-template-columns: 1fr 1fr;
   }
-  .hero__actions .btn,
+  .hero__actions .btn--primary,
   .cta__actions .btn {
     flex: 1 1 100%;
+  }
+  .hero__proof {
+    grid-template-columns: repeat(2, auto);
+  }
+  .hero__proof-item:last-child {
+    grid-column: 1 / -1;
   }
   .intro__stats-grid {
     grid-template-columns: 1fr;

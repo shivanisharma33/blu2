@@ -1,0 +1,1831 @@
+# BluEnergies — inner pages content extraction
+
+Source: https://www.blu-energies.com/ · Extracted 2026-11-16 · 34 inner pages. The homepage is excluded.
+
+Text is copied verbatim from the live HTML: entities are decoded and whitespace is collapsed, nothing else is changed. Links are shown as `[text](url)`, images as `[image] url — alt`, and form controls as `[form …]` lines. Lines under **Unwrapped text** are visible strings that sit outside a paragraph, heading or list on the source page.
+
+## Contents
+
+1. [About Us](#page-1) — `/corporate/about-us/`
+2. [Board & Management](#page-2) — `/corporate/board-management/`
+3. [Corporate Governance](#page-3) — `/corporate/corporate-governance/`
+4. [Overview](#page-4) — `/assets-and-operations/overview/`
+5. [Outlook](#page-5) — `/investors/outlook/`
+6. [Stock Information](#page-6) — `/investors/stock-information/`
+7. [Financials](#page-7) — `/investors/financials/`
+8. [Presentations](#page-8) — `/investors/presentations/`
+9. [News](#page-9) — `/news-and-media/news/`
+10. [In the Media](#page-10) — `/news-and-media/in-the-media/`
+11. [Contact Details](#page-11) — `/contact/contact-details/`
+12. [Request for Information](#page-12) — `/contact/request-for-information/`
+13. [BluEnergies Ltd. Announces Commencement of Trading on the TSX Venture Exchange](#page-13) — `/news-and-media/news/bluenergies-ltd-announces-commencement-of-trading-on-the-tsx-venture-exchange/`
+14. [Legal](#page-14) — `/legal/`
+15. [In the Media](#page-15) — `/news-and-media/in-the-media/deepwater-development-conference-mcedd-2025/`
+16. [AGM](#page-16) — `/investors/agm/`
+17. [BluEnergies Announces Advisory Agreements](#page-17) — `/news-and-media/news/bluenergies-announces-advisory-agreements/`
+18. [BluEnergies Announces Closing of Non-Brokered Private Placement of Units for Gross Proceeds of C$20.7 Million](#page-18) — `/news-and-media/news/bluenergies-announces-closing-of-non-brokered-private-placement-of-units-for-gross-proceeds-of-c207-million/`
+19. [BluEnergies Announces Upsize of Non-Brokered Private Placement of Units for Gross Proceeds of Up to C$20,700,000](#page-19) — `/news-and-media/news/bluenergies-announces-upsize-of-non-brokered-private-placement-of-units-for-gross-proceeds-of-up-to-c20700000-/`
+20. [BluEnergies Announces Non-Brokered Private Placement is Fully Subscribed](#page-20) — `/news-and-media/news/bluenergies-announces-non-brokered-private-placement-is-fully-subscribed/`
+21. [BluEnergies Announces Non-Brokered Private Placement of Units for Gross Proceeds of up to C$10 Million](#page-21) — `/news-and-media/news/bluenergies-announces-non-brokered-private-placement-of-units-for--gross-proceeds-of-up-to-c10-million/`
+22. [BluEnergies and TotalEnergies Progress Operations, Harper Basin, Offshore Liberia](#page-22) — `/news-and-media/news/bluenergies-and-totalenergies-progress-operations-harper-basin-offshore-liberia/`
+23. [BluEnergies Provides Details of Investor Relations Engagements](#page-23) — `/news-and-media/news/bluenergies-provides-details-of-investor-relations-engagements/`
+24. [BluEnergies Announces DTC Eligibility, Engagement of Market Maker and Initiation of Research Coverage](#page-24) — `/news-and-media/news/bluenergies-announces-dtc-eligibility-engagement-of-market-maker-and-initiation-of-research-coverage/`
+25. [BluEnergies Announces Financial Advisory Agreements With Haywood Securities INC. And Canaccord Genuity Corp.](#page-25) — `/news-and-media/news/bluenergies-announces-financial-advisory-agreements-with-haywood-securities-inc-and-canaccord-genuity-corp/`
+26. [BluEnergies Announces Trading on OTCQX Best Market Under the Trading Symbol “BLUGF”](#page-26) — `/news-and-media/news/bluenergies-announces-trading-on-otcqx-best-market-under-the-trading-symbol--blugf/`
+27. [BluEnergies Secures Top Bid in Gulf of America Lease Sale, Engages Independent Houston Firm for Reserve Evaluation](#page-27) — `/news-and-media/news/bluenergies-secures-top-bid-in-gulf-of-america-lease-sale--engages-independent-houston-firm-for-reserve-evaluation/`
+28. [BluEnergies Announces Engagement of Curzio Research, Inc. And Appointment of Doug Allen, Senior Manager of Investor Relations](#page-28) — `/news-and-media/news/bluenergies-announces-engagement-of-curzio-research-inc-and-appointment-of-doug-allen-senior-manager-of-investor-relations/`
+29. [BluEnergies Announces Completion Of Warrant Acceleration](#page-29) — `/news-and-media/news/bluenergies-announces-completion-of-warrant-acceleration/`
+30. [BluEnergies Announces Warrant Expiry Acceleration](#page-30) — `/news-and-media/news/bluenergies-announces-warrant-expiry-acceleration/`
+31. [BluEnergies Announces Shares for Services and Option Grant](#page-31) — `/news-and-media/news/bluenergies-announces-shares-for-services-and-option-grant/`
+32. [TotalEnergies Partners With BluEnergies in Its Harper Basin Fan Play, Offshore Liberia](#page-32) — `/news-and-media/news/totalenergies-partners-with-bluenergies-in-its-harper-basin-fan-play-offshore-liberia/`
+33. [BluEnergies Announces CEO Transition](#page-33) — `/news-and-media/news/bluenergies-announces-ceo-transition/`
+34. [Oil majors snap up West African blocks in hunt for next Brazil](#page-34) — `/news-and-media/in-the-media/oil-majors-snap-up-west-african-blocks-in-hunt-for-next-brazil/`
+
+## Shared site chrome (appears on every inner page)
+
+### Header navigation
+
+[image] https://www.blu-energies.com/_templates/2/source/img/logo.svg — alt: "BluEnergies Ltd. logo"
+↳ link: https://www.blu-energies.com/
+- [Corporate](https://www.blu-energies.com/corporate/about-us/)
+- [About Us](https://www.blu-energies.com/corporate/about-us/)
+- [Board & Management](https://www.blu-energies.com/corporate/board-management/)
+- [Corporate Governance](https://www.blu-energies.com/corporate/corporate-governance/)
+- [Assets & Operations](https://www.blu-energies.com/assets-and-operations/overview/)
+- [Overview](https://www.blu-energies.com/assets-and-operations/overview/)
+- [Investors](https://www.blu-energies.com/investors/outlook/)
+- [Outlook](https://www.blu-energies.com/investors/outlook/)
+- [Stock Information](https://www.blu-energies.com/investors/stock-information/)
+- [Financials](https://www.blu-energies.com/investors/financials/)
+- [Presentations](https://www.blu-energies.com/investors/presentations/)
+- [AGM](https://www.blu-energies.com/investors/agm/)
+- [News & Media](https://www.blu-energies.com/news-and-media/news/)
+- [News](https://www.blu-energies.com/news-and-media/news/)
+- [In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+- [Contact](https://www.blu-energies.com/contact/contact-details/)
+- [Contact Details](https://www.blu-energies.com/contact/contact-details/)
+- [Request for Information](https://www.blu-energies.com/contact/request-for-information/)
+TSXV **BLU**
+[form] action="/search/" method="get"
+[form input] type="search" name="s" placeholder="Search"
+[(no text)]((no href))
+
+### Latest news strip (shown below the content on inner pages)
+
+#### News
+09.14.26
+BluEnergies Announces Advisory Agreements
+↳ link: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-advisory-agreements
+07.23.26
+BluEnergies Announces Closing of Non-Brokered Private Placement of Units for Gross Proceeds of C$20.7 Million
+↳ link: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-closing-of-non-brokered-private-placement-of-units-for-gross-proceeds-of-c207-million
+07.21.26
+BluEnergies Announces Upsize of Non-Brokered Private Placement of Units for Gross Proceeds of Up to C$20,700,000
+↳ link: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-upsize-of-non-brokered-private-placement-of-units-for-gross-proceeds-of-up-to-c20700000-
+
+### Subscribe block
+
+Stay Updated on BluEnergies' Development Journey
+[form] action="/ajax/" method="post"
+[form input] type="text" name="name" placeholder="Name"
+[form input] type="text" name="email" placeholder="Email"
+Oops! Please input a valid email address.
+[button] Submit
+
+### Footer
+
+[image] https://www.blu-energies.com/_templates/2/source/img/logo-white.svg — alt: "BluEnergies Ltd. logo"
+↳ link: https://www.blu-energies.com/
+[(no text)](https://www.linkedin.com/company/bluenergies-ltd) [(no text)](https://www.youtube.com/@BluEnergies) [(no text)](https://x.com/bluenergiesltd?s=11&t=q8C3N9LNh2yRH938qQoROg)
+©2026 BluEnergies Ltd. | [Update Cookie Preferences](#) | Designed & powered by [BLENDER](http://blendermedia.com)
+- [Corporate](https://www.blu-energies.com/corporate/about-us/)
+- [Assets & Operations](https://www.blu-energies.com/assets-and-operations/overview/)
+- [Investors](https://www.blu-energies.com/investors/outlook/)
+- [News & Media](https://www.blu-energies.com/news-and-media/news/)
+- [Contact](https://www.blu-energies.com/contact/contact-details/)
+- [Legal](https://www.blu-energies.com/legal/)
+©2026 BluEnergies Ltd. | [Update Cookie Preferences](#) | Designed & powered by [BLENDER](http://blendermedia.com)
+close
+[form label] I consent
+[form input] type="checkbox" name="consent"
+I agree to and consent to receive news, updates, and other communications by way of commercial electronic messages (including email) from BluEnergies Ltd. I understand I may withdraw consent at any time by clicking the unsubscribe link contained in all emails from BluEnergies Ltd.
+[info@blu-energies.com](mailto:info@blu-energies.com)
+[button] Continue
+
+---
+
+<a id="page-1"></a>
+## 1. About Us
+
+**Page Name:** About Us  
+**Original URL:** https://www.blu-energies.com/corporate/about-us/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - About Us
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - About Us
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/corporate/about-us/
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/corporate-v2.jpg
+### About Us
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+Corporate
+[About Us](https://www.blu-energies.com/corporate/about-us/)
+[Board & Management](https://www.blu-energies.com/corporate/board-management/)
+[Corporate Governance](https://www.blu-energies.com/corporate/corporate-governance/)
+
+**Section 3 — Main content**
+
+BluEnergies Ltd. is a West Africa Deepwater Oil and Gas explorer. High success rates in basin floor fan plays have sparked an exploration boom along the West African Margin.
+[Corporate Video](https://www.youtube.com/watch?v=-ZmxXdsUQsU)
+
+---
+
+<a id="page-2"></a>
+## 2. Board & Management
+
+**Page Name:** Board & Management  
+**Original URL:** https://www.blu-energies.com/corporate/board-management/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - Board & Management
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - Board & Management
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/corporate/board-management/
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/corporate-v2.jpg
+### Board & Management
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+Corporate
+[About Us](https://www.blu-energies.com/corporate/about-us/)
+[Board & Management](https://www.blu-energies.com/corporate/board-management/)
+[Corporate Governance](https://www.blu-energies.com/corporate/corporate-governance/)
+
+**Section 3 — Main content**
+
+#### Board of Directors
+[image] https://www.blu-energies.com/_resources/bios/Craig-Steinke.jpg (CSS background)
+###### Craig Steinke
+CEO and Director
+###### Craig Steinke
+CEO and Director
+Mr. Steinke has a wealth of experience in identifying, successfully developing and financing oil and natural gas exploration and production projects in North America, Africa, Latin America, Europe and Asia, and has successfully held numerous senior executive roles throughout his career.
+Since the inception of BluEnergies in 2021, Mr. Steinke, together with long-time partners, guided the Company through a thorough, proactive, and technology-driven selection process, privately funding its growth prior to the go-public transaction in April 2025.
+[image] https://www.blu-energies.com/_resources/bios/Carol-Law.jpg (CSS background)
+###### Carol Law
+Director
+###### Carol Law
+Director
+Carol Law brings 40 years of experience in the petroleum industry with roles in leadership, strategic decision making, exploration geology, research, and consulting. Carol spent the majority of her technical career developing and applying state of the art petroleum systems technology and leading teams in exploration efforts in over 50 countries around the world with major and independent oil companies including Amoco, BP, Kerr McGee and Anadarko. She has worked in 28 African countries, where she was involved in exploration drilling and international government relations.
+Carol retired in 2011 from her role as Exploration Manager for East Africa and Caribbean at Anadarko Petroleum, where she led the team which discovered the world class gas discovery in the offshore Mozambique Rovuma Basin. Over the last 14 years Carol has had roles as CEO/COO/Board Member, and advisor for a number of small cap oil and gas companies.
+Carol is passionate about being part of a successful world class organization, leading people and working with them to achieve their highest potential, creating effective but efficient business practices, and building business success.
+[image] https://www.blu-energies.com/_resources/bios/Cyrus-Driver.jpg (CSS background)
+###### Cyrus Driver
+Director and Audit Committee Chair
+###### Cyrus Driver
+Director and Audit Committee Chair
+Cyrus is a Chartered Accountant and a retired partner from the firm of Davidson & Company of Vancouver, BC. Prior to March 2002 he was a partner with the accounting firm of Driver Anderson which he co-founded in 1982. Cyrus has over 30 years of accounting experience with public companies; and is and has been the Chief Financial Officer and/or director of a number of junior natural resource companies listed on the Exchange. While providing general accounting and tax services to a wide range of clients, he specializes in managing and servicing publicly traded companies and members of the brokerage community.
+[image] https://www.blu-energies.com/_resources/bios/Don-Crossley.jpg (CSS background)
+###### Don Crossley
+Director
+###### Don Crossley
+Director
+After graduating with a Bachelor of Commerce degree from UBC, Don obtained his Canadian CPA designation and worked for several years with KPMG. He has been involved with a variety of public companies over the past 35 years holding positions as a Director, CEO, and CFO, while also providing management services. Most recently Don has been semi-retired while still providing some services to resource companies.
+
+#### Management
+###### Vivien Chuang
+CFO
+###### Vivien Chuang
+CFO
+Ms. Chuang is a Chartered Professional Accountant with more than fifteen years of experience in the resource and mining sector. She has served as Chief Financial Officer, director and audit committee chair of various public companies listed on the TSX-V and CSE. Her professional experience includes financial reporting, budgeting, equity financing, internal controls and risk management. Ms. Chuang articled with PricewaterhouseCoopers LLP and was a senior manager at a medium sized audit firm.
+###### Michelle Borthwick
+Corporate Secretary
+###### Michelle Borthwick
+Corporate Secretary
+Ms. Borthwick is a corporate finance and governance professional with over 25 years of experience in senior corporate finance and governance roles providing advice and support to various Canadian publicly listed issuers on the Toronto Stock Exchange, TSXV, CSE and OTC markets. She has extensive experience in the areas of equity and debt financings, domestic and cross-border M&A and general corporate and commercial transactions and has provided executive leadership teams with strategic advice and hands-on support in all phases of corporate growth. Additionally, Michelle is well versed in all areas of public company governance, administration and reporting requirements and advises boards and management on best practices. She is the founder and principal of Peakshore Consulting Inc. since January 2013 and Senior Vice President, Corporate Finance of Fiore Management & Advisory Corp. since July 2020. Prior to this time, she was Vice President, Corporate Affairs and Corporate Secretary of Endeavour Mining Corporation (TSX: EDV), one of the world’s leading gold producers and the largest in West Africa.
+[image] https://www.blu-energies.com/_resources/bios/Sergio_Laura.jpg (CSS background)
+###### Sergio Laura
+Vice President, Exploration
+###### Sergio Laura
+Vice President, Exploration
+Sergio is a senior oil & gas exploration executive advisor; he holds a degree in Geological Sciences (Hons.) from the University of Genoa, Italy.
+He spent his entire 40 year international career with the Italian major energy company Eni (formerly AGIP), working and living in: Italy, UK, China, Egypt, Indonesia, India, Poland, Ghana, and Cote d’Ivoire, gradually taking increasing responsibilities as Chief Geologist, Exploration Manager, Sr. Business Advisor, Vice President, Director and since 2006 as Managing Director of several foreign Eni’ subsidiaries in Africa, South Asia, Middle & Far East and Europe. In 2004, he was the Project Manager of the Eni’ Exploration Management System.
+Sergio has gained experience in most oil & gas basins worldwide as a leading member of several exploration new venture and successful project teams: he took part in several major oil & gas discoveries, in Egypt, Indonesia, Mozambique, Ghana, Cote d’Ivoire and in successful E&P business projects as VP Exploration and Business Advisor for the Sub Sahara Africa region.
+He concluded his international career as Managing Director of Eni Cote d’Ivoire and retired, after providing a major contribution to the historical discovery of the Baleine oil & gas deep-water giant field, for which he was also decorated to the merit by the Ivorian Government, in November 2023.
+
+---
+
+<a id="page-3"></a>
+## 3. Corporate Governance
+
+**Page Name:** Corporate Governance  
+**Original URL:** https://www.blu-energies.com/corporate/corporate-governance/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - Corporate Governance
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - Corporate Governance
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/corporate/corporate-governance/
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/corporate-v2.jpg
+### Corporate Governance
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+Corporate
+[About Us](https://www.blu-energies.com/corporate/about-us/)
+[Board & Management](https://www.blu-energies.com/corporate/board-management/)
+[Corporate Governance](https://www.blu-energies.com/corporate/corporate-governance/)
+
+**Section 3 — Main content**
+
+[Anti-Bribery Corruption Policy](https://www.blu-energies.com/_resources/governance/Anti-Bribery_and_Corruption_Policy_Blu_Energies.pdf?v=111611) [Code of Conduct and Ethics](https://www.blu-energies.com/_resources/governance/Code_of_Conduct_and_Ethics_BluEnergies.pdf?v=111611)
+
+#### ESTMA
+[2025 ESTMA Report (Apr 8, 2025 to Sept 30, 2025)](https://www.blu-energies.com/_resources/estma/BLU-ESTMA-Reporting-Jan-3-2026.pdf?v=111611)
+
+---
+
+<a id="page-4"></a>
+## 4. Overview
+
+**Page Name:** Overview  
+**Original URL:** https://www.blu-energies.com/assets-and-operations/overview/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - Overview
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - Overview
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/assets-and-operations/overview/
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/assets-and-operations.jpg
+### Overview
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+Assets & Operations
+[Overview](https://www.blu-energies.com/assets-and-operations/overview/)
+
+**Section 3 — Main content**
+
+BluEnergies Ltd. holds a 35% interest and TotalEnergies holds a 65% interest in Reconnaissance License No. LPRA-003 (the “RL”), in the Harper basin, offshore Liberia. The RL was issued by the Liberia Petroleum Regulatory Authority (“LPRA”) for a duration up to June 30, 2027.
+This RL comprises Blocks LB-26, LB-30, and LB-31, with an areal extent of 8,924 km2 (2.2 million acres), which is ~40% of the Harper basin. The Harper basin contains a Cretaceous **deepwater fan play** analogous to:
+- The 1 to 1.5 billion boe* (in place) Calao discovery (Cote d’Ivoire) and the 0.8 billion boe* Jubilee Field (Ghana) on the same West African Transform
+- The 4+ billion boe* Venus discovery and the 10 billion boe* (in place) Mopane discovery in Namibia
+The Harper basin fan play shares the same source rocks and depositional environment as the 16+ billion bls Stabroek Block in Guyana on the conjugate margin.
+[image] https://www.blu-energies.com/_resources/images/MAP_BluEnergies.png — alt: "BluEnergies Map"
+↳ link: https://www.blu-energies.com/_resources/images/MAP_BluEnergies.png
+Map showing the location of Reconnaissance License No. LPRA – 003; its component Blocks LB-26, LB-30 and LB-31; and the Lead inventory as of April, 2025.
+BluEnergies is positioned in the Harper basin following a proactive, strategy-led, data-intensive evaluation of more than 30 African and South America basins. These Blocks provide BluEnergies a material, high-value, repeatable growth asset and a transformational opportunity for the country of Liberia.
+Based on regional subsurface work and the interpretation of 6,167 km2 of 3D seismic data, significant independently certified unrisked recoverable prospective resource potential has been recognized in six (6) deepwater fans thus far. All of these fans are in Blocks LB-30 and LB-31. As context, a 1 billion boe* recoverable discovery in the Harper basin would rank among offshore Africa’s top 5% (by volume) in the past decade (Westwood, 2024). An assessment of Block LB-26, is underway.
+[image] https://www.blu-energies.com/_resources/images/Fan_Play_image_v2.jpg — alt: "3D Seismic Images of the seven Cretaceous Fan systems"
+↳ link: https://www.blu-energies.com/_resources/images/Fan_Play_image_v2.jpg
+3D Seismic Images of the seven Cretaceous Fan systems identified in BluEnergies’ Harper Basin License (Cenomanian: top; Turonian: bottom)
+[image] https://www.blu-energies.com/_resources/images/Deep_Fan_Play_image_v1.jpg — alt: "Deep Fan Play image"
+↳ link: https://www.blu-energies.com/_resources/images/Deep_Fan_Play_image_v1.jpg
+Development of potential Harper basin discoveries is facilitated by low break-even price thresholds, high NPV/boe, a benign and secure operating environment, proximity to shore (50 km), competitive fiscal and contractual terms, and an accommodating host Government.
+As was the case with the giant Venus discovery in the Orange basin, offshore Namibia, BluEnergies and other Independents continue to play a critical role in unlocking the world’s few remaining billion-barrel deepwater provinces.
+*boe - barrels of oil equivalent
+
+---
+
+<a id="page-5"></a>
+## 5. Outlook
+
+**Page Name:** Outlook  
+**Original URL:** https://www.blu-energies.com/investors/outlook/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - Outlook
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - Outlook
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/investors/outlook/
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/investors-v2.jpg
+### Outlook
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+Investors
+[Outlook](https://www.blu-energies.com/investors/outlook/)
+[Stock Information](https://www.blu-energies.com/investors/stock-information/)
+[Financials](https://www.blu-energies.com/investors/financials/)
+[Presentations](https://www.blu-energies.com/investors/presentations/)
+[AGM](https://www.blu-energies.com/investors/agm/)
+
+**Section 3 — Main content**
+
+The Harper basin, offshore Liberia, is one of the last remaining undrilled West African margin basins containing the prolific deepwater basin floor fan play.
+BluEnergies Ltd. (TSXV: BLU, OTCQX:BLUGF), a Canadian Independent, has identified significant recoverable prospective resource potential in its deepwater Harper basin Blocks LB-30 and LB-31, based on an independent prospective resource report dated March 28, 2025. As context, a Harper basin discovery of even 1 bbo would rank among offshore Africa’s top 5% (by volume) in the past decade.
+These blocks provide BluEnergies with a material, high-impact asset and a potentially transformational opportunity for the country of Liberia.
+Through 2026, BluEnergies and TotalEnergies will be executing a work program designed to build its portfolio, mitigate and diversify risk, and accelerate the selection and drilling of its initial test of the Harper basin deepwater fan play. In January 2026, BluEnergies partnered with TotalEnergies in RL-003 which covers all three blocks (26, 30 & 31) where BLU holds 35% interest and TTE 65% interest.
+
+---
+
+<a id="page-6"></a>
+## 6. Stock Information
+
+**Page Name:** Stock Information  
+**Original URL:** https://www.blu-energies.com/investors/stock-information/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - Stock Information
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - Stock Information
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/investors/stock-information/
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/investors-v2.jpg
+### Stock Information
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+Investors
+[Outlook](https://www.blu-energies.com/investors/outlook/)
+[Stock Information](https://www.blu-energies.com/investors/stock-information/)
+[Financials](https://www.blu-energies.com/investors/financials/)
+[Presentations](https://www.blu-energies.com/investors/presentations/)
+[AGM](https://www.blu-energies.com/investors/agm/)
+
+**Section 3 — Main content**
+
+| 2026-11-13 15:59:05 | Symbol: BLU |
+| **Open** $2.130 | **Volume** 39033 |
+| **Last** $2.070 | **Day Hi** $2.140 |
+| **Change** -0.11 | **Day Low** $2.050 |
+
+---
+
+<a id="page-7"></a>
+## 7. Financials
+
+**Page Name:** Financials  
+**Original URL:** https://www.blu-energies.com/investors/financials/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - Financials
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - Financials
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/investors/financials/
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/investors-v2.jpg
+### Financials
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+Investors
+[Outlook](https://www.blu-energies.com/investors/outlook/)
+[Stock Information](https://www.blu-energies.com/investors/stock-information/)
+[Financials](https://www.blu-energies.com/investors/financials/)
+[Presentations](https://www.blu-energies.com/investors/presentations/)
+[AGM](https://www.blu-energies.com/investors/agm/)
+
+**Section 3 — Main content**
+
+All company reports and financial statements of BluEnergies Ltd. have been approved by the Board of Directors of the Company. The consolidated financial statements have been prepared by management in accordance with International Financial Reporting Standards (IFRS).
+BluEnergies’ regulatory filings can be found on Sedar+ at [BluEnergies Company Reports (sedarplus.ca)](https://www.sedar.com/DisplayCompanyDocuments.do?lang=EN&issuerNo=00008235) or by contacting Investor Relations.
+Insider filings can be found on the [System for Electronic Disclosure by Insiders ("SEDI")](https://www.sedi.ca/sedi/) by searching the Company or specific insiders.
+Investor Relations Contact
+[info@blu-energies.com](mailto:info@blu-energies.com)
+
+---
+
+<a id="page-8"></a>
+## 8. Presentations
+
+**Page Name:** Presentations  
+**Original URL:** https://www.blu-energies.com/investors/presentations/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - Presentations
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - Presentations
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/investors/presentations/
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/investors-v2.jpg
+### Presentations
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+Investors
+[Outlook](https://www.blu-energies.com/investors/outlook/)
+[Stock Information](https://www.blu-energies.com/investors/stock-information/)
+[Financials](https://www.blu-energies.com/investors/financials/)
+[Presentations](https://www.blu-energies.com/investors/presentations/)
+[AGM](https://www.blu-energies.com/investors/agm/)
+
+**Section 3 — Main content**
+
+[Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf?v=111611) [Research Report - March 30, 2026](https://www.blu-energies.com/_resources/reports/Granite-Point-BluEnergies-In-Pursui-of-a-Giant-Resource-in-Offshore-Liberia.pdf?v=111611) [Research Report - June 1, 2026](https://www.blu-energies.com/_resources/reports/Granite-Point-Tectonic-Shift-FOCUS-Report-20260601-C.pdf?v=111611)
+
+---
+
+<a id="page-9"></a>
+## 9. News
+
+**Page Name:** News  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+- 2026
+- 2025
+09.14.26
+BluEnergies Announces Advisory Agreements
+↳ link: https://www.blu-energies.com/bluenergies-announces-advisory-agreements
+07.23.26
+BluEnergies Announces Closing of Non-Brokered Private Placement of Units for Gross Proceeds of C$20.7 Million
+↳ link: https://www.blu-energies.com/bluenergies-announces-closing-of-non-brokered-private-placement-of-units-for-gross-proceeds-of-c207-million
+07.21.26
+BluEnergies Announces Upsize of Non-Brokered Private Placement of Units for Gross Proceeds of Up to C$20,700,000
+↳ link: https://www.blu-energies.com/bluenergies-announces-upsize-of-non-brokered-private-placement-of-units-for-gross-proceeds-of-up-to-c20700000-
+07.09.26
+BluEnergies Announces Non-Brokered Private Placement is Fully Subscribed
+↳ link: https://www.blu-energies.com/bluenergies-announces-non-brokered-private-placement-is-fully-subscribed
+07.09.26
+BluEnergies Announces Non-Brokered Private Placement of Units for Gross Proceeds of up to C$10 Million
+↳ link: https://www.blu-energies.com/bluenergies-announces-non-brokered-private-placement-of-units-for--gross-proceeds-of-up-to-c10-million
+07.06.26
+BluEnergies and TotalEnergies Progress Operations, Harper Basin, Offshore Liberia
+↳ link: https://www.blu-energies.com/bluenergies-and-totalenergies-progress-operations-harper-basin-offshore-liberia
+06.26.26
+BluEnergies Provides Details of Investor Relations Engagements
+↳ link: https://www.blu-energies.com/bluenergies-provides-details-of-investor-relations-engagements
+04.27.26
+BluEnergies Announces DTC Eligibility, Engagement of Market Maker and Initiation of Research Coverage
+↳ link: https://www.blu-energies.com/bluenergies-announces-dtc-eligibility-engagement-of-market-maker-and-initiation-of-research-coverage
+04.16.26
+BluEnergies Announces Financial Advisory Agreements With Haywood Securities INC. And Canaccord Genuity Corp.
+↳ link: https://www.blu-energies.com/bluenergies-announces-financial-advisory-agreements-with-haywood-securities-inc-and-canaccord-genuity-corp
+03.30.26
+BluEnergies Announces Trading on OTCQX Best Market Under the Trading Symbol “BLUGF”
+↳ link: https://www.blu-energies.com/bluenergies-announces-trading-on-otcqx-best-market-under-the-trading-symbol--blugf
+03.19.26
+BluEnergies Secures Top Bid in Gulf of America Lease Sale, Engages Independent Houston Firm for Reserve Evaluation
+↳ link: https://www.blu-energies.com/bluenergies-secures-top-bid-in-gulf-of-america-lease-sale--engages-independent-houston-firm-for-reserve-evaluation
+03.16.26
+BluEnergies Announces Engagement of Curzio Research, Inc. And Appointment of Doug Allen, Senior Manager of Investor Relations
+↳ link: https://www.blu-energies.com/bluenergies-announces-engagement-of-curzio-research-inc-and-appointment-of-doug-allen-senior-manager-of-investor-relations
+03.12.26
+BluEnergies Announces Completion Of Warrant Acceleration
+↳ link: https://www.blu-energies.com/bluenergies-announces-completion-of-warrant-acceleration
+02.10.26
+BluEnergies Announces Warrant Expiry Acceleration
+↳ link: https://www.blu-energies.com/bluenergies-announces-warrant-expiry-acceleration
+01.16.26
+BluEnergies Announces Shares for Services and Option Grant
+↳ link: https://www.blu-energies.com/bluenergies-announces-shares-for-services-and-option-grant
+01.15.26
+TotalEnergies Partners With BluEnergies in Its Harper Basin Fan Play, Offshore Liberia
+↳ link: https://www.blu-energies.com/totalenergies-partners-with-bluenergies-in-its-harper-basin-fan-play-offshore-liberia
+05.08.25
+BluEnergies Announces CEO Transition
+↳ link: https://www.blu-energies.com/bluenergies-announces-ceo-transition
+04.14.25
+BluEnergies Ltd. Announces Commencement of Trading on the TSX Venture Exchange
+↳ link: https://www.blu-energies.com/bluenergies-ltd-announces-commencement-of-trading-on-the-tsx-venture-exchange
+
+---
+
+<a id="page-10"></a>
+## 10. In the Media
+
+**Page Name:** In the Media  
+**Original URL:** https://www.blu-energies.com/news-and-media/in-the-media/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - In the Media
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - In the Media
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/in-the-media/
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### In the Media
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+05.14.26
+SmithWeekly Research Discussion with Craig Steinke, CEO and Doug Allen, Senior Manager, Investor Relations
+↳ link: https://youtu.be/XUNiuHwe3kc
+05.06.26
+Wall Street Unplugged podcast with host, Frank Curzio, and BluEnergies CEO, Craig Steinke
+↳ link: https://www.curzioresearch.com/this-tiny-offshore-driller-is-ahead-of-the-majors-in-the-global-energy-race/
+04.15.26
+The Race to Discover Offshore Oil & Gas Reserves - BNN Bloomberg
+↳ link: https://www.bnnbloomberg.ca/video/shows/commodities/2026/04/15/the-race-to-discover-offshore-oil-gas-reserves/
+02.04.26
+Oil majors snap up West African blocks in hunt for next Brazil
+↳ link: https://www.blu-energies.com/oil-majors-snap-up-west-african-blocks-in-hunt-for-next-brazil
+11.27.24
+Liberia Emerges as Africa's Next Deep-Water Oil Hub - The Vaultz News
+↳ link: https://thevaultznews.com/business/extractives-energy/liberia-emerges-as-africas-next-deep-water-oil-hub/
+11.26.24
+Liberia: Africa's Top Deepwater Hydrocarbon Hotspot - African Energy Council
+↳ link: https://africanenergycouncil.org/liberia-africas-top-deepwater-hydrocarbon-hotspot/
+11.25.24
+Liberia Named Top Destination for Deepwater Hydrocarbon Exploration in Africa - FrontPageAfrica
+↳ link: https://frontpageafricaonline.com/news/liberia-named-top-destination-for-deepwater-hydrocarbon-exploration-in-africa/
+
+---
+
+<a id="page-11"></a>
+## 11. Contact Details
+
+**Page Name:** Contact Details  
+**Original URL:** https://www.blu-energies.com/contact/contact-details/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - Contact Details
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - Contact Details
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/contact/contact-details/
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/contact.jpg
+### Contact Details
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+Contact
+[Contact Details](https://www.blu-energies.com/contact/contact-details/)
+[Request for Information](https://www.blu-energies.com/contact/request-for-information/)
+
+**Section 3 — Main content**
+
+**CANADA**
+Suite 2200 - 885 West Georgia Street
+Vancouver, BC Canada
+V6C 3E8
+**UNITED KINGDOM**
+Level 1, Devonshire House
+One Mayfair Place
+London, UK
+W1J 8AJ
+
+---
+
+<a id="page-12"></a>
+## 12. Request for Information
+
+**Page Name:** Request for Information  
+**Original URL:** https://www.blu-energies.com/contact/request-for-information/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - Request for Information
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - Request for Information
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/contact/request-for-information/
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/contact.jpg
+### Request for Information
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+Contact
+[Contact Details](https://www.blu-energies.com/contact/contact-details/)
+[Request for Information](https://www.blu-energies.com/contact/request-for-information/)
+
+**Section 3 — Main content**
+
+[form] action="index.php" method="post"
+[form label] I am a:
+[form select] name="iama"
+  [option] Potential Investor
+  [option] Analyst
+  [option] Shareholder
+  [option] Journalist
+  [option] Broker
+  [option] Investment Advisor
+  [option] Industry Professional
+[form label] Full Name *
+[form input] type="text" name="full_name" placeholder="Your Name"
+Please enter your full name.
+[form label] Email *
+[form input] type="text" name="email" placeholder="Your Email"
+Please enter a valid email address.
+[form label] Comments
+[form textarea] name="comments" placeholder="Enter your message here"
+[form label] Sign me up for Email List
+[form input] type="checkbox" name="email_list"
+[form label] I agree to and consent to receive news, updates, and other communications by way of commercial electronic messages (including email) from BluEnergies Ltd. I understand I may withdraw consent at any time by clicking the unsubscribe link contained in all emails from BluEnergies Ltd.
+[info@blu-energies.com](mailto:info@blu-energies.com)
+[button] Submit
+
+---
+
+<a id="page-13"></a>
+## 13. BluEnergies Ltd. Announces Commencement of Trading on the TSX Venture Exchange
+
+**Page Name:** BluEnergies Ltd. Announces Commencement of Trading on the TSX Venture Exchange  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-ltd-announces-commencement-of-trading-on-the-tsx-venture-exchange/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-ltd-announces-commencement-of-trading-on-the-tsx-venture-exchange
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Ltd. Announces Commencement of Trading on the TSX Venture Exchange
+**April 14, 2025**
+April 14, 2025 – Vancouver, BC – BluEnergies Ltd. (formerly Acme Gold Company Limited) (“ **BluEnergies** ” or the “ **Company** ”) ( **TSXV: BLU) ** is pleased to announce that it has received final listing approval, and effective at the opening of trading today, Monday, April 14, 2025, the common shares of the Company will commence trading on the TSX Venture Exchange (“ **TSXV** ”) under ticker symbol “BLU” and CUSIP number 095922010.
+The Company’s transfer agent is Endeavor Trust Corporation.
+**About BluEnergies**
+BluEnergies is an international oil and gas exploration and development company with a focus on operations offshore of the Republic of Liberia. For further information on BluEnergies, please refer to the Company’s profile on SEDAR+ ( [www.sedarplus.ca](http://www.sedarplus.ca/)).
+For further information, please contact:
+James Deckelman, Chief Executive Officer
+Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+
+---
+
+<a id="page-14"></a>
+## 14. Legal
+
+**Page Name:** Legal  
+**Original URL:** https://www.blu-energies.com/legal/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - Legal
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - Legal
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/legal/
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/hero_home.jpg
+### Legal
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+Legal
+
+**Section 3 — Main content**
+
+#### PRIVACY POLICY
+BluEnergies Ltd. (“BluEnergies”, the “Company”, “we”, “us” or “our”) values and respects your privacy. This privacy policy (this “Privacy Policy”) sets out the manner in which we collect, use, disclose and otherwise manage personal information. This Privacy Policy describes that personal information may be collected from you via our website and its related external services, and how we use that information. By accessing www.blu-energies.com you agree to be bound by our terms and conditions of this Privacy Policy, as well as the Terms of Use set out elsewhere on this website.
+If you do not agree with the Company’s policies and practices, you may choose not to provide your personal information to the Company. BluEnergies is committed to regular review of this Privacy Policy. Any changes will be posted. We encourage you to check the website periodically for any such postings. Your continued use of the site or submission of information will be deemed your conclusive acceptance of the updated Privacy Policy.
+When you visit our website, certain information about you may be collected, whether automatically through technology tools that make our website effective, or to accommodate certain requests which you make.
+We only collect and use your personal information when we have a lawful basis for doing so. This lawful basis includes when you provide us with express consent, when consent is implied, or when we have a legal or contractual obligation to collect or process the information.
+Certain collection, use and disclosure of your personal information that we wish to make are specifically set out in this Privacy Policy. Be sure to review this Privacy Policy since, by providing your personal information to us, you are consenting to the collection, use and disclosure of your personal information in accordance with the terms of this Privacy Policy.
+You may change or withdraw your consent at any time on reasonable notice to us, subject to pre-existing legal and contractual obligations, by contacting us as set out under the heading “Contact” in this Privacy Policy. If you withdraw certain consents, it may limit the manner in which you can interact with the Company. For clarity, your ability to change or withdraw consent is not absolute. The Company reserves the right to continue handling your personal information in those circumstances required or permitted by law despite a change or withdrawal of consent.
+##### COLLECTION AND USE OF PERSONAL INFORMATION
+**GENERAL INQUIRIES**
+When you contact us with an inquiry, we collect the contact information you provide, such as your name, title, telephone number and email address. We use this information to respond to your inquiry.
+**INVESTOR RELATIONS**
+When you contact us regarding investment related inquiries, we collect the contact information you provide, such as your name, title, telephone number and email address. We use this information to respond to your inquiry and to provide you with requested materials or information.
+**NEWSLETTER**
+When you subscribe to receive our newsletter by email, we collect the contact information you provide, such as your name and email address. We use this information to add you to our newsletter email distribution list.
+##### DISCLOSURE AND SHARING OF PERSONAL INFORMATION
+**GENERAL PRIVACY STATEMENT**
+We will not disclose, trade, rent or sell your personal information except as set out herein or as otherwise required or permitted by law.
+**SERVICE PROVIDERS**
+Because we work with third-party service providers in various aspects of our business (including operating this website, website security, information collection and storage, etc.), the Company may use these third-party vendors to store and process personal information on its behalf. In these cases, your personal information may be made available to these third parties. In all cases where third parties may be able to access your information, we will continue to protect it through contractual arrangements. Our service providers are provided the information they require to perform their designated function and are not authorized to use or disclose personal information for their own purposes. We may store your information in electronic databases or email boxes hosted by us or our third-party service providers for periods of time and with safeguards that we believe are reasonable depending on the nature and sensitivity of the information. Access to the information is restricted in accordance with our security protocols, and storage of the information is governed by our agreements with the service providers. Please note that some personal information may be stored on servers outside of Canada.
+**LEGAL/COMPLIANCE**
+BluEnergies and its service providers may provide your personal information in response to a search warrant or other legally valid inquiry or order, or to another organization for the purposes of investigating a breach of an agreement or contravention of law or detecting, suppressing or preventing fraud, or as otherwise required or permitted by applicable Canadian, U.S. or other applicable law. Your personal information may also be disclosed where necessary for the establishment, exercise or defence of legal claims and to investigate or prevent actual or suspected loss or harm to persons or property, or when disclosing such information is reasonably required to protect the Company, our property, this website or the safety of visitors or others.
+**SALE OF BUSINESS**
+Personal information may be provided to third parties in connection with a merger or sale (including transfers made as part of insolvency or bankruptcy proceedings) involving all or part of BluEnergies or as part of a corporate reorganization or stock sale or other change in corporate control, including for the purpose of determining whether to proceed or continue with such transaction or business relationship.
+**SAFEGUARDS AND RETENTION**
+We have implemented reasonable administrative, technical and physical measures in an effort to safeguard the personal information in our custody and control against theft, loss and unauthorized access, use, modification and disclosure. We restrict access to your personal information on a need-to-know basis to employees and authorized service providers who require access to it to fulfil their job requirements.
+For legal and business purposes we may retain your personal information for as long as it is reasonably needed. Upon expiry of the appropriate retention period, bearing in mind our reasonable legal and business requirements, your personal information may be destroyed in a secure manner or made anonymous.
+**ACCESS TO PERSONAL INFORMATION**
+In certain circumstances, you may have the right to access, update and correct inaccuracies in your personal information in our custody and control, subject to certain exceptions prescribed by law. If personal information is incorrect or incomplete, you may have the right to request for it to be corrected or supplemented. You may have the right to request that your data is deleted if the processing of such data has no legal basis, or if the legal basis has ceased to apply. The same applies if the purpose behind the data processing activity has lapsed or ceased to be applicable for other reasons. However, certain operational, legal and/or statutory retention requirements must be observed. We may request certain personal information for the purposes of verifying the identity of the individual seeking access to their personal information records.
+You may also have the right to data portability i.e. you may have the right to request us to provide you, or a third party, with a copy of your personal information in a structured, commonly used machine-readable format. In the very limited circumstances where we may be processing personal information based on your consent, you may withdraw that consent at any time. This does not affect the lawfulness of processing which took place prior to its withdrawal.
+If you wish to exercise any of the foregoing rights or are unhappy with how we process personal information, we ask you to contact the Company so that we can rectify the situation.
+**PROTECTION OF YOUR PERSONAL INFORMATION**
+BluEnergies considers personal information provided by you to be private and confidential and accordingly we treat it with care. We will not collect, use or disclose your personal information for any purpose other than those identified in this Privacy Policy, except with your consent or where permitted by law to do so, we will protect the privacy and confidentiality of your personal information with reasonable security safeguards that are appropriate to the sensitivity level of the information, and we will keep your personal information as accurate and up to date as is necessary for the purposes identified in this Privacy Policy.
+**AUTOMATED COLLECTION OF DATA**
+Your use of BluEnergies’ website may result in the automated collection of data that can potentially be used to identify you. An automated collection method that may be used is “cookies”. Cookies are types of browser data that may include Internet Protocol (IP) addresses, WIFI details and user data captured when accessing systems or websites. Cookies provide system analytics and assist organizations with site maintenance or operational system requirements. With most internet browsers, you can erase cookies from your computer hard drive, block all cookies, or receive a warning before a cookie is stored. Please refer to your browser instructions or help screen to learn more about these functions.
+**SOCIAL MEDIA**
+Our website contains, or may contain in the future, links to third-party websites, including social media platforms such as Facebook, Twitter, Instagram and LinkedIn. If you click on one of those links, you will be taken to third-party websites we do not control. This Privacy Policy does not apply to the information practices of any third-party websites. We recommend that you review the privacy statements of other websites carefully. We are not responsible for the personal information practices of such third-party websites.
+**CONTACT**
+If you have any requests, questions or comments about your personal information or this Privacy Policy, you may contact us in one of the following ways:
+**E-mail**: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Phone Number**: [l]
+**Mail:**
+NORTH AMERICA
+Suite 2200 - 885 West Georgia Street Vancouver, BC Canada V6C 3E8
+EUROPE
+Level 1, Devonshire House One Mayfair Place London, UK W1J 8AJ
+
+#### TERMS OF USE
+This website is the property of BluEnergies Ltd. (“BluEnergies”, the “Company”, “we”, “us” or “our”). We encourage you to use this website and information contained herein for your personal, non-commercial use. By accessing or using www.blu-energies.com, you accept the following terms and conditions (“Terms of Use”). Please read these Terms of Use carefully before using this website. BluEnergies may update these Terms of Use at any time without notice. By accessing or using this website after such revisions are posted, you agree to the revised Terms of Use. Visitors should check this posting regularly to review these Terms of Use and any revisions.
+**NO SOLICITATION**
+The information provided through this website is intended solely for the general knowledge of visitors to this website and does not constitute an offer or a solicitation of an offer for the purchase or sale of any shares or other securities of BluEnergies in any jurisdiction. Content available on or through this website is not intended to modify, qualify, supplement or amend the documents that BluEnergies has made available to the public pursuant to the requirements of applicable corporate and securities legislation and regulations and should not be used for the purpose of making investment decisions concerning BluEnergies’ securities. Official versions of BluEnergies’ public disclosure documents, which should be considered by prospective investors, are available on SEDAR+ at www.sedarplus.ca.
+**COPYRIGHT AND TRADEMARKS**
+Any and all information, content, reports, data, databases, graphics, designs, icons, interfaces, web pages, text, files, software, product names, company names, trademarks, logos and trade names contained on this website (collectively, the “content”), including the manner in which the content is presented or appears and all information relating thereto, are the property of BluEnergies or its licensors. By accessing or using this website, you agree and acknowledge BluEnergies’ rights in this website and the content. This website and the content are protected by copyright, trademark and other proprietary rights of BluEnergies or third parties. Except as expressly permitted herein, no portion of this website or the content, including trademarks, logos and service marks, may be reproduced in any form or by any means without prior written permission from BluEnergies or the applicable third party. Any unauthorized retransmission, republication or other copying or modification of content posted on this website, including trademarks, trade names and service marks, may violate federal, common or civil law, trade-mark law and copyright law, and may result in legal action.
+**GENERAL USE**
+BluEnergies makes no representation that this website or services or information referenced on this website are appropriate or available for use in any specific location and access to this website where the contents are contrary to local laws, is strictly prohibited. Accessing this website is at your own risk and you shall be responsible for compliance with any applicable local, national, or international laws. The information provided on this website is intended to be general in nature and you should not rely on it to make any decisions. Any decisions or actions based on information contained on this website or any other sites linked to this one, are your exclusive responsibility. BluEnergies does not warrant or make any representations or claims as to the validity, correctness, currency or otherwise of the information provided at this website, or at any links to this website. Information on this website may contain typographical errors or technical inaccuracies. BluEnergies shall not be liable or responsible for any claim or damage, whether direct, special, indirect or consequential, arising out of the interpretation, reliance upon or other use, authorized or unauthorized, of such information. Information may be changed or updated without notice and your continued access to or use of this website after such changes indicates
+your acceptance of these Terms of Use as modified. It is your responsibility to review these Terms of Use regularly. BluEnergies may also make improvements and changes to the information on this website at any time without notice.
+**PERMITTED USE**
+Provided you are in compliance with these Terms of Use, BluEnergies hereby grants a personal, non-exclusive and non-transferable license to you to access, read, download and print the content for the sole purpose of viewing the content. Such license is revocable at BluEnergies’ sole option and no other use of the content is authorized. In consideration of this authorization, you covenant: (i) not to remove any copyright, trademark or other proprietary notices from any downloaded or printed copy of the content and (ii) that you will explicitly acknowledge BluEnergies as the provider of the content. Except as specified above, nothing contained herein shall be construed as conferring to you by implication any license or right under or to any intellectual property, including patents, trademarks or copyrighted materials of BluEnergies or of any third party.
+You agree not to use this website: in any way that violates any applicable federal, provincial, state, local or international law or regulation (including, without limitation, any laws regarding the export of data or software to and from Canada or other countries); to transmit, or procure the sending of, any advertising or promotional material, including any “junk mail”, “chain letter” or “spam” or any other similar solicitation; to impersonate or attempt to impersonate the Company, a Company employee, or any other person or entity (including, without limitation, by using e-mail addresses or screen names associated with any of the foregoing); or to engage in any other conduct that restricts or inhibits anyone’s use or enjoyment of this website, or which, as determined by us, may harm the Company or users of this website or expose them to liability.
+**LINKS TO THIRD PARTY SITES**
+This website may contain links to other Web Sites (“Linked Sites”). The Linked Sites are not under the control of, and the Company is not responsible for, the contents of any Linked Site, including without limitation any link contained in a Linked Site, or any changes or updates to a Linked Site. BluEnergies is not responsible for webcasting or any other form of transmission received from any Linked Site. BluEnergies is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement by the Company of this website or any association with its operators.
+**DISCLAIMER**
+THIS WEBSITE AND THE CONTENT ARE PROVIDED “AS IS” WITHOUT WARRANTY OR CONDITION OF ANY KIND. USE OF THIS WEBSITE OR THE CONTENT IS AT YOUR OWN RISK. BLUENERGIES DOES NOT MAKE ANY REPRESENTATIONS, WARRANTIES OR CONDITIONS ABOUT THE QUALITY, ACCURACY, RELIABILITY, COMPLETENESS, CURRENCY, OR TIMELINESS OF THIS WEBSITE OR THE CONTENT. BLUENERGIES DOES NOT ASSUME ANY RESPONSIBILITY FOR ANY ERRORS, OMISSIONS OR INACCURACIES IN THIS WEBSITE OR THE CONTENT.
+TO THE FULLEST EXTENT PERMITTED BY LAW, BLUENERGIES DISCLAIMS ALL WARRANTIES, REPRESENTATIONS AND CONDITIONS OF ANY KIND WITH RESPECT TO THIS WEBSITE AND THE CONTENT WHETHER EXPRESS, IMPLIED OR COLLATERAL, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT OR THAT THIS WEBSITE OR THE CONTENT ARE OR WILL BE ERROR-FREE OR WILL OPERATE WITHOUT INTERRUPTION. IN NO EVENT WILL BLUENERGIES BE LIABLE, WHETHER BASED ON WARRANTY, CONTRACT, TORT, NEGLIGENCE, OR STRICT
+LIABILITY, FOR ANY DAMAGES OR ANY KIND (INCLUDING, WITHOUT LIMITATION, DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, EXEMPLARY, PUNITIVE DAMAGES, LOST PROFITS, LOSS OF USE, LOSS OF DATA, PERSONAL INJURY, FINES, FEES, PENALTIES OR OTHER LIABILITIES), WHETHER OR NOT BLUENERGIES IS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, RESULTING FROM THE USE OF, OR THE INABILITY TO MAKE USE OF, THIS WEBSITE OR THE CONTENT.
+**INDEMNITY**
+Visitors to this website agree at all times to indemnify, defend and hold harmless BluEnergies from all claims, liabilities, damages, costs, expenses, losses (including reasonable legal fees and expenses), sustained, incurred, or paid by BluEnergies directly or indirectly in respect of: (i) any information or other content a visitor provides on or through this website or which is sent to BluEnergies by email or other correspondence; or (ii) a visitor’s use or misuse of the content of this website, including, without limitation, infringement claims.
+**STOCK QUOTES**
+All quotes are delayed at least 20 minutes unless otherwise stated and are believed to be accurate but are not guaranteed or warranted by the TSX Venture Exchange or BluEnergies. Visitors and potential investors should seek independent information and advice from qualified professionals prior to making an investment.
+**FORWARD-LOOKING INFORMATION ADVISORY**
+This website contains certain forward-looking information and forward-looking statements (collectively referred to herein as “forward-looking statements”) within the meaning of applicable Canadian securities laws. Forward-looking statements and other information are based on the Company’s current expectations, estimates, projections and assumptions that were made by the Company in light of information available at the time the statement was made and consider the Company’s experience and its perception of historical trends, including expectations and assumptions concerning: the accuracy of prospective resources estimates; commodity prices and interest and foreign exchange rates; the performance of assets and equipment; capital efficiencies and cost-savings; applicable laws and government policies; future exploration and development operations; the sufficiency of budgeted capital expenditures in carrying out planned activities; the availability and cost of labour, services and infrastructure; the satisfaction by third parties of their obligations to the Company; the development and execution of the company’s business plan; and the receipt, in a timely manner, of regulatory and third-party approvals. All statements and information that address expectations or projections about the future, and other statements and information about the Company’s strategy for growth, expected and future expenditures or investment decisions, commodity prices, costs, schedules, prospective resource volumes, operating and financial results, future financing and capital activities, and the expected impact of future commitments are forward-looking statements. Some of the forward-looking statements may be identified by words such as “objective”, “option”, “targets”, “estimates”, “anticipated”, “extendable”, “plans”, “goal”, “strategy”, “strive”, “expects”, “proposed”, “intention”, “continue”, “may”, “will”, “opportunity”, “pursuing”, “projected”, “prospective”, “potential”, “recoverable”, “believes” and variations of such words and similar expressions.
+Forward-looking statements are not guarantees of future performance and involve a number of risks and uncertainties, some that are similar to other oil and gas companies and some that are unique to BluEnergies. BluEnergies’ actual results may differ materially from those expressed or implied by its forward-looking statements, so users are cautioned not to place undue reliance on them. Risks, uncertainties and other factors that could influence the financial and operating performance of BluEnergies include, but are not limited to, changes in general economic, market
+and business conditions, such as commodity prices and interest rates; fluctuations in supply and demand for BluEnergies’ products; the successful and timely implementation of capital projects, including growth projects; competitive actions of other companies, including increased competition from other oil and gas companies or from companies that provide alternative sources of energy; labour and material shortages; actions by government authorities, including the imposition or reassessment of taxes or changes to fees and royalties, and changes in environmental and other regulations; political uncertainty; the ability and willingness of parties with whom we have material relationships to perform their obligations to us; the occurrence of unexpected events such as fires, equipment failures and other similar events affecting BluEnergies or other parties whose operations or assets directly or indirectly affect BluEnergies; our ability to find new oil and gas resources and reserves that can be developed economically or at all; the accuracy of BluEnergies’ reserves, resources and future production estimates; the cost of compliance with current and future environmental and corporate laws; risks and uncertainties associated with closing a transaction for the purchase or sale of an oil and gas property, including estimates of the final consideration to be paid or received, and the receipt of any required regulatory or other third-party approvals outside of BluEnergies’ control that are customary to transactions of this nature; the accuracy of cost estimates, some of which are provided at the conceptual or other preliminary stage of projects and prior to commencement or conception of the detailed engineering that is needed to reduce the margin of error and increase the level of accuracy; the ability to secure adequate product transportation; and risks associated with existing and potential future lawsuits and regulatory actions. The foregoing important factors are not exhaustive.
+**JURISDICTION**
+BluEnergies and this website (excluding Linked Sites or other third-party content) are based in British Columbia, Canada. The use of this website is governed by the laws of the Province of British Columbia and the federal laws of Canada. Any dispute arising out of the use of this website or these Terms of Use shall be governed by the laws of the Province of British Columbia and the federal laws of Canada applicable therein and shall be treated in all respects as a British Columbia contract without reference to the principles of conflicts of law.
+In the event of a dispute, visitors to this website agree to submit to the exclusive jurisdiction of the courts of the Province of British Columbia and the federal courts of Canada. If any part of these Terms of Use is held to be invalid or unenforceable, the balance of these Terms of Use shall continue to have full force and effect.
+**GENERAL**
+These Terms of Use, including any documents referenced herein, constitute the entire agreement between BluEnergies and you pertaining to the subject matter hereof and supersedes all prior or contemporaneous communications and proposals, whether electronic, oral or written, between you and BluEnergies with respect to this website. A printed version of these Terms of Use and of any notice given in electronic form shall be admissible in judicial or administrative proceedings based upon or relating to these Terms of Use to the same extent and subject to the same conditions as other business documents and records originally generated and maintained in printed form. The Company’s failure to insist upon or enforce strict performance of any provision of these Terms of Use shall not be construed as a waiver of any provisions or right. If any of the provisions contained in these Terms of Use are determined to be void, invalid or otherwise unenforceable by a court of competent jurisdiction, such determination shall not affect the remaining provisions contained herein.
+
+---
+
+<a id="page-15"></a>
+## 15. In the Media
+
+**Page Name:** In the Media  
+**Original URL:** https://www.blu-energies.com/news-and-media/in-the-media/deepwater-development-conference-mcedd-2025/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - In the Media
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - In the Media
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/in-the-media/deepwater-development-conference-mcedd-2025
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### In the Media
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+
+---
+
+<a id="page-16"></a>
+## 16. AGM
+
+**Page Name:** AGM  
+**Original URL:** https://www.blu-energies.com/investors/agm/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - AGM
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - AGM
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/investors/agm/
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/investors-v2.jpg
+### AGM
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+Investors
+[Outlook](https://www.blu-energies.com/investors/outlook/)
+[Stock Information](https://www.blu-energies.com/investors/stock-information/)
+[Financials](https://www.blu-energies.com/investors/financials/)
+[Presentations](https://www.blu-energies.com/investors/presentations/)
+[AGM](https://www.blu-energies.com/investors/agm/)
+
+**Section 3 — Main content**
+
+#### AGM Materials
+The Annual General Meeting of Shareholders of BluEnergies Ltd. will be held on June 23, 2026 at 11:00am PST.
+[Notice of Meeting & Information Circular](https://www.blu-energies.com/_resources/agm/BLU-NOM-Information-Circular.pdf?v=111611) [Proxy](https://www.blu-energies.com/_resources/agm/BLU-Proxy.pdf?v=111611) [Financial Statement Return Card](https://www.blu-energies.com/_resources/agm/BLU-Return-Card.pdf?v=111611)
+
+---
+
+<a id="page-17"></a>
+## 17. BluEnergies Announces Advisory Agreements
+
+**Page Name:** BluEnergies Announces Advisory Agreements  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-announces-advisory-agreements/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-advisory-agreements
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Announces Advisory Agreements
+VANCOUVER, BC, September 14, 2026 /CNW/ - BluEnergies Ltd. (TSXV: BLU | OTCQX: BLUGF | F: 66E) ("BLU" or the "Company") announces the extension of the Financial Advisory Agreement with Canaccord Genuity Corp. (" **Canaccord** ") and an amendment to the Financial Advisory Agreement with Haywood Securities Inc. (“ **Haywood** ”).
+**Extension of Financial Advisory Agreement with Canaccord**
+Further to its news release dated April 16, 2026, the Company has mutually agreed with Canaccord to extend the term of their strategic advisory services agreement (the " **Canaccord Advisory Agreement** ") by an additional three (3) months, expiring December 14, 2026. Subject to the acceptance of the TSXV, the Company will issue to Canaccord 125,000 Common Shares at a deemed price of C$2.30 per share and 125,000 common share purchase warrants, each exercisable into one Common Share at a price of C$2.30 for a period of twenty-four (24) months from the date of the Canaccord Advisory Agreement, expiring April 15, 2028. The Company will also settle the C$60,000 consulting fee payable for the initial three (3) month term of the Canaccord Advisory Agreement through the issuance of 26,087 Common Shares at a deemed price of C$2.30 per share, and as of today’s date to December 14, 2026 will continue to pay Canaccord a monthly consulting fee of C$20,000, plus applicable taxes, payable in arrears and settled in Common Shares at the closing price on the date immediately prior to issuance. Canaccord is at arm’s length to the Company. All securities issued will be subject to a hold period of four months and one day from the date of issuance in accordance with applicable securities laws.
+**Amendment to Haywood Financial Advisory Agreement**
+The Company further announces that it has entered into an amendment (the " **Amended Agreement** ") to its advisory agreement (the “ **Haywood Advisory Agreement** ”) with Haywood Securities Inc. (“ **Haywood** ”) previously announced on April 16, 2026 pursuant to which the Company has agreed to issue to Haywood 150,000 common shares of the Company (the " **Rendered Services Shares** ") at a deemed price of $2.30 per share, and 150,000 common share purchase warrants (the " **Rendered Services Warrants** ") in recognition of certain corporate finance advisory services (the “ **Rendered Services** ”) provided by Haywood to the Company outside the scope of the Haywood Advisory Agreement. Each Advisory Warrant is exercisable to acquire one common share of the Company at a price of $3.00 per share for a period of thirty-six (36) months from the date of the Amended Agreement. The issuance of the Advisory Shares and Advisory Warrants remains subject to the approval of the TSX Venture Exchange, and all securities issued will be subject to a statutory hold period of four months and one day from the date of issuance in accordance with applicable Canadian securities laws. Haywood is at arm’s length to the Company.
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian based oil and gas exploration and development company focused on offshore West Africa. The Company has recently partnered with TotalEnergies to explore its basin floor fan plays in Blocks LB-26, LB-30, and LB-31 covering an area of approximately 8,924 square kilometers (~2.2 million acres) located in the Harper Basin, in the deep-water offshore Liberia. Additionally, the Company recently acquired a previously discovered and tested sand channel play offshore Louisiana in the shallow water Gulf of America. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+Craig Steinke, Chief Executive Officer
+Investor Relations Inquiries:
+Doug Allen, Senior Manager, Investor Relations
+Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+**Cautionary Note Regarding Forward-Looking Information**
+Certain statements made and information contained in this news release constitute "forward-looking information" within the meaning of applicable securities legislation ("forward-looking information"). Generally, this forward-looking information can, but not always, be identified by use of forward-looking terminology such as "plans", "expects" or "does not expect", "is expected", "budget", "scheduled", "estimates", "forecasts", "intends", "anticipates" or "does not anticipate", or "believes", or variations of such words and phrases or statements that certain actions, events, conditions or results "will", "may", "could", "would", "might" or "will be taken", "occur" or "be achieved" or the negative connotations thereof.
+All statements other than statements of historical fact may be forward-looking information. Forward-looking information is necessarily based on estimates and assumptions that are inherently subject to known and unknown risks, uncertainties and other factors that may cause the actual results, level of activity, performance or achievements of the Company to be materially different from those expressed or implied by such forward-looking information.
+There can be no assurance that such statements will prove to be accurate, as the Company's actual results and future events could differ materially from those anticipated in this forward-looking information as a result of the factors discussed in the "Risk Factors" section in the Company's most recent MD&A available under the Company's profile at [www.sedarplus.ca](http://www.sedarplus.ca).
+Although the Company has attempted to identify important factors that would cause actual results to differ materially from those contained in forward-looking information, there may be other factors that cause results not to be as anticipated, estimated or intended. The forward-looking information contained in this news release is based on information available to the Company as of the date of this news release. There can be no assurance that such statements will prove to be accurate, as actual results and future events could differ materially from those anticipated in such statements. All of the forward-looking information contained in this news release is qualified by these cautionary statements. Readers are cautioned not to place undue reliance on forward-looking information due to the inherent uncertainty thereof. Except as required under applicable securities legislation and regulations applicable to the Company, the Company does not intend, and does not assume any obligation, to update this forward-looking information.
+
+---
+
+<a id="page-18"></a>
+## 18. BluEnergies Announces Closing of Non-Brokered Private Placement of Units for Gross Proceeds of C$20.7 Million
+
+**Page Name:** BluEnergies Announces Closing of Non-Brokered Private Placement of Units for Gross Proceeds of C$20.7 Million  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-announces-closing-of-non-brokered-private-placement-of-units-for-gross-proceeds-of-c207-million/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-closing-of-non-brokered-private-placement-of-units-for-gross-proceeds-of-c207-million
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Announces Closing of Non-Brokered Private Placement of Units for Gross Proceeds of C$20.7 Million
+VANCOUVER, BC, July 23, 2026 /CNW/ - BluEnergies Ltd. (TSXV: BLU | OTCQX: BLUGF | F: 66E) ("BLU" or the "Company") is pleased to announce that, further to its news releases dated July 9, 2026 and July 21, 2026, it has closed its previously announced non-brokered private placement (the "Offering"). The Company issued 9,202,027 units of the Company (each, a "Unit") at a price of C$2.25 per Unit for aggregate gross proceeds of C$20,704,560.75.
+Each Unit consists of one common share of the Company (each, a "Common Share") and one common share purchase warrant (each, a "Warrant"). Each Warrant entitles the holder to purchase one additional Common Share at an exercise price of C$3.00 for a period of three years from the closing date, expiring July 23, 2029.
+The Company intends to use the net proceeds from the Offering for the exploration and advancement of the Company’s assets and for working capital and general corporate purposes.
+In connection with the Offering, the Company paid finder's fees to eligible arm's-length parties in accordance with the policies of the TSX Venture Exchange (the "TSXV"), consisting of a cash commission of C$1,005,683.85 equal to 6% of the gross proceeds raised from subscribers introduced by the finder and 446,970 finder's warrants (the “Finder’s Warrants”) equal to 6% of the securities sold to such subscribers. Each Finder's Warrant is exercisable into one Common Share at a price of C$3.00 until July 23, 2029 and is non-transferrable.
+All securities issued pursuant to the Offering, including the Common Shares issuable on exercise of the Warrants and the Finder’s Warrants, are subject to a statutory hold period of four months and one day from the closing date, expiring November 24, 2026, in accordance with applicable Canadian securities legislation.
+The Offering remains subject to the final acceptance of the TSXV.
+Following completion of the Offering, the Company has 82,154,849 Common Shares issued and outstanding. No new Control Person (as defined in the policies of the TSXV) was created as a result of the Offering. No finder’s fee was paid and no Finder’s Warrants were issued in connection with the portion of the Offering subscribed for by insiders of the Company.
+**Related Party Transaction Disclosure**
+Certain insiders of the Company subscribed for an aggregate of 192,000 Units under the Offering for aggregate gross proceeds of C$432,000, representing approximately 2.1% of the Offering. Participation by insiders in the Offering constitutes a "related party transaction" as defined under Multilateral Instrument 61-101 – Protection of Minority Security Holders in Special Transactions ("MI 61-101") and Policy 5.9 of the TSXV.
+The Company is relying on the exemptions from the formal valuation and minority shareholder approval requirements of MI 61-101 contained in sections 5.5(a) and 5.7(1)(a) of MI 61-101 in respect of such insider participation, as neither the fair market value of the subject matter of, nor the fair market value of the consideration for, the transaction, insofar as it involves interested parties, exceeds 25% of the Company’s market capitalization, in each case as determined in accordance with MI 61-101.
+The Company did not file a material change report in respect of the related party transaction at least 21 days before the closing of the Offering, as the details of the Offering and the participation of insiders of the Company were not settled until shortly prior to closing, and the Company deemed it reasonable in the circumstances to close the Offering on an expedited basis in order to obtain the proceeds thereof as soon as practicable.
+This news release does not constitute an offer to sell or a solicitation of an offer to buy nor shall there be any sale of any of the securities in any jurisdiction in which such offer, solicitation or sale would be unlawful, including any of the securities in the United States of America. The securities have not been and will not be registered under the United States Securities Act of 1933, as amended (the "1933 Act") or any state securities laws and may not be offered or sold within the United States or to, or for account or benefit of, U.S. Persons (as defined in Regulation S under the 1933 Act) unless registered under the 1933 Act and applicable state securities laws, or an exemption from such registration requirements is available.
+**Extension of Financial Advisory Agreement with Haywood Securities Inc.**
+The Company further announces that, further to its news release dated April 16, 2026, it has mutually agreed with Haywood Securities Inc. ("Haywood") to extend the term of their strategic advisory services agreement (the "Haywood Advisory Agreement") by an additional three (3) months, expiring October 15, 2026. Subject to the acceptance of the TSXV, the Company will issue to Haywood 125,000 Common Shares at a deemed price of C$2.15 per share and 125,000 common share purchase warrants, each exercisable into one Common Share at a price of C$2.15 for a period of twenty-four (24) months from the date of the Haywood Advisory Agreement, expiring April 15, 2028. The Company will also settle the C$60,000 consulting fee payable for the initial three (3) month term of the Haywood Advisory Agreement through the issuance of 27,907 Common Shares at a deemed price of C$2.15 per share, and will continue to pay Haywood a monthly consulting fee of C$20,000, plus applicable taxes, payable in arrears and settled in Common Shares at the closing price on the date immediately prior to issuance. Haywood is at arm’s length to the Company. All securities issued will be subject to a hold period of four months and one day from the date of issuance in accordance with applicable securities laws.
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian based oil and gas exploration and development company focused on offshore West Africa. The Company has recently partnered with TotalEnergies to explore its basin floor fan plays in Blocks LB-26, LB-30, and LB-31 covering an area of approximately 8,924 square kilometers (~2.2 million acres) located in the Harper Basin, in the deep-water offshore Liberia. Additionally, the Company recently acquired a previously discovered and tested sand channel play offshore Louisiana in the shallow water Gulf of America. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+Craig Steinke, Chief Executive Officer
+Investor Relations Inquiries:
+Doug Allen, Senior Manager, Investor Relations
+Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+**Cautionary Note Regarding Forward-Looking Information**
+Certain statements made and information contained in this news release constitute "forward-looking information" within the meaning of applicable securities legislation ("forward-looking information"). Generally, this forward-looking information can, but not always, be identified by use of forward-looking terminology such as "plans", "expects" or "does not expect", "is expected", "budget", "scheduled", "estimates", "forecasts", "intends", "anticipates" or "does not anticipate", or "believes", or variations of such words and phrases or statements that certain actions, events, conditions or results "will", "may", "could", "would", "might" or "will be taken", "occur" or "be achieved" or the negative connotations thereof.
+All statements other than statements of historical fact may be forward-looking information. Forward-looking information is necessarily based on estimates and assumptions that are inherently subject to known and unknown risks, uncertainties and other factors that may cause the actual results, level of activity, performance or achievements of the Company to be materially different from those expressed or implied by such forward-looking information. In particular, this news release contains forward-looking information regarding the expected use of proceeds from the Offering, the Offering being subject to TSXV final acceptance and the Company continuing to pay Haywood a monthly consulting fee.
+There can be no assurance that such statements will prove to be accurate, as the Company's actual results and future events could differ materially from those anticipated in this forward-looking information as a result of the factors discussed in the "Risk Factors" section in the Company's most recent MD&A available under the Company's profile at [www.sedarplus.ca](http://www.sedarplus.ca).
+Although the Company has attempted to identify important factors that would cause actual results to differ materially from those contained in forward-looking information, there may be other factors that cause results not to be as anticipated, estimated or intended. The forward-looking information contained in this news release is based on information available to the Company as of the date of this news release. There can be no assurance that such statements will prove to be accurate, as actual results and future events could differ materially from those anticipated in such statements. All of the forward-looking information contained in this news release is qualified by these cautionary statements. Readers are cautioned not to place undue reliance on forward-looking information due to the inherent uncertainty thereof. Except as required under applicable securities legislation and regulations applicable to the Company, the Company does not intend, and does not assume any obligation, to update this forward-looking information.
+
+---
+
+<a id="page-19"></a>
+## 19. BluEnergies Announces Upsize of Non-Brokered Private Placement of Units for Gross Proceeds of Up to C$20,700,000
+
+**Page Name:** BluEnergies Announces Upsize of Non-Brokered Private Placement of Units for Gross Proceeds of Up to C$20,700,000  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-announces-upsize-of-non-brokered-private-placement-of-units-for-gross-proceeds-of-up-to-c20700000-/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-upsize-of-non-brokered-private-placement-of-units-for-gross-proceeds-of-up-to-c20700000-
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Announces Upsize of Non-Brokered Private Placement of Units for Gross Proceeds of Up to C$20,700,000
+VANCOUVER, BC, July 21, 2026 /CNW/ - BluEnergies Ltd. (TSXV: BLU | OTCQX: BLUGF | F: 66E) ("BLU" or the "Company") is pleased to announce that, further to its news release dated July 9, 2026 and as a result of strong investor demand, it has increased the size of its previously announced non-brokered private placement (the "Offering"). The Offering now consists of up to 9,200,000 units of the Company (each, a "Unit") at a price of C$2.25 per Unit for aggregate gross proceeds of up to C$20,700,000, an increase from the previously announced maximum of up to 4,500,000 Units for gross proceeds of up to C$10,125,000.
+Each Unit will consist of one common share of the Company (each, a "Common Share") and one common share purchase warrant (each, a "Warrant"), with each Warrant exercisable to purchase one additional Common Share for a period of three years from the date of closing at an exercise price of C$3.00. All other terms of the Offering remain unchanged from those set out in the Company’s news release dated July 9, 2026.
+The Company intends to use the net proceeds from the Offering for the exploration and advancement of the Company’s assets as well as for working capital and general corporate purposes.
+The Offering is subject to TSX Venture Exchange (the "TSXV") acceptance. All Common Shares and Warrants issued pursuant to the Offering, as well as the Common Shares issuable upon exercise of the Warrants, will be subject to a four month and a day hold period from the closing date, and TSXV hold period, as applicable. The Company anticipates paying finders’ fees equal to 6% cash to certain eligible arm’s length parties on a portion of the proceeds raised under the Offering. In addition, the Company may issue to certain eligible arm’s length finders non-transferable warrants equal to 6% of a portion of the number of Units issued under the Offering.
+It is anticipated that certain insiders of the Company will participate in the Offering. Details of any such insider participation, including the applicable related party transaction disclosure under Multilateral Instrument 61-101, will be provided in the closing news release.
+This news release does not constitute an offer to sell or a solicitation of an offer to buy nor shall there be any sale of any of the securities in any jurisdiction in which such offer, solicitation or sale would be unlawful, including any of the securities in the United States of America. The securities have not been and will not be registered under the United States Securities Act of 1933, as amended (the "1933 Act") or any state securities laws and may not be offered or sold within the United States or to, or for account or benefit of, U.S. Persons (as defined in Regulation S under the 1933 Act) unless registered under the 1933 Act and applicable state securities laws, or an exemption from such registration requirements is available.
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian based oil and gas exploration and development company focused on offshore West Africa. The Company has recently partnered with TotalEnergies to explore its basin floor fan plays in Blocks LB-26, LB-30, and LB-31 covering an area of approximately 8,924 square kilometers (~2.2 million acres) located in the Harper Basin, in the deep-water offshore Liberia. Additionally, the Company recently acquired a previously discovered and tested sand channel play offshore Louisiana in the shallow water Gulf of America. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+Craig Steinke, Chief Executive Officer
+Investor Relations Inquiries:
+Doug Allen, Senior Manager, Investor Relations
+Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+**Cautionary Note Regarding Forward-Looking Information**
+Certain statements made and information contained in this news release constitute "forward-looking information" within the meaning of applicable securities legislation ("forward-looking information"). Generally, this forward-looking information can, but not always, be identified by use of forward-looking terminology such as "plans", "expects" or "does not expect", "is expected", "budget", "scheduled", "estimates", "forecasts", "intends", "anticipates" or "does not anticipate", or "believes", or variations of such words and phrases or statements that certain actions, events, conditions or results "will", "may", "could", "would", "might" or "will be taken", "occur" or "be achieved" or the negative connotations thereof.
+All statements other than statements of historical fact may be forward-looking information. Forward-looking information is necessarily based on estimates and assumptions that are inherently subject to known and unknown risks, uncertainties and other factors that may cause the actual results, level of activity, performance or achievements of the Company to be materially different from those expressed or implied by such forward-looking information. In particular, this news release contains forward-looking information regarding the expected use of proceeds from the Offering and the Offering being subject to TSXV acceptance.
+There can be no assurance that such statements will prove to be accurate, as the Company's actual results and future events could differ materially from those anticipated in this forward-looking information as a result of the factors discussed in the "Risk Factors" section in the Company's most recent MD&A available under the Company's profile at [www.sedarplus.ca](http://www.sedarplus.ca).
+Although the Company has attempted to identify important factors that would cause actual results to differ materially from those contained in forward-looking information, there may be other factors that cause results not to be as anticipated, estimated or intended. The forward-looking information contained in this news release is based on information available to the Company as of the date of this news release. There can be no assurance that such statements will prove to be accurate, as actual results and future events could differ materially from those anticipated in such statements. All of the forward-looking information contained in this news release is qualified by these cautionary statements. Readers are cautioned not to place undue reliance on forward-looking information due to the inherent uncertainty thereof. Except as required under applicable securities legislation and regulations applicable to the Company, the Company does not intend, and does not assume any obligation, to update this forward-looking information.
+
+---
+
+<a id="page-20"></a>
+## 20. BluEnergies Announces Non-Brokered Private Placement is Fully Subscribed
+
+**Page Name:** BluEnergies Announces Non-Brokered Private Placement is Fully Subscribed  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-announces-non-brokered-private-placement-is-fully-subscribed/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-non-brokered-private-placement-is-fully-subscribed
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Announces Non-Brokered Private Placement is Fully Subscribed
+VANCOUVER, BC, July 9, 2026 /CNW/ - BluEnergies Ltd. (TSXV: BLU | OTCQX: BLUGF | F: 66E) ("BLU" or the "Company") is pleased to announce that its previously announced non-brokered private placement of C$10,125,000 (the “ **Private Placement** ”), as announced earlier today, has been fully subscribed.
+Closing of the Private Placement remains subject to final acceptance by the Exchange.
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian based oil and gas exploration and development company focused on offshore West Africa. The Company has recently partnered with TotalEnergies to explore its basin floor fan plays in Blocks LB-26, LB-30, and LB-31 covering an area of approximately 8,924 square kilometers (~2.2 million acres) located in the Harper Basin, in the deep-water offshore Liberia. Additionally, the Company recently acquired a previously discovered and tested sand channel play offshore Louisiana in the shallow water Gulf of America. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+Craig Steinke, Chief Executive Officer
+Investor Relations Inquiries:
+Doug Allen, Senior Manager, Investor Relations
+Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+**Cautionary Note Regarding Forward-Looking Information**
+Certain statements made and information contained in this news release constitute "forward-looking information" within the meaning of applicable securities legislation ("forward-looking information"). Generally, this forward-looking information can, but not always, be identified by use of forward-looking terminology such as "plans", "expects" or "does not expect", "is expected", "budget", "scheduled", "estimates", "forecasts", "intends", "anticipates" or "does not anticipate", or "believes", or variations of such words and phrases or statements that certain actions, events, conditions or results "will", "may", "could", "would", "might" or "will be taken", "occur" or "be achieved" or the negative connotations thereof.
+All statements other than statements of historical fact may be forward-looking information. Forward-looking information is necessarily based on estimates and assumptions that are inherently subject to known and unknown risks, uncertainties and other factors that may cause the actual results, level of activity, performance or achievements of the Company to be materially different from those expressed or implied by such forward-looking information. In particular, this news release contains forward-looking information regarding the expected use of proceeds from the Private Placement and the Private Placement being subject to TSXV acceptance.
+There can be no assurance that such statements will prove to be accurate, as the Company's actual results and future events could differ materially from those anticipated in this forward-looking information as a result of the factors discussed in the "Risk Factors" section in the Company's most recent MD&A available under the Company's profile at [www.sedarplus.ca](http://www.sedarplus.ca).
+Although the Company has attempted to identify important factors that would cause actual results to differ materially from those contained in forward-looking information, there may be other factors that cause results not to be as anticipated, estimated or intended. The forward-looking information contained in this news release is based on information available to the Company as of the date of this news release. There can be no assurance that such statements will prove to be accurate, as actual results and future events could differ materially from those anticipated in such statements. All of the forward-looking information contained in this news release is qualified by these cautionary statements. Readers are cautioned not to place undue reliance on forward-looking information due to the inherent uncertainty thereof. Except as required under applicable securities legislation and regulations applicable to the Company, the Company does not intend, and does not assume any obligation, to update this forward-looking information.
+
+---
+
+<a id="page-21"></a>
+## 21. BluEnergies Announces Non-Brokered Private Placement of Units for Gross Proceeds of up to C$10 Million
+
+**Page Name:** BluEnergies Announces Non-Brokered Private Placement of Units for Gross Proceeds of up to C$10 Million  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-announces-non-brokered-private-placement-of-units-for--gross-proceeds-of-up-to-c10-million/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-non-brokered-private-placement-of-units-for--gross-proceeds-of-up-to-c10-million
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Announces Non-Brokered Private Placement of Units for Gross Proceeds of up to C$10 Million
+VANCOUVER, BC, July 9, 2026 /CNW/ - BluEnergies Ltd. (TSXV: BLU | OTCQX: BLUGF | F: 66E) ("BLU" or the "Company") is pleased to announce a non-brokered private placement financing of up to 4,500,000 units at a price of C$2.25 per unit (a “Unit”) for gross proceeds of up to C$10,125,000 (the “Private Placement”). Each Unit will consist of one common share of the Company (each, a “Common Share”) and one common share purchase warrant (each, a “Warrant”), with each Warrant exercisable to purchase one additional Common Share for a period of three years from the date of closing at an exercise price of C$3.00.
+The Company intends to use the net proceeds from the Private Placement for the exploration and advancement of the Company’s assets, including the Harper Basin project in Liberia, as well as for working capital and general corporate purposes.
+The Private Placement is subject to TSX Venture Exchange (the “TSXV”) acceptance. All Common Shares and Warrants issued pursuant to the Private Placement, as well as the Common Shares issuable upon exercise of the Warrants, will be subject to a four month and a day hold period from the closing date, and TSXV hold period, as applicable. The Company anticipates paying finders' fees equal to 6% cash to certain eligible arm’s length parties on a portion of the proceeds raised under the Private Placement. In addition, the Company may issue to certain eligible arm’s length finders non-transferable warrants equal to 6% of a portion of the number of Units issued under the Private Placement.
+It is anticipated that certain insiders of the Company will participate in the Private Placement. Details of any such insider participation, including the applicable related party transaction disclosure under Multilateral Instrument 61-101, will be provided in the closing news release.
+This news release does not constitute an offer to sell or a solicitation of an offer to buy nor shall there be any sale of any of the securities in any jurisdiction in which such offer, solicitation or sale would be unlawful, including any of the securities in the United States of America. The securities have not been and will not be registered under the United States Securities Act of 1933, as amended (the “1933 Act”) or any state securities laws and may not be offered or sold within the United States or to, or for account or benefit of, U.S. Persons (as defined in Regulation S under the 1933 Act) unless registered under the 1933 Act and applicable state securities laws, or an exemption from such registration requirements is available.
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian based oil and gas exploration and development company focused on offshore West Africa. The Company has recently partnered with TotalEnergies to explore its basin floor fan plays in Blocks LB-26, LB-30, and LB-31 covering an area of approximately 8,924 square kilometers (~2.2 million acres) located in the Harper Basin, in the deep-water offshore Liberia. Additionally, the Company recently acquired a previously discovered and tested sand channel play offshore Louisiana in the shallow water Gulf of America. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+Craig Steinke, Chief Executive Officer
+Investor Relations Inquiries:
+Doug Allen, Senior Manager, Investor Relations
+Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+**Cautionary Note Regarding Forward-Looking Information**
+Certain statements made and information contained in this news release constitute "forward-looking information" within the meaning of applicable securities legislation ("forward-looking information"). Generally, this forward-looking information can, but not always, be identified by use of forward-looking terminology such as "plans", "expects" or "does not expect", "is expected", "budget", "scheduled", "estimates", "forecasts", "intends", "anticipates" or "does not anticipate", or "believes", or variations of such words and phrases or statements that certain actions, events, conditions or results "will", "may", "could", "would", "might" or "will be taken", "occur" or "be achieved" or the negative connotations thereof.
+All statements other than statements of historical fact may be forward-looking information. Forward-looking information is necessarily based on estimates and assumptions that are inherently subject to known and unknown risks, uncertainties and other factors that may cause the actual results, level of activity, performance or achievements of the Company to be materially different from those expressed or implied by such forward-looking information. In particular, this news release contains forward-looking information regarding the expected use of proceeds from the Private Placement and the Private Placement being subject to TSXV acceptance.
+There can be no assurance that such statements will prove to be accurate, as the Company's actual results and future events could differ materially from those anticipated in this forward-looking information as a result of the factors discussed in the "Risk Factors" section in the Company's most recent MD&A available under the Company's profile at [www.sedarplus.ca](http://www.sedarplus.ca).
+Although the Company has attempted to identify important factors that would cause actual results to differ materially from those contained in forward-looking information, there may be other factors that cause results not to be as anticipated, estimated or intended. The forward-looking information contained in this news release is based on information available to the Company as of the date of this news release. There can be no assurance that such statements will prove to be accurate, as actual results and future events could differ materially from those anticipated in such statements. All of the forward-looking information contained in this news release is qualified by these cautionary statements. Readers are cautioned not to place undue reliance on forward-looking information due to the inherent uncertainty thereof. Except as required under applicable securities legislation and regulations applicable to the Company, the Company does not intend, and does not assume any obligation, to update this forward-looking information.
+
+---
+
+<a id="page-22"></a>
+## 22. BluEnergies and TotalEnergies Progress Operations, Harper Basin, Offshore Liberia
+
+**Page Name:** BluEnergies and TotalEnergies Progress Operations, Harper Basin, Offshore Liberia  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-and-totalenergies-progress-operations-harper-basin-offshore-liberia/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-and-totalenergies-progress-operations-harper-basin-offshore-liberia
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies and TotalEnergies Progress Operations, Harper Basin, Offshore Liberia
+VANCOUVER, BC, July 6, 2026 /CNW/ - BluEnergies Ltd. (TSXV: BLU) (" **BLU** " or the " **Company** ") is pleased to provide an operations update on the work program currently being conducted on the blocks LB-26, LB-30 and LB-31 (the “ **Blocks** ”) jointly with TotalEnergies (NYSE: TTE) (“ **TTE** ”) in the Harper Basin, offshore Liberia.
+The work program, designed to confirm and enhance drillable prospects within the Blocks, is on schedule and comprises the following operations:
+**Reprocessing the 6,167 sq kms of 3-D seismic data**
+On behalf of BLU and TTE, TGS ASA (Oslo), (“ **TGS** ”) a leading provider of advanced data in the energy sector, is reprocessing the entire 3D seismic data set. This important process is on schedule, over 50% complete, with preliminary results to date. The primary goal of the data reprocessing is to enhance the seismic character/definition and the AVO content (Direct Hydrocarbon Indicator) of the original 3-D seismic survey completed by TGS in 2013.
+**Sea Bottom Survey: Multi Beam Echo Sounder Survey, Seabed Geochemical Sampling & Heat Flow Measurements**
+On behalf of BLU and TTE, GeoPartners Limited, a London based international company specialized in providing geophysical and geological services, is conducting within the Blocks a Multi-Beam Eco Sounder survey (“ **MBES** ”) comprising an area of 4,045 km² in water depths ranging from 500 meters to 3,500 meters. GeoPartners is utilizing the R/V GYRE vessel owned and operated by TDI-Brooks, a Texas based offshore survey company with more than 30 years of experience providing geotechnical investigations, geochemical seep surveys and marine science worldwide. This data acquisition commenced on June 19, 2026, with expected completion in 3Q 2026 allowing for early integration into a refined 3-D seismic data interpretation.
+- The MBES is designed to map underwater terrain, aiding in identifying sea bottom anomalies, supporting the safe selection of future drilling locations. More specifically, the MBES identifies seabed geomorphologies (pockmarks, mud volcanoes, faults, etc.) and the presence of anomalous features (carbonates, outcrops, bacterial mats, etc.); it also performs water column imaging for the detection of anomalies related to seepage of hydrocarbons through the sea bottom.
+- **Seabed Geochemical Sampling** is conducted through piston coring to collect evidence of migrated mature hydrocarbons (detection of fluorescent/natural oil compounds, hydrocarbon chromatography, thermogenic origin, etc.)
+- **Heat Flow Measurements** are being performed to collect information about the relative sediment temperature and the thermal history of the undrilled Harper basin.
+This project completion is expected by 4Q 2026, allowing for the integration of the data into a refined 3-D data re-interpretation of the numerous leads (basin floor fans) within the Blocks.
+All of these program initiatives are focused on identifying drillable prospects and assisting in the selection of optimal drilling locations.
+Sergio Laura, BluEnergies’ VP of Exploration stated, “The West Africa Transform Margin, where the Harper basin is located, and its conjugate South American Margin are regions where basin floor fan plays are being actively and successfully explored, developed and produced. The recent, hectic activity by major oil companies in securing licenses for deepwater acreage along the entire Africa west margin is confirmation that the early move by BluEnergies in the Harper basin (2023) was a valid one. The Jubilee field in Ghana, the Venus field in Namibia, and the recent discoveries offshore Cote d’Ivoire have proven the significance of basin floor fan plays along the African margin.”
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian based oil and gas exploration and development company focused on offshore West Africa. The Company has recently partnered with TotalEnergies to explore its basin floor fan play in Blocks LB-26, LB-30, and LB-31 covering an area of approximately 8,924 square kilometers (~2.2 million acres) located in the Harper basin, in the deep-water offshore Liberia. Additionally, the Company recently acquired a previously discovered and tested sand channel play offshore Louisiana in the shallow water Gulf of America. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+Craig Steinke, Chief Executive Officer
+Investor Relations Inquiries:
+Doug Allen, Senior Manager of Investor Relations
+Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+**Cautionary Note Regarding Forward-Looking Information**
+Statements included in this news release, including statements concerning our plans, intentions and expectations, which are not historical in nature are intended to be, and are hereby identified as, "forward-looking statements". Forward-looking statements may be identified by words including "anticipates", "believes", "intends", "estimates", "expects" and similar expressions. The Company cautions readers that forward-looking statements are subject to certain risks and uncertainties that could cause actual results to differ materially from those indicated in the forward-looking statements.
+
+---
+
+<a id="page-23"></a>
+## 23. BluEnergies Provides Details of Investor Relations Engagements
+
+**Page Name:** BluEnergies Provides Details of Investor Relations Engagements  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-provides-details-of-investor-relations-engagements/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-provides-details-of-investor-relations-engagements
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Provides Details of Investor Relations Engagements
+VANCOUVER, BC, June 26, 2026 /CNW/ - BluEnergies Ltd. (TSXV: BLU) ("BLU" or the "Company") further to its news releases dated March 16, 2026 and April 27, 2026 and at the request of the TSX Venture Exchange, the Company is providing the following clarification with respect to its investor relations engagements.
+**Agreement with Mr. Doug Allen**
+The Company advises that at the time of entering into the consulting agreement with Mr. Allen, Mr. Allen held 30,000 common shares of the Company. Following the expiration of the initial one-year term, Mr. Allen’s agreement with the Company will automatically renew on a month-to-month basis on the same compensation terms, unless earlier terminated in accordance with its provisions.
+**Agreement with Curzio Research, Inc.**
+The Company advises that at the time of entering into the agreement with Curzio Research, Inc. (the “Curzio Agreement”), Mr. Curzio held no securities of the Company. Services under the Curzio Agreement will be provided solely by Mr. Frank Curzio.
+**Agreement with Independent Trading Group (ITG) Inc.**
+In connection with the Company’s market making agreement with Independent Trading Group (ITG) Inc. (“ITG”), ITG and not the Company will be providing the shares and/or funds for the services.
+The Company will not be issuing any shares or funds from treasury in connection with the ITG Agreement. Pursuant to the terms of the ITG Agreement, a monthly fee for services in the amount of $6,000 is paid by the Company to ITG on the first day of every month for the duration of the agreement. The Company has also made a $6,000 payment for the last month of services.
+**Agreement with Granite Point Research Inc.**
+The Company advises that at the time of entering into the agreement with Granite Point Research Inc., John Stephenson did not hold any securities of the Company.
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian based oil and gas exploration and development company focused on offshore West Africa. The Company has recently partnered with TotalEnergies to explore its basin floor fan plays in Blocks LB-26, LB-30, and LB-31 covering an area of approximately 8,924 square kilometers (~2.2 million acres) located in the Harper basin, in the deep-water offshore Liberia. Additionally, the Company recently acquired a previously discovered and tested sand channel play offshore Louisiana in the shallow water Gulf of America. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+Craig Steinke, Chief Executive Officer
+Investor Relations Inquiries:
+Doug Allen, Senior Manager, Investor Relations
+Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+**Cautionary Note Regarding Forward-Looking Information**
+Statements included in this news release, including statements concerning our plans, intentions and expectations, which are not historical in nature are intended to be, and are hereby identified as, "forward-looking statements". Forward-looking statements may be identified by words including "anticipates", "believes", "intends", "estimates", "expects" and similar expressions. The Company cautions readers that forward-looking statements are subject to certain risks and uncertainties that could cause actual results to differ materially from those indicated in the forward-looking statements.
+
+---
+
+<a id="page-24"></a>
+## 24. BluEnergies Announces DTC Eligibility, Engagement of Market Maker and Initiation of Research Coverage
+
+**Page Name:** BluEnergies Announces DTC Eligibility, Engagement of Market Maker and Initiation of Research Coverage  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-announces-dtc-eligibility-engagement-of-market-maker-and-initiation-of-research-coverage/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-dtc-eligibility-engagement-of-market-maker-and-initiation-of-research-coverage
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Announces DTC Eligibility, Engagement of Market Maker and Initiation of Research Coverage
+VANCOUVER, BC, April 27, 2026 /CNW/ - BluEnergies Ltd. (TSXV: BLU) ("BLU" or the "Company") is pleased to announce that its common shares are now eligible for electronic clearing and settlement in the United States through the Depository Trust Company ("DTC").
+A subsidiary of the Depository Trust & Clearing Corporation (DTCC), DTC handles electronic clearing and settlement for publicly traded companies. DTC eligibility is expected to simplify the trading of the Company’s shares, making it more efficient for investors and brokers, and enhance liquidity in the United States. With DTC eligibility, the Company’s shares can now be traded across a wider network of brokerage firms, accelerating the settlement process and improving access for a broader range of investors.
+“Obtaining DTC eligibility marks an important step in expanding BLU’s investor base and enhancing accessibility for shareholders,” said Craig Steinke, Chief Executive Officer of BLU. “For investors, DTC eligibility is a key milestone that streamlines electronic trading and supports improved liquidity, which is especially important as we advance the development of our assets in the Harper Basin, Liberia and Gulf of America and continue to build long-term value across our portfolio.”
+The Company's shares recently began trading on the OTCQX® Best Market ("OTCQX") under the ticker BLUGF. DTC eligibility represents a central component of the Company’s capital markets strategy, intended to modernize share transfer protocols and improve market efficiency for North American investors.
+**Engagement of Market Maker**
+The Company is also pleased to announce that, subject to regulatory approval, it has engaged the services of Independent Trading Group (“ITG”) to provide market-making services in accordance with TSX Venture Exchange (“TSXV”) policies. ITG will trade shares of the Company on the TSXV and all other trading venues with the objective of maintaining a reasonable market and improving the liquidity of the Company’s common shares.
+The agreement is dated January 8, 2026 and is for an initial term of one month and will renew for additional one-month terms unless terminated. Under the agreement, ITG will receive compensation of CAD$6,000 per month, payable monthly in advance. The agreement may be terminated by either party with 30 days’ notice. There are no performance factors contained in the agreement and ITG will not receive shares or options as compensation. ITG and the Company are unrelated and unaffiliated entities and at the time of the agreement, neither ITG nor its principals have an interest in or right to acquire, directly or indirectly, the securities of the Company.
+Independent Trading Group (ITG) Inc. is a Toronto based CIRO dealer-member that specializes in market making, liquidity provision, agency execution, ultra-low latency connectivity, and bespoke algorithmic trading solutions. Established in 1992, with a focus on market structure, execution and trading, ITG has leveraged its own proprietary technology to deliver high quality liquidity provision and execution services to a broad array of public issuers and institutional investors.
+**Initiation of Research Coverage by Granite Point Research**
+The Company further announces it engaged Granite Point Research Inc. (“Granite Point”) to provide company sponsored equity research and investor awareness including the preparation and distribution of independent research activities for a period of one year. The agreement is dated March 2, 2026. In consideration of the services, the Company will pay Granite Point a fee of C$10,000 each calendar quarter, in arrears. Granite Point is located at 100 King Street West, Suite 5600, Toronto, Ontario, Canada and is an arm’s length service provider to the Company. Granite Point does not offer investment banking services to its clients, and its employees do not serve as officers or directors of covered companies. Granite Point’s employees do not own, trade, or have a beneficial interest in the securities of covered companies. The engagement remains subject to the approval of the TSX Venture Exchange.
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian based oil and gas exploration and development company focused on offshore West Africa. The Company has recently partnered with TotalEnergies to explore its basin floor fan plays in Blocks LB-26, LB-30, and LB-31 covering an area of approximately 8,924 square kilometers (~2.2 million acres) located in the Harper basin, in the deep-water offshore Liberia. Additionally, the Company recently acquired a previously discovered and tested sand channel play offshore Louisiana in the shallow water Gulf of America. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+Craig Steinke, Chief Executive Officer
+Investor Relations Inquiries:
+Doug Allen, Senior Manager, Investor Relations
+Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+**Cautionary Note Regarding Forward-Looking Information**
+Statements included in this news release, including statements concerning our plans, intentions and expectations, which are not historical in nature are intended to be, and are hereby identified as, "forward-looking statements". Forward-looking statements may be identified by words including "anticipates", "believes", "intends", "estimates", "expects" and similar expressions. The Company cautions readers that forward-looking statements, including without limitation those relating to the Company's future operations and business prospects, the issuance of the securities to Haywood and Canaccord as compensation for the services to be rendered under the Advisory Agreements and the receipt of the acceptance of the Exchange, are subject to certain risks and uncertainties that could cause actual results to differ materially from those indicated in the forward-looking statements.
+
+---
+
+<a id="page-25"></a>
+## 25. BluEnergies Announces Financial Advisory Agreements With Haywood Securities INC. And Canaccord Genuity Corp.
+
+**Page Name:** BluEnergies Announces Financial Advisory Agreements With Haywood Securities INC. And Canaccord Genuity Corp.  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-announces-financial-advisory-agreements-with-haywood-securities-inc-and-canaccord-genuity-corp/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-financial-advisory-agreements-with-haywood-securities-inc-and-canaccord-genuity-corp
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Announces Financial Advisory Agreements With Haywood Securities INC. And Canaccord Genuity Corp.
+VANCOUVER, BC, April 16, 2026 /CNW/ - BluEnergies Ltd. (TSXV: BLU) ("BLU" or the "Company") announces it has entered into new strategic advisory services agreements (the “Advisory Agreements”) with each of Haywood Securities Inc. (“Haywood”) and Canaccord Genuity Corp. (“Canaccord”), together the co-advisors (the “Co-Advisors”), pursuant to which the Co-Advisors will provide the Company with certain strategic advisory services. Haywood is a full-service investment dealer with assets under management of C$21 billion. Canaccord Genuity is a global independent financial services company with C$145 billion in client assets.
+Pursuant to the terms of the Advisory Agreements and subject to the acceptance of the TSX Venture Exchange (the “Exchange”), the Company has agreed to issue after thirty (30) days, subject to receipt and verification of documentation evidencing completed services under the Advisory Agreements, to each of the Co-Advisors, 125,000 common shares of the Company (the “Initial Advisory Shares”), at a deemed issue price of $2.43 per Initial Advisory Share (the “Issue Price”), and 125,000 common share purchase warrants of the Company (the “Initial Advisory Warrants”). Each Initial Advisory Warrant shall entitle the Co-Advisors to acquire one common share of the Company (the “Initial Advisory Warrant Shares”). The Initial Advisory Warrants shall have an exercise price of $2.43 for a period of twenty-four (24) months from the date of the Advisory Agreements.
+The Advisory Agreements have initial terms of three months from the date of signing of the respective Advisory Agreements (the “Initial Term”) and may be extended by a further three months at the mutual agreement of the Company and the Co-Advisors, at which time the Company shall issue to each of the Co-Advisors an additional 125,000 common shares of the Company (the “Additional Advisory Shares”), at a deemed issue price equal to the closing price of the Company’s common shares on the Exchange on the date immediately prior to the issuance of the Additional Advisory Shares and an additional 125,000 common share purchase warrants of the Company (the “Additional Advisory Warrants”). Each Additional Advisory Warrant shall entitle the Co-Advisors to acquire one common share of the Company (the “Additional Advisory Warrant Shares”). The Additional Advisory Warrants shall have an exercise price equal to the closing price of the Company’s common shares on the Exchange on the date of issuance of the Additional Advisory Warrants for a period of twenty-four (24) months from the date of the Advisory Agreements.
+If either Advisory Agreement is not extended beyond the Initial Term, then the Additional Advisory Warrants and the Additional Advisory Shares will not be issued to Haywood and/or Canaccord, as applicable.
+The Initial Advisory Shares, the Additional Advisory Shares, the Initial Advisory Warrant Shares, and the Additional Advisory Warrant Shares will have a hold period of four months and one day from the date of issuance in accordance with applicable securities laws.
+In addition, under the Advisory Agreements, the Company will pay each Co-Advisor a monthly consulting fee of C$20,000, plus applicable taxes, payable each 3-month period following the date of the Advisory Agreements in arrears (the “Consulting Fee”), and the Consulting Fee will be settled through the issuance of common shares of the Company (the “Consulting Fee Shares”) at a deemed issue price per Consulting Fee Share equal to the closing price of the common shares of the Company on the Exchange on the date immediately prior to the issuance of the Consulting Fee Shares, subject to the acceptance of the Exchange. The Consulting Fee Shares will have a hold period of four months and one day from the date of issuance in accordance with applicable securities laws.
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian based oil and gas exploration and development company focused on offshore West Africa. The Company has recently partnered with TotalEnergies to explore its basin floor fan play in Blocks LB-26, LB-30, and LB-31 covering an area of approximately 8,924 square kilometers (~2.2 million acres) located in the Harper basin, in the deep water offshore Liberia. Additionally, the Company recently acquired a previously discovered and tested sand channel play offshore Louisiana in the shallow water Gulf of America. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+Craig Steinke, Chief Executive Officer
+Investor Relations Inquiries:
+Doug Allen, Senior Manager of Investor Relations
+Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+**Cautionary Note Regarding Forward-Looking Information**
+Statements included in this news release, including statements concerning our plans, intentions and expectations, which are not historical in nature are intended to be, and are hereby identified as, "forward-looking statements". Forward-looking statements may be identified by words including "anticipates", "believes", "intends", "estimates", "expects" and similar expressions. The Company cautions readers that forward-looking statements, including without limitation those relating to the Company's future operations and business prospects, the issuance of the securities to Haywood and Canaccord as compensation for the services to be rendered under the Advisory Agreements and the receipt of the acceptance of the Exchange, are subject to certain risks and uncertainties that could cause actual results to differ materially from those indicated in the forward-looking statements.
+
+---
+
+<a id="page-26"></a>
+## 26. BluEnergies Announces Trading on OTCQX Best Market Under the Trading Symbol “BLUGF”
+
+**Page Name:** BluEnergies Announces Trading on OTCQX Best Market Under the Trading Symbol “BLUGF”  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-announces-trading-on-otcqx-best-market-under-the-trading-symbol--blugf/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-trading-on-otcqx-best-market-under-the-trading-symbol--blugf
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Announces Trading on OTCQX Best Market Under the Trading Symbol “BLUGF”
+VANCOUVER, BC, March 30, 2026 /CNW/ - BluEnergies Ltd. (TSXV: BLU) (OTCQX: BLUGF) ("BLU" or the "Company") is pleased to announce that its common shares commence trading today on the OTCQX Best Market (" **OTCQX** "), a U.S. marketplace operated by OTC Markets Group Inc., under the trading symbol BLUGF.
+Craig Steinke, CEO commented: "We are pleased to announce that, alongside our existing listing on the TSX Venture Exchange, the Company's common shares will now begin trading on the OTCQX Best Market in the United States. This dual-trading is expected to enhance liquidity, attract a wider range of institutional and retail investors, and strengthen our presence in the U.S. capital markets. It also provides an excellent platform to showcase our strategy for building enduring shareholder value through ongoing exploration activities in the Harper Basin, Liberia."
+OTCQX is the highest-level trading venue of OTC Markets Group Inc. on which 12,000 U.S. and global securities trade. To qualify for trading on OTCQX, companies must meet stringent financial standards, adhere to best practice corporate governance, and demonstrate compliance with applicable securities laws, providing investors with a trusted market for trading.
+Along with trading under the trading symbol " **BLUGF** " on OTCQX, the Company's common shares will continue to trade on the TSX Venture Exchange under the symbol " **BLU** ".
+U.S. investors can find current financial disclosure and real-time Level 2 quotes for BluEnergies’ common shares at [https://www.otcmarkets.com/stock/BLUGF/overview](https://www.otcmarkets.com/stock/BLUGF/overview).
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian based oil and gas exploration and development company focused on offshore West Africa. The Company has recently partnered with TotalEnergies to explore its basin floor fan play in Blocks LB-26, LB-30, and LB-31 covering an area of approximately 8,924 square kilometers (~2.2 million acres) located in the Harper basin, in the deep-water offshore Liberia. Additionally, the Company recently acquired a previously discovered and tested sand channel play offshore Louisiana in the shallow water Gulf of America. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+**Craig Steinke, Chief Executive Officer**
+Investor Relations Inquiries:
+Doug Allen, Senior Manager of Investor Relations
+Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+
+---
+
+<a id="page-27"></a>
+## 27. BluEnergies Secures Top Bid in Gulf of America Lease Sale, Engages Independent Houston Firm for Reserve Evaluation
+
+**Page Name:** BluEnergies Secures Top Bid in Gulf of America Lease Sale, Engages Independent Houston Firm for Reserve Evaluation  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-secures-top-bid-in-gulf-of-america-lease-sale--engages-independent-houston-firm-for-reserve-evaluation/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-secures-top-bid-in-gulf-of-america-lease-sale--engages-independent-houston-firm-for-reserve-evaluation
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Secures Top Bid in Gulf of America Lease Sale, Engages Independent Houston Firm for Reserve Evaluation
+VANCOUVER, BC, March 19, 2026 /CNW/ - BluEnergies Ltd. (TSXV: BLU) ("BLU" or the "Company") is pleased to announce that BLU was the successful top bidder in the Bureau of Ocean Energy Management's (“BOEM”) March 11, 2026 lease sale for federal waters in the Gulf of America. The Company secured a 100% working interest in the SS-59 block (“SS-59”), a 5,000-acre lease block under a 5-year term located in shallow water – less than 20 feet of water – in the promising Crown Royal prospect.
+SS-59 was bid through the Company's agent, Focus Exploration LLC, based in Houston, Texas. Signing of the official lease provided by the BOEM is expected to occur in the next several weeks.
+The Crown Royal play is located offshore Louisiana straddling two 5,000-acre blocks, BLU’s SS-59 block and SS-52 contiguous to the north of SS-59. The primary geological play is a channel levee complex which contains 5 objective sand intervals between 11,600 feet and 17,180 feet. This channel levee complex was drilled by Texaco in 1987, (Texaco #1) on the southern edge of block SS-52 offsetting the northern border of block SS-59. Based on information publicly available from the BOEM database, the well proved oil and gas/condensate bearing reservoir quality sands in 5 intervals and successfully flow tested sands at 2 of the 5 intervals at a test rate of 1,398 barrels of oil per day of light oil and 5.54 million cubic feet of gas per day. Both zones are over pressured.
+The Crown Royal play was originally drilled by Texaco, (Texaco #1), in 1987 amid low commodity prices ($20 per barrel oil and $2.00 per 1,000 cubic feet gas) that along with poor quality of existing 2D seismic data, the operator was unable to quantify reservoir size and elected not to complete the discovery. Subsequently, several 3D seismic surveys have been acquired over the area, allowing for a fully integrated evaluation of this amplitude-based play. BLU’s management firmly believes, due to current commodity prices and existing production infrastructure, now within 10 miles, allows for profitable, cost effective and efficient development of these reservoirs.
+To advance the project, BLU has engaged a third-party engineering firm based in Houston, Texas to conduct an independent valuation of the Crown Royal (SS-59) oil and gas reserves. The assessment will contribute to future drilling and development plans and provide a clear picture of the Crown Royal prospects’ full-scale economics.
+Craig Steinke, BLU’s CEO stated, “The new 5,000-acre lease (SS-59), encompassing approximately 50% of the Crown Royal prospect, represents untapped value in today’s market. The block highly complements BLU’s high potential basin floor fan play, currently being explored jointly with TotalEnergies in the Harper Basin, offshore Liberia. Together, these assets provide significant balance to BLU’s risk-reward profile pairing shallow water, low risk drilling opportunities with high impact deepwater upside.”
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian-based international oil and gas exploration and development company with a focus on operations in West Africa. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+**Craig Steinke, CEO**
+**Doug Allen, Senior Manager, Investor Relations**
+Investor Relations Inquiries Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+Advisories
+Information Regarding Oil and Gas Disclosure
+References in this news release to test rates and other short-term production rates are useful in confirming the presence of hydrocarbons, however such rates are not determinative of the rates at which such wells will commence production and decline thereafter and are not indicative of long-term performance or of ultimate recovery. While encouraging, readers are cautioned not to place reliance on such rates in calculating the aggregate anticipated production of BLU from wells that may be drilled on SS-59 in the future. The Company has not conducted any well-test interpretation on the well referenced in this news release. The Company cautions that such results should be considered preliminary and are historical.
+Analogous Information
+Certain information in this news release may constitute "analogous information" as defined in National Instrument 51-101 - Standards of Disclosure for Oil and Gas Activities (“ **NI 51-101** ”). Such information includes historical production estimates and other information retrieved from the publicly available records of certain industry participants or other publicly available sources. Management of the Company believes the information is relevant as it may help to define the reservoir characteristics and production profile of lands and leases in which the Company may hold an interest. BLU is unable to confirm that the analogous information was prepared by a qualified reserves evaluator or auditor and is unable to confirm that the analogous information was prepared in accordance with NI 51-101. Such information is not an estimate of the production, reserves or resources attributable to lands or leases held or to be held by the Company and there is no certainty that the production, reserves or resources data and economic information for the lands held or to be held by the Company will be similar to the information presented herein. The reader is cautioned that the data relied upon by the Company may be in error and/or may not be analogous to such lands or leases held or to be held by the Company.
+Cautionary Note Regarding Forward-Looking Information
+Certain information contained in this news release may constitute forward-looking statements and information (collectively, "forward-looking information") within the meaning of applicable securities legislation that involve known and unknown risks, assumptions, uncertainties and other factors. Forward- looking statements may be identified by words like "anticipates", "estimates", "expects", "indicates", "intends", "may", "could" "should", "would", "plans", "target", "scheduled", "projects", "outlook", "proposed", "potential", "will", "seek" and similar expressions. Forward-looking information in this news release include statements regarding, among other things: the anticipated official lease being provided by the BOEM; the promising nature of the Crown Royal prospect; BLU’s management’s beliefs that the reservoirs will prove to be profitable; the Company’s plans to advance the anticipated project on block SS-59; and the performance and other characteristics of the Company’s properties and expected results from its assets. Such statements reflect the current views of management of the Company with respect to future events and are subject to certain risks, uncertainties and assumptions that could cause results to differ materially from those expressed in the forward-looking information. With respect to forward-looking information contained in this news release, the Company has made assumptions regarding, among other things: that the anticipated official lease being provided by the BOEM will be provided by the BOEM on the terms anticipated or at all; that commodity prices will be consistent with the current pricing environment and forecasts; the accuracy of reserves estimates and historical information in respect of the well drilled on block SS-59; the accuracy of historical test rates; costs to drill, complete and tie-in wells; ultimate recovery of reserves; that royalty regimes will not be subject to material modification; future exchange and interest rates; supply of and demand for commodities; inflation; the availability of capital on satisfactory terms; the availability and price of labour and materials; the impact of increasing competition; conditions in general economic and financial markets; that the Company will be able to access capital, including debt, on acceptable terms; the receipt and timing of regulatory, exchange and other required approvals; the ability of the Company to implement its business strategies and complete future acquisitions; the Company's long term business strategy; and effects of regulation by governmental agencies.
+Factors that could cause actual results to vary from forward-looking information or may affect the operations, performance, development and results of the Company's businesses include, among other things: assumptions concerning operational reliability; risks inherent in the Company's future operations; the Company's ability to generate sufficient cash flow and access to capital to meet its future obligations; increases in maintenance, operating or financing costs; the realization of the anticipated benefits of future acquisitions, if any; the availability and price of labour, equipment and materials; competitive factors, including competition from third parties in the areas in which the Company intends to operate, pricing pressures and supply and demand in the oil and gas industry; fluctuations in currency and interest rates; inflation; risks of war, hostilities, civil insurrection, pandemics, political and economic instability overseas and its effect on commodity pricing and the oil and gas industry (including ongoing military actions in the Middle East); severe weather conditions and risks related to climate change, such as fire, drought and flooding; terrorist threats; risks associated with technology; changes in laws and regulations, including environmental, regulatory and taxation laws, and the interpretation of such changes to the management team's future business; availability of adequate levels of insurance; difficulty in obtaining necessary regulatory approvals and the maintenance of such approvals; general economic and business conditions and markets; and such other similar risks and uncertainties. The impact of any one assumption, risk, uncertainty or other factor on a forward-looking statement cannot be determined with certainty, as these are interdependent and the Company's future course of action depends on the assessment of all information available at the relevant time. For additional risk factors relating to the Company, please refer to the Company's most recent management’s discussion and analysis, which is available on the Company's SEDAR+ profile at [www.sedarplus.ca](http://www.sedarplus.ca/). The forward-looking information contained in this news release is made as of the date hereof and the Company does not undertake any obligation to update or revise any forward-looking information, whether as a result of new information, future events or otherwise, unless so required by applicable securities laws.
+
+---
+
+<a id="page-28"></a>
+## 28. BluEnergies Announces Engagement of Curzio Research, Inc. And Appointment of Doug Allen, Senior Manager of Investor Relations
+
+**Page Name:** BluEnergies Announces Engagement of Curzio Research, Inc. And Appointment of Doug Allen, Senior Manager of Investor Relations  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-announces-engagement-of-curzio-research-inc-and-appointment-of-doug-allen-senior-manager-of-investor-relations/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-engagement-of-curzio-research-inc-and-appointment-of-doug-allen-senior-manager-of-investor-relations
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Announces Engagement of Curzio Research, Inc. And Appointment of Doug Allen, Senior Manager of Investor Relations
+VANCOUVER, BC, March 16, 2026 /CNW/ - BluEnergies Ltd. (TSXV: BLU) ("BLU" or the "Company") is pleased to announce the engagement of Curzio Research, Inc. (“CRI”) and the appointment of Doug Allen as Senior Manager of Investor Relations.
+**Engagement of Curzio Research, Inc.**
+Curzio Research is a communication and marketing company that produces awareness and engagement initiatives focused on introducing the Company to a broader audience through research pieces, video commentary and podcasts. Frank Curzio, founder and CEO of CRI, brings over 25 years of experience in financial markets, stock analysis, and investor communications. As host of one of the longest running financial podcasts and a veteran market analyst, Mr. Curzio has built a reputation for providing insightful, unbiased commentary on market trends, particularly in resource and energy sectors.
+The Company has entered into a services agreement (the “Agreement”) with CRI, effective April 1, 2026, that has an initial term of two (2) months with a first payment of US$125,000 and a further US$125,000 payable upon commencement of the second month. The term can be extended by mutual agreement among the parties for an incremental four (4) months for a total additional payment of US$250,000 paid monthly in equal installments. The Agreement remains subject to the approval of the TSX Venture Exchange.
+**Appointment of Doug Allen, Senior Manager of Investor Relations**
+Doug Allen joins BluEnergies with more than 40 years of experience in financial services and investor relations, including senior roles in the resource industry. Most recently, Mr. Allen served as Senior Vice President of Investor Relations at Reconnaissance Energy Africa Ltd., where he played a pivotal role in building investor awareness and managing stakeholder communications during the initial exploration phases. As Senior Manager of Investor Relations, Mr. Allen will lead the Company’s IR strategy, focusing on transparent communication with shareholders, research analysts, and the investment community to drive and support shareholder value as BluEnergies advances its high-potential exploration activities jointly with TotalEnergies in the Harper Basin Fan Play, offshore Liberia.
+Subject to the approval of the TSXV, the Company has granted Mr. Allen a total of 500,000 incentive stock options (the “Options”) at a price of $1.52 per common share for a period of five (5) years from the date of grant. The Options shall vest over an 18-month period commencing March 16, 2026 on the following schedule, 125,000 in three months, 125,000 in six months, 125,000 in 12 months and 125,000 in 18 months.
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian-based international oil and gas exploration and development company with a focus on operations in West Africa. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+**Craig Steinke, Chief Executive Officer**
+Investor Relations Inquiries Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+
+---
+
+<a id="page-29"></a>
+## 29. BluEnergies Announces Completion Of Warrant Acceleration
+
+**Page Name:** BluEnergies Announces Completion Of Warrant Acceleration  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-announces-completion-of-warrant-acceleration/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-completion-of-warrant-acceleration
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Announces Completion Of Warrant Acceleration
+VANCOUVER, BC, March 12, 2026 /CNW/ - BluEnergies Ltd. (TSXV: BLU) ("BLU" or the "Company") announces the successful completion of the exercise of all outstanding common share purchase warrants ("Warrants") following the acceleration of their expiry date.
+As previously announced on February 10, 2026, the Company accelerated the expiry of 8,009,950 Warrants originally issued on April 8, 2025, in connection with the Company's private placement financing and TSX Venture Exchange listing. The acceleration was triggered upon the moving volume weighted average trading price of the Common Shares on the TSXV equaling or exceeding C$1.50 for 20 consecutive trading days ending February 10, 2026. The accelerated expiry date was set to March 12, 2026.
+The Company is pleased to confirm that all 8,009,950 Warrants have now been exercised by the holders, resulting in the issuance of 8,009,950 additional common shares ("Common Shares") of the Company at the exercise price of C$0.75 per Common Share, generating gross proceeds to the Company of C$6,007,462. The proceeds will strengthen the Company's balance sheet and support ongoing operations for its oil and gas exploration activities jointly with TotalEnergies in the Harper Basin fan play, offshore Liberia.
+In addition, the Company settled (the “Settlement”) an aggregate of C$323,073 owing to an arm’s length advisor to the Company by the issuance of an aggregate of 216,715 Common Shares at a price of $1.50 per Common Share. The Common Shares were issued in lieu of cash payments for services previously rendered by the advisor to the Company pursuant to a consulting and advisory agreement whereby the advisor provided various services to the Company throughout 2024 and 2025.
+The Common Shares issued in connection with the Settlement are subject to a hold period of four months and a day from the date of closing.
+Following the warrant exercise and shares for services, the total number of issued and outstanding Common Shares of the Company is now 72,549,915.
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian-based international oil and gas exploration and development company with a focus on operations in West Africa. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+**Craig Steinke, Chief Executive Officer**
+Investor Relations Inquiries Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+
+---
+
+<a id="page-30"></a>
+## 30. BluEnergies Announces Warrant Expiry Acceleration
+
+**Page Name:** BluEnergies Announces Warrant Expiry Acceleration  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-announces-warrant-expiry-acceleration/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-warrant-expiry-acceleration
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Announces Warrant Expiry Acceleration
+NOT FOR DISTRIBUTION TO UNITED STATES NEWSWIRE SERVICES OR FOR PUBLIC DISSEMINATION IN THE UNITED STATES
+Vancouver, British Columbia, February 10, 2026 /CNW/ – BluEnergies Ltd. (TSXV: BLU) (“ **BLU** ” or the “ **Company** ”) is pleased to announce the accelerated expiry date of the common share purchase warrants (“ **Warrants** ”) issued by the Company on April 8, 2025.
+On April 8, 2025, in connection with a private placement financing completed as part of its listing on the TSX Venture Exchange (the “ **TSXV** ”), the Company issued 8,009,950 Warrants entitling the holders thereof (each, a “ **Warrant Holder** ”) to purchase fully paid and non-assessable common shares of the Company (“ **Common Shares** ”) at an exercise price of C$0.75 per Common Share until April 8, 2027, (the “ **Expiry Date** ”), subject to the Accelerated Expiry Date (as defined herein).
+Pursuant to the terms of the Warrant, if the moving volume weighted average (“ **MVWA** ”) trading price of the Common Shares for any period of 20 consecutive trading days on the TSXV equals or exceeds CAD$1.50 (the “ **Acceleration Trigger** ”), the Company may, within ten Business Days of the occurrence of such event, provide written notice to the Holders accelerating the Expiry Date to the date that is 30 days following the date of such notice (the “ **Accelerated Expiry Date** ”).
+The Company hereby advises that the Acceleration Trigger has been met. Specifically, the MVWA trading price of the Common Shares on the TSXV equaled or exceeded CAD$1.50 for the period of 20 consecutive trading days ending on February 10, 2026. Accordingly, the Company hereby accelerates the Expiry Date of the Warrants. The Accelerated Expiry Date shall be March 12, 2026 (being 30 days following the date of this notice). All Warrants that remain unexercised after 5:00 p.m. (Vancouver time) on the Accelerated Expiry Date will expire and become void and of no further force or effect.
+If all 8,009,950 Warrants are exercised for 8,009,950 Common Shares, the Company will receive gross proceeds of approximately C$6,007,462.50 upon payment of the exercise therefor.
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian-based international oil and gas exploration and development company with a focus on operations in West Africa. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+**Craig Steinke, Chief Executive Officer**
+Investor Relations Inquiries Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Forward-looking Information**
+This news release contains “forward-looking statements” and “forward-looking information” (collectively, “ **forward-looking information** ”) within the meaning of applicable securities laws. Forward-looking information can be identified by words such as: “intend”, “believe”, “estimate”, “expect”, “may”, “will” and similar references to future periods. Examples of forward-looking information include, among others, the number of Warrants that may be exercised or may remain unexercised and the estimated gross proceeds resulting from such Warrants being exercised. Although BLU believes that, in light of the experience of its officers and directors, current conditions and other factors that have been considered appropriate, the expectations reflected in this forward-looking information are reasonable, undue reliance should not be placed on them because BLU can give no assurance that they will prove to be correct. Readers are cautioned to not place undue reliance on forward-looking information. Actual results may differ materially from those contemplated by this information depending on, among other things, the risk that all, or some of the Warrants may not be exercised and, as such, may result in BLU receiving minimal gross proceeds. Additional risks include those disclosed in the management information circular of BluEnergies Ltd. dated May 27, 2025, which is available on the Company’s profile at SEDAR+ at www.sedarplus.ca. Readers are cautioned not to place undue reliance on forward-looking information. The Company undertakes no obligation to update any of the forward-looking information in this news release, except as otherwise required by law.
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+
+---
+
+<a id="page-31"></a>
+## 31. BluEnergies Announces Shares for Services and Option Grant
+
+**Page Name:** BluEnergies Announces Shares for Services and Option Grant  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-announces-shares-for-services-and-option-grant/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-shares-for-services-and-option-grant
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Announces Shares for Services and Option Grant
+Vancouver, British Columbia, January 16, 2026 /CNW/ – BluEnergies Ltd. (TSXV: BLU) (“ **BLU** ” or the “ **Company** ”) announces that it intends to enter into a shares for services agreement (the " **Agreement** ") with an advisor to the Company for past services rendered to the Company in the amount of $325,073. Subject to the approval of the TSX Venture Exchange (the “ **Exchange** ”), an aggregate of 216,715 common shares (the “ **Shares** ”) at a deemed price of $1.50 per Share, being the closing price of the Company’s common shares on January 15, 2026, are proposed to be issued in connection with the Agreement. The Shares will be subject to a statutory hold period of four months and one day from the date of issuance, in accordance with applicable securities laws and Exchange policies.
+The Company also announces the issuance of 2,300,000 stock options with an exercise price of C$1.50 per share for the purchase of up to 2,300,000 shares of the Company, expiring January 15, 2031. The stock options are being issued to directors, officers, employees and consultants of the Company and are subject to approval by regulatory authorities.
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian-based international oil and gas exploration and development company with a focus on operations in West Africa. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+**Craig Steinke, Chief Executive Officer**
+Investor Relations Inquiries Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+
+---
+
+<a id="page-32"></a>
+## 32. TotalEnergies Partners With BluEnergies in Its Harper Basin Fan Play, Offshore Liberia
+
+**Page Name:** TotalEnergies Partners With BluEnergies in Its Harper Basin Fan Play, Offshore Liberia  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/totalenergies-partners-with-bluenergies-in-its-harper-basin-fan-play-offshore-liberia/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/totalenergies-partners-with-bluenergies-in-its-harper-basin-fan-play-offshore-liberia
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### TotalEnergies Partners With BluEnergies in Its Harper Basin Fan Play, Offshore Liberia
+**January 15, 2026**
+Vancouver, British Columbia, January 15, 2026 /CNW/ – BluEnergies Ltd. (TSXV: BLU) (“ **BLU** ” or the “ **Company** ”) is pleased to report it has successfully entered into an industry standard joint study and application agreement (“ **JSAA** ”) with the Liberian upstream subsidiary of TotalEnergies SE (NYSE:TTE) (“ **TTE** ”), in order to further explore the prospectivity of the Company’s deep water fan play in the Harper Basin, offshore Liberia. The West Africa Transform Margin, where the Harper Basin is located, and its conjugate South American Margin are regions where the basin floor fan play is being actively, successfully explored, developed and produced.
+**JSAA Highlights**
+The purpose of the JSAA between BLU and TTE is to further unlock the prospective potential of the Harper Basin blocks by establishing prospects within LB-26, LB-30 and LB-31 (the “ **Blocks** ”). Subject to establishing economically viable drillable prospects, BLU and TTE intend to apply for one or several production sharing contracts covering the desirable Blocks. An immediate budget has been jointly committed for the execution of a work program during the next 18 months involving state-of-the-art seismic reprocessing for more accurate reservoir imaging and the acquisition of sea bottom data, in order to fully evaluate the prospectivity and de-risk the hydrocarbon potential. This work program comprises:
+- the reprocessing by TGS ASA (Oslo) (“ **TGS** ”), a leading provider of advanced data and intelligence in the energy sector, of 6,167 km² (~1.5 million acres) of original 3-D seismic data initially acquired by TGS in 2013, covering the majority of the Blocks. This program commenced November 28, 2025; and
+- offshore sea bottom new data acquisition comprising multi-beam/backscatter, heat flow survey and subsequent data studies and interpretation.
+**New Liberia Reconnaissance License**
+To support the JSAA between TTE and the Company, the Liberian subsidiaries of BLU and TTE have entered into a new Reconnaissance License LPRA-003 (“ **RL-003** ”) with the Liberia Petroleum Regulatory Authority (“ **LPRA** ”) covering these contiguous Blocks with an areal extent of 8,924 km² (~ 2.2 million acres). Key provisions of RL-003 are:
+- BLU has a 35% participating interest and TTE has a 65% participating interest in RL-003.
+- BLU and TTE are required to conduct a work program that includes state-of-the-art 3-D reprocessing and sea bottom new data acquisition.
+- The term of RL-003 continues up to June 30, 2027, with new RL-003 replacing BLU’s existing Reconnaissance License LPRA-002 (“ **RL-002** ”).
+- Reconnaissance expenditures under RL-003 and RL-002 would be recoverable under any future production sharing contracts covering the Blocks. Under the RL-002 work program, which required a minimum expenditure of US$1,600,000, BLU spent US$1,862,000 (CA$2,570,000).
+**Background**
+During October 2024, under RL-002 held 100% by BLU, the Company acquired from TGS a review license of the 6,167 km2 3-D seismic survey covering a majority of the Blocks. As a result of the Company’s interpretation of the 3-D survey, BLU delineated seven large scale discrete Cretaceous aged basin floor fans.
+In Q1 2025, the Company entered into negotiations under non-disclosure agreements with numerous deepwater operators. As a result of these broad-based negotiations, BLU accepted an exclusive relationship with TTE in July 2025 and thereafter entered into a non-binding memorandum of understanding on October 8, 2025. Final negotiations led the Company to successfully enter into the JSAA with TTE under the new RL– 003.
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is a Canadian-based international oil and gas exploration and development company with a focus on operations in West Africa. For additional information on BluEnergies Ltd., please refer to the Company’s website, [www.blu-energies.com](http://www.blu-energies.com).
+For further information, please contact:
+**Craig Steinke, Chief Executive Officer**
+Investor Relations Inquiries Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Forward-looking Information**
+This news release contains “forward-looking statements” and “forward-looking information” (collectively, “ **forward-looking information** ”) within the meaning of applicable securities laws. Forward-looking information can be identified by words such as: “intend”, “believe”, “estimate”, “expect”, “may”, “will” and similar references to future periods. Examples of forward-looking information include, among others, the future plans of BLU, and information herein relating to BLU and its business plans, including the potential exploration and other planned activities in joint venture with TTE under possible production sharing contracts. Although BLU believes that, in light of the experience of its officers and directors, current conditions and expected future developments and other factors that have been considered appropriate, the expectations reflected in this forward-looking information are reasonable, undue reliance should not be placed on them because BLU can give no assurance that they will prove to be correct. Readers are cautioned to not place undue reliance on forward-looking information. Actual results and developments may differ materially from those contemplated by this information depending on, among other things, the risk that the future plans of BLU may differ from those that currently are contemplated. Additional risks include those disclosed in the management information circular of Canadian Global Energy Corp., which is available on the Company’s profile at SEDAR+ at www.sedarplus.ca. Readers are cautioned not to place undue reliance on forward-looking information. The Company undertakes no obligation to update any of the forward-looking information in this news release, except as otherwise required by law.
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+
+---
+
+<a id="page-33"></a>
+## 33. BluEnergies Announces CEO Transition
+
+**Page Name:** BluEnergies Announces CEO Transition  
+**Original URL:** https://www.blu-energies.com/news-and-media/news/bluenergies-announces-ceo-transition/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - News
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - News
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/news/bluenergies-announces-ceo-transition
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### News
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### BluEnergies Announces CEO Transition
+**May 8, 2025**
+May 8, 2025 – Vancouver, BC – BluEnergies Ltd. (TSXV: BLU) (“ **Blu** ” or the “ **Company** ”), announces that Mr. Craig Steinke has been appointed Chief Executive Officer (“ **CEO** ”) and as a director of the Company effective immediately. Mr. Steinke succeeds Mr. James Deckelman as CEO and director, following Mr. Deckelman's resignation from these roles for personal reasons, which the Company accepted effective today.
+The Company would like to thank Mr. Deckelman for his service and contributions to the Company during the previously announced go public transaction with Canadian Global Energy Corp., helping to position the Company for continued success. The Company wishes Mr. Deckelman all the best in his future endeavours.
+The Company has full confidence in Mr. Steinke to serve Blu as its CEO and as a director in order to deliver value to its shareholders. Mr. Steinke has a wealth of experience in identifying, successfully developing and financing oil and natural gas exploration and production projects in North America, Africa, Latin America, Europe and Asia, and has successfully held numerous senior executive roles throughout his career.
+Leading up to Blu obtaining its ~2.2 million acre reconnaissance licenses in the Harper basin, offshore Liberia, the Company began operations as a private entity in September 2021. Mr. Steinke, together with long-time partners, guided the Company through a thorough, proactive, and technology-driven selection process, privately funding its growth prior to the recent go-public transaction.
+The Company is assured that Mr. Steinke’s knowledge of its assets and extensive leadership experience in international oil and gas exploration and development will be instrumental in the continued growth and success of the Company.
+**About BluEnergies Ltd.**
+BluEnergies Ltd. is Canadian based international oil and gas exploration and development company with a focus on operations in the Harper basin offshore Liberia. For further information on BluEnergies Ltd., please refer to the Company’s profile on SEDAR+ ( [www.sedarplus.ca](http://www.sedarplus.ca)).
+For further information, please contact:
+Craig Steinke, Chief Executive Officer
+Email: [info@blu-energies.com](mailto:info@blu-energies.com)
+**Forward-looking Information**
+This news release contains “forward-looking statements” and “forward-looking information” (collectively, “ **forward-looking information** ”) within the meaning of applicable securities laws. Forward-looking information can be identified by words such as: “intend”, “believe”, “estimate”, “expect”, “may”, “will” and similar references to future periods. Examples of forward-looking information include, among others, the future plans of Blu, the success of Mr. Steinke as CEO and as a director of the Company, and information herein relating to Blu and its business plans. Although Blu believes that, in light of the experience of its officers and directors, current conditions and expected future developments and other factors that have been considered appropriate, the expectations reflected in this forward-looking information are reasonable, undue reliance should not be placed on them because Blu can give no assurance that they will prove to be correct. Readers are cautioned to not place undue reliance on forward-looking information. Actual results and developments may differ materially from those contemplated by this information depending on, among other things, the risk that the future plans of Blu may differ from those that currently are contemplated. Additional risks include those disclosed in the management information circular of Canadian Global Energy Corp., which is available on the Company’s profile at SEDAR+ at www.sedarplus.ca. Readers are cautioned not to place undue reliance on forward-looking information. The Company undertakes no obligation to update any of the forward-looking information in this news release, except as otherwise required by law.
+**Neither the TSX Venture Exchange nor its Regulation Services Provider (as that term is defined in the policies of the TSX Venture Exchange) accepts responsibility for the adequacy or accuracy of this news release.**
+
+---
+
+<a id="page-34"></a>
+## 34. Oil majors snap up West African blocks in hunt for next Brazil
+
+**Page Name:** Oil majors snap up West African blocks in hunt for next Brazil  
+**Original URL:** https://www.blu-energies.com/news-and-media/in-the-media/oil-majors-snap-up-west-african-blocks-in-hunt-for-next-brazil/
+
+**SEO**
+
+- Title: BluEnergies Ltd. - In the Media
+- Meta description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:title: BluEnergies Ltd. - In the Media
+- og:description: BluEnergies Ltd. is a publically traded Canadian Oil & Gas company that creates value and opportunity for all stakeholders through disciplined and responsible investment across the energy spectrum. 
+- og:image: https://www.blu-energies.com/favicon/OG.jpg
+- Canonical: https://www.blu-energies.com/news-and-media/in-the-media/oil-majors-snap-up-west-african-blocks-in-hunt-for-next-brazil
+
+**Section 1 — Banner**
+
+[banner image] https://www.blu-energies.com/_resources/banners/news-and-media.jpg
+### In the Media
+[Newsletter Signup]((no href)) [Corporate Presentation](https://www.blu-energies.com/_resources/presentations/corporate-presentation.pdf)
+
+**Section 2 — Section navigation (sidebar)**
+
+News & Media
+[News](https://www.blu-energies.com/news-and-media/news/)
+[In the Media](https://www.blu-energies.com/news-and-media/in-the-media/)
+
+**Section 3 — Main content**
+
+#### Oil majors snap up West African blocks in hunt for next Brazil
+[image] https://www.blu-energies.com/_resources/images/article-20260204-image1.png
+By [Wendell Roelf](https://www.reuters.com/authors/wendell-roelf/)
+February 4, 2026
+[image] https://www.blu-energies.com/_resources/images/article-20260204-image2.png
+The Chevron offices are pictured in Caracas, Venezuela, December 2, 2022. REUTERS/Gaby Oraa/File Photo
+[image] https://www.blu-energies.com/_resources/images/article-20260204-image3.png
+[image] https://www.blu-energies.com/_resources/images/article-20260204-image4.png
+How many years can they produce from their reserves at their current rate of output?
+
+
+> **Article text not reproduced.** This page republishes a Reuters article (by Wendell Roelf, February 4, 2026). The body text is Reuters copyright, so it is listed here by reference only; see the original URL above.
+
+---
+
+## Inaccessible or missing pages
+
+- `/assets-and-operations/resource-definitions/` — 404
+- `/favicon/site.webmanifest/` — 404

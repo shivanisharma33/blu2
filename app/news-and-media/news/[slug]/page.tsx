@@ -5,6 +5,7 @@ import LatestNews from "@/components/page/LatestNews";
 import { Arrow, ExternalArrow, formatDate } from "@/components/ui/primitives";
 import { releases, getRelease, releaseHref } from "@/lib/releases";
 import { routes, investorContact } from "@/lib/content";
+import { SITE_DESCRIPTION } from "@/lib/original";
 
 type Params = { slug: string };
 
@@ -18,11 +19,12 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params;
   const r = getRelease(slug);
   if (!r) return {};
+  // Release pages on the official site all use the News page title and the site description.
   return {
-    title: r.title,
-    description: r.excerpt,
+    title: { absolute: "BluEnergies Ltd. - News" },
+    description: SITE_DESCRIPTION,
     alternates: { canonical: releaseHref(r.slug) },
-    openGraph: { type: "article", title: r.title, description: r.excerpt, publishedTime: r.date },
+    openGraph: { type: "article", title: "BluEnergies Ltd. - News", description: SITE_DESCRIPTION, publishedTime: r.date },
   };
 }
 
@@ -57,7 +59,6 @@ export default async function ReleasePage({ params }: { params: Promise<Params> 
           </nav>
           <p className="article-hero__meta hero-in" style={{ ["--d" as string]: "0.05s" }}>
             <time dateTime={r.date}>{formatDate(r.date)}</time>
-            <span>{r.category}</span>
           </p>
           <h1 id="page-title" className="article-hero__title hero-in" style={{ ["--d" as string]: "0.12s" }}>
             {r.title}
@@ -71,8 +72,6 @@ export default async function ReleasePage({ params }: { params: Promise<Params> 
             <div className="article__aside-inner">
               <p className="article__aside-label">Published</p>
               <p className="article__aside-value">{formatDate(r.date)}</p>
-              <p className="article__aside-label">Topic</p>
-              <p className="article__aside-value">{r.category}</p>
               <p className="article__aside-label">Media &amp; IR enquiries</p>
               <a className="article__aside-value u-link" href={`mailto:${investorContact.email}`}>{investorContact.email}</a>
               <a className="read-more article__source" href={r.source} target="_blank" rel="noopener noreferrer">

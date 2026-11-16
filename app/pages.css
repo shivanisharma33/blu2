@@ -1507,3 +1507,131 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ------------------------------------------- original-content pages -- */
+.page-hero__links {
+  margin-top: 28px;
+}
+.original {
+  max-width: 76ch;
+}
+.original--wide {
+  max-width: none;
+}
+.original > h2 {
+  margin-top: 40px;
+}
+.original__note {
+  font-size: 14px;
+  color: var(--muted);
+}
+.original__figure {
+  margin: 32px 0;
+}
+.original__figure a {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+}
+.original__figure img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s var(--ease);
+}
+.original__figure a:hover img {
+  transform: scale(1.01);
+}
+.original__figure figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.original--wide > p,
+.original--wide > ul {
+  max-width: 76ch;
+}
+.doc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 !important;
+  list-style: none;
+}
+.doc-links li + li {
+  margin-top: 0 !important;
+}
+.doc-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink) !important;
+  text-decoration: none !important;
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+.doc-links a:hover {
+  background: var(--ink);
+  color: #fff !important;
+}
+.original__offices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px var(--gutter);
+}
+.original__offices address {
+  display: grid;
+  gap: 2px;
+  font-style: normal;
+  font-size: 17px;
+}
+.original__offices strong {
+  margin-bottom: 8px;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+.original__quote {
+  min-height: 420px;
+  margin-top: 16px;
+}
+.year-list__tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.original .release-list {
+  padding: 0;
+  list-style: none;
+}
+.original .release-list li + li {
+  margin-top: 0;
+}
+.original .release-list a {
+  text-decoration: none;
+  color: inherit;
+}
+@media (max-width: 767px) {
+  .original__offices {
+    grid-template-columns: 1fr;
+  }
+}
+.year-list .release-list a {
+  grid-template-columns: 96px 1fr auto;
+}
+@media (max-width: 767px) {
+  .year-list .release-list a {
+    grid-template-columns: 1fr auto;
+    gap: 4px 16px;
+  }
+  .year-list .release-list time {
+    grid-column: 1 / -1;
+  }
+}

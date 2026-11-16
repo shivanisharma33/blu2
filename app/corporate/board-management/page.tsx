@@ -5,12 +5,13 @@ import SubNav from "@/components/page/SubNav";
 import LatestNews from "@/components/page/LatestNews";
 import { boardBios, managementBios, slugify, type Bio } from "@/lib/people";
 import { routes } from "@/lib/content";
+import { banners, pageMeta } from "@/lib/original";
 
-export const metadata: Metadata = {
-  title: "Board & Management",
-  description: "The BluEnergies board of directors and management team.",
-  alternates: { canonical: routes.board },
-};
+export const metadata: Metadata = pageMeta("Board & Management", routes.board);
+
+/** Management in the order shown on the official page. */
+const MANAGEMENT_ORDER = ["Vivien Chuang", "Michelle Borthwick", "Sergio Laura"];
+const management = [...managementBios].sort((a, b) => MANAGEMENT_ORDER.indexOf(a.name) - MANAGEMENT_ORDER.indexOf(b.name));
 
 function Profile({ p }: { p: Bio }) {
   const initials = p.name.split(" ").map((s) => s[0]).join("");
@@ -66,27 +67,20 @@ export default function BoardPage() {
     <>
       <PageHero
         eyebrow="Corporate"
-        title="Board & Management."
-        intro={
-          <p>
-            Decades of international exploration, discovery, capital markets and public-company governance experience, from Amoco, BP,
-            Anadarko and Eni to TSX and TSXV boardrooms.
-          </p>
-        }
+        title="Board & Management"
         crumbs={[{ label: "Corporate", href: routes.about }, { label: "Board & Management" }]}
-        image="/images/ocean-dusk.jpg"
-        imagePosition="center 65%"
+        image={banners.corporate}
       />
       <SubNav group="Corporate" />
 
       <div className="section section--white">
         <div className="container">
           <Group id="board" title="Board of Directors" people={boardBios} />
-          <Group id="management" title="Management" people={managementBios} />
+          <Group id="management" title="Management" people={management} />
         </div>
       </div>
 
-      <LatestNews />
+      <LatestNews title="News" />
     </>
   );
 }
